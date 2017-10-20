@@ -15,12 +15,12 @@ body {
     .btn {
         width: rem(346);
         height: rem(254);
-        background: url(../../img/status1/btn-on.png) no-repeat;
+        background: url(../img/status1/btn-on.png) no-repeat;
         background-size: rem(346) rem(254);
         margin: rem(100) auto;
         &.off {
             height: rem(254);
-            background: url(../../img/status1/btn-off.png) no-repeat;
+            background: url(../img/status1/btn-off.png) no-repeat;
             background-size: rem(346) rem(254);
         }
     }

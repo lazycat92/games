@@ -10,13 +10,13 @@ body {
 body .btn {
   width: 7.38133rem;
   height: 5.41867rem;
-  background: url(../../img/status1/btn-on.png) no-repeat;
+  background: url(../img/status1/btn-on.png) no-repeat;
   background-size: 7.38133rem 5.41867rem;
   margin: 2.13333rem auto;
 }
 /* line 21, ../sass/style.scss */
 body .btn.off {
   height: 5.41867rem;
-  background: url(../../img/status1/btn-off.png) no-repeat;
+  background: url(../img/status1/btn-off.png) no-repeat;
   background-size: 7.38133rem 5.41867rem;
 }
