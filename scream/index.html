@@ -15,6 +15,7 @@
 		<div class="btn"></div>
 		<time>10</time>
 		<button>再玩一次</button>
+		<p class="count"></p>
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			var count = 0;
@@ -26,7 +27,7 @@
 					$(this).addClass("off");
 				}).on("touchend", function(){
 					$(this).removeClass("off");
-					console.log(count);
+					$(".count").html(count);
 				});
 				$("button").off("click", handler);
 				var timer = setInterval(function(){
