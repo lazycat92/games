@@ -22,7 +22,7 @@ body {
             height: 100vh;
             &#status1 {
                 background: url(../img/status1/bg.png) no-repeat;
-                background-size: cover;
+                background-size: 100% 100%;
                 position: relative;
                 .title {
                     width: rem(634);
@@ -188,7 +188,7 @@ body {
                     }
                     50% {
                         transform: rotate(180deg);
-                        top: rem(30);
+                        top: rem(15);
                         opacity: 1;
                     }
                     75% {
@@ -196,7 +196,7 @@ body {
                     }
                     100% {
                         transform: rotate(360deg);
-                        top: rem(30);
+                        top: rem(15);
                         opacity: 1;
                     }
                 }

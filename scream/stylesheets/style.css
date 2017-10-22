@@ -22,7 +22,7 @@ body .container .status {
 /* line 23, ../sass/style.scss */
 body .container .status#status1 {
   background: url(../img/status1/bg.png) no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
 }
 /* line 27, ../sass/style.scss */
@@ -199,7 +199,7 @@ body .container .status#status1 .arrow {
   }
   50% {
     transform: rotate(180deg);
-    top: 0.64rem;
+    top: 0.32rem;
     opacity: 1;
   }
   75% {
@@ -207,7 +207,7 @@ body .container .status#status1 .arrow {
   }
   100% {
     transform: rotate(360deg);
-    top: 0.64rem;
+    top: 0.32rem;
     opacity: 1;
   }
 }
