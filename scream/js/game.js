@@ -19,7 +19,7 @@ define(function(require) {
 		"https://img04.aomygod.com/fontend/20171022/imgs/status1/title.png"
 	];
 
-	var preload = new createjs.LoadQueue(true, "");
+	var preload = new createjs.LoadQueue(true);
 	preload.on('fileload', handleFileLoad);
 	preload.on('progress', handleOverallProgress);
 	preload.on("fileprogress", handleFileProgress);
