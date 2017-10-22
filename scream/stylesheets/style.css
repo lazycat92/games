@@ -163,12 +163,6 @@ body .container .status#status1 .arrow {
   0% {
     transform: scale(1.1);
   }
-  50% {
-    transform: scale(1);
-  }
-  75% {
-    transform: scale(1.1);
-  }
   100% {
     transform: scale(1);
   }
@@ -233,12 +227,12 @@ body .container .status#status1 .arrow {
     left: -0.10667rem;
   }
 }
-/* line 224, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
 body .container .status#status1 p {
   margin: 0;
   padding: 0;
 }
-/* line 231, ../sass/style.scss */
+/* line 225, ../sass/style.scss */
 body .btn {
   width: 7.38133rem;
   height: 5.41867rem;
@@ -246,7 +240,7 @@ body .btn {
   background-size: 7.38133rem 5.41867rem;
   margin: 2.13333rem auto;
 }
-/* line 237, ../sass/style.scss */
+/* line 231, ../sass/style.scss */
 body .btn.off {
   height: 5.41867rem;
   background: url(../img/status3/btn-off.png) no-repeat;
