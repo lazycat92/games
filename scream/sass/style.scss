@@ -1,6 +1,6 @@
+@import "../js/Swiper/swiper.min.css";
 $fontSize: 46.875; // 750px 宽度
 $primary_color: #f03468;
-
 // 计算宽度
 @function rem($n) {
     @return ($n / $fontSize) * 1rem;
@@ -12,6 +12,209 @@ body {
     background: #eee;
     width: 100%;
     height: 100vh;
+    .container {
+        margin: 0 auto;
+        width: rem(750);
+        height: 100vh;
+        overflow: hidden;
+        .status {
+            width: 100%;
+            height: 100vh;
+            &#status1 {
+                background: url(../img/status1/bg.png) no-repeat;
+                background-size: rem(750) 100%;
+                position: relative;
+                .title {
+                    width: rem(634);
+                    height: rem(305);
+                    display: block;
+                    background: url(../img/status1/title.png) no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    left: 50%;
+                    margin-left: rem(-317);
+                    animation: titleLoad 1.5s ease forwards;
+                    z-index: 10;
+                }
+                .could {
+                    width: rem(736);
+                    height: rem(318);
+                    margin: 0 auto;
+                    display: block;
+                    background: url(../img/status3/cloud.png) no-repeat;
+                    background-size: 100% 100%;
+                    position: relative;
+                    top: rem(45);
+                    z-index: 6;
+                    animation: cloudShake 1s ease-in-out infinite alternate-reverse;
+                }
+                .cartoon {
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+                    z-index: 20;
+                    .boy {
+                        flex: 1 50%;
+                        height: rem(585);
+                        left: rem(-370);
+                        position: relative;
+                        background: url(../img/status1/boy.png) center right no-repeat;
+                        background-size: rem(323) rem(585);
+                        animation: formLeft 1s ease-in-out forwards;
+                    }
+                    .girl {
+                        flex: 1 50%;
+                        height: rem(585);
+                        background: url(../img/status1/girl.png) center left no-repeat;
+                        background-size: rem(376) rem(506);
+                        position: relative;
+                        left: rem(-15);
+                        animation: formRight 1s ease-in-out forwards;
+                    }
+                }
+                .coupon {
+                    width: rem(530);
+                    height: rem(302);
+                    margin: 0 auto;
+                    background: url(../img/status1/coupon.png) no-repeat;
+                    background-size: rem(530) rem(302);
+                    position: relative;
+                    z-index: 30;
+                    animation: formTop 1s ease-in forwards;
+                }
+                .btn-light {
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+                    top: rem(-250);
+                    z-index: 50;
+                    .btn-boy {
+                        flex: 1;
+                        display: block;
+                        height: rem(275);
+                        background: url(../img/status1/boy-light.png) no-repeat;
+                        background-size: rem(376) rem(275);
+                        animation: btnScale 1s ease forwards;
+                    }
+                    .btn-girl {
+                        flex: 1;
+                        display: block;
+                        height: rem(275);
+                        background: url(../img/status1/girl-light.png) no-repeat;
+                        background-size: rem(376) rem(275);
+                        animation: btnScale 1s ease forwards;
+                    }
+                }
+                .arrow {
+                    display: block;
+                    width: rem(106);
+                    height: rem(94);
+                    background: url(../img/status1/arrow.png) no-repeat;
+                    background-size: rem(106) rem(94);
+                    position: relative;
+                    top: rem(-290);
+                    left: rem(100);
+                    animation: arrowTransform 2s ease infinite alternate-reverse;
+                }
+                @keyframes arrowTransform {
+                    0% {
+                        opacity: 0;
+                        left: rem(100);
+                    }
+                    50% {
+                        opacity: 1;
+                        left: rem(100);
+                    }
+                    75% {
+                        opacity: 0;
+                        left: rem(550);
+                    }
+                    100% {
+                        opacity: 1;
+                        left: rem(550);
+                    }
+                }
+                @keyframes btnScale {
+                    0% {
+                        transform: scale(1.2);
+                    }
+                    50% {
+                        transform: scale(1);
+                    }
+                    75% {
+                        transform: scale(1.2);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+                @keyframes formTop {
+                    0% {
+                        top: rem(-300);
+                        opacity: 0;
+                    }
+                    50% {
+                        top: rem(-130);
+                        opacity: 1;
+                    }
+                    75% {
+                        top: rem(-150);
+                        opacity: 1;
+                    }
+                    100% {
+                        top: rem(-130);
+                        opacity: 1;
+                    }
+                }
+                @keyframes formLeft {
+                    0% {
+                        left: rem(-370);
+                    }
+                    100% {
+                        left: 0;
+                    }
+                }
+                @keyframes formRight {
+                    0% {
+                        left: rem(370);
+                    }
+                    100% {
+                        left: rem(-15);
+                    }
+                }
+                @keyframes titleLoad {
+                    0% {
+                        opacity: 0;
+                    }
+                    50% {
+                        transform: rotate(180deg);
+                        top: rem(30);
+                        opacity: 1;
+                    }
+                    75% {
+                        transform: rotate(360deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                        top: rem(30);
+                        opacity: 1;
+                    }
+                }
+                @keyframes cloudShake {
+                    0% {
+                        left: rem(5);
+                    }
+                    100% {
+                        left: rem(-5);
+                    }
+                }
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
     .btn {
         width: rem(346);
         height: rem(254);

@@ -4,7 +4,6 @@ define(function(require) {
 	var $ = require('jquery');
 	var Swiper = require('Swiper');
 	
-	
 	var count = 0;
 
 	function countdown(a) {
@@ -35,4 +34,9 @@ define(function(require) {
 		count = 0
 		countdown(10);
 	};
+	
+	new Swiper('.swiper-container', {
+		direction: "vertical",
+		noSwiping: true
+	})
 })
