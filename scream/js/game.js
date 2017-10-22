@@ -34,7 +34,8 @@ define(function(require) {
 	
 	function handleOverallProgress(e) {
 		var progress = parseInt(preload.progres);
-		$(".preload-progress").html(progress * 100);
+		console.log(preload.progres);
+		$(".preload-progress").html(preload.progres * 100);
 		if(preload.progress == 1) {
 			$(".container").show();
 		}
