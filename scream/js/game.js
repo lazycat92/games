@@ -33,7 +33,7 @@ define(function(require) {
 	}
 	
 	function handleOverallProgress(e) {
-		$(".preload-progress").html((preload.progress * 100).toFixed(2));
+		$(".preload-progress").html(parseInt(preload.progress * 100));
 	}
 	
 	function handleFileProgress(e) {
