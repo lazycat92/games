@@ -21,7 +21,7 @@ body .container .status {
 }
 /* line 23, ../sass/style.scss */
 body .container .status#status1 {
-  background: url(../img/status1/bg.png) no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/bg.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
 }
@@ -30,7 +30,7 @@ body .container .status#status1 .title {
   width: 13.52533rem;
   height: 6.50667rem;
   display: block;
-  background: url(../img/status1/title.png) center center no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/title.png") center center no-repeat;
   background-size: 100%;
   position: absolute;
   left: 50%;
@@ -44,7 +44,7 @@ body .container .status#status1 .could {
   height: 6.784rem;
   margin: 0 auto;
   display: block;
-  background: url(../img/status3/cloud.png) center center no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status3/cloud.png") center center no-repeat;
   background-size: 100%;
   position: relative;
   top: 1.28rem;
@@ -65,7 +65,7 @@ body .container .status#status1 .cartoon .boy {
   height: 12.48rem;
   left: -7.89333rem;
   position: relative;
-  background: url(../img/status1/boy.png) center right no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/boy.png") center right no-repeat;
   background-size: 80%;
   animation: formLeft 1s ease-in-out forwards;
 }
@@ -73,7 +73,7 @@ body .container .status#status1 .cartoon .boy {
 body .container .status#status1 .cartoon .girl {
   flex: 1 50%;
   height: 12.48rem;
-  background: url(../img/status1/girl.png) center left no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/girl.png") center left no-repeat;
   background-size: 80%;
   position: relative;
   left: -0.32rem;
@@ -84,7 +84,7 @@ body .container .status#status1 .coupon {
   width: 11.30667rem;
   height: 6.44267rem;
   margin: 0 auto;
-  background: url(../img/status1/coupon.png) center center no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/coupon.png") center center no-repeat;
   background-size: 100%;
   position: relative;
   z-index: 30;
@@ -103,7 +103,7 @@ body .container .status#status1 .btn-light .btn-boy {
   flex: 1;
   display: block;
   height: 5.86667rem;
-  background: url(../img/status1/boy-light.png) center right no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/boy-light.png") center right no-repeat;
   background-size: 90%;
   animation: btnScale 1s ease forwards;
 }
@@ -112,7 +112,7 @@ body .container .status#status1 .btn-light .btn-girl {
   flex: 1;
   display: block;
   height: 5.86667rem;
-  background: url(../img/status1/girl-light.png) center left no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/girl-light.png") center left no-repeat;
   background-size: 90%;
   animation: btnScale 1s ease forwards;
 }
@@ -121,7 +121,7 @@ body .container .status#status1 .arrow {
   display: block;
   width: 2.26133rem;
   height: 2.00533rem;
-  background: url(../img/status1/arrow.png) no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/arrow.png") no-repeat;
   background-size: 80%;
   position: relative;
   top: -7.68rem;

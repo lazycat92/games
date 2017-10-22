@@ -8,18 +8,18 @@ define(function(require) {
 	var count = 0;
 
 	var manifest = [
-		"status1/arrow.png",
-		"status1/bg.png",
-		"status1/boy-light.png",
-		"status1/girl-light.png",
-		"status1/girl.png",
-		"status1/boy.png",
-		"status1/cloud.png",
-		"status1/coupon.png",
-		"status1/title.png"
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/arrow.png",
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/bg.png",
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/boy-light.png",
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/girl-light.png",
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/girl.png",
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/boy.png",
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/cloud.png",
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/coupon.png",
+		"https://img04.aomygod.com/fontend/20171022/imgs/status1/title.png"
 	];
 
-	var preload = new createjs.LoadQueue(true, "./img/");
+	var preload = new createjs.LoadQueue(true, "");
 	preload.on('fileload', handleFileLoad);
 	preload.on('progress', handleOverallProgress);
 	preload.on("fileprogress", handleFileProgress);
