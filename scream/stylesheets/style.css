@@ -124,26 +124,25 @@ body .container .status#status1 .arrow {
   background: url(../img/status1/arrow.png) no-repeat;
   background-size: 80%;
   position: relative;
-  top: -6.82667rem;
-  left: 37.54667rem;
+  top: -7.68rem;
   animation: arrowTransform 2s ease infinite alternate-reverse;
 }
 @keyframes arrowTransform {
   0% {
     opacity: 0;
-    left: 3.62667rem;
+    left: 3.2rem;
   }
   50% {
     opacity: 1;
-    left: 3.62667rem;
+    left: 3.2rem;
   }
   75% {
     opacity: 0;
-    left: 11.09333rem;
+    left: 11.73333rem;
   }
   100% {
     opacity: 1;
-    left: 11.09333rem;
+    left: 11.73333rem;
   }
 }
 @keyframes btnScale {
@@ -220,12 +219,12 @@ body .container .status#status1 .arrow {
     left: -0.10667rem;
   }
 }
-/* line 212, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 body .container .status#status1 p {
   margin: 0;
   padding: 0;
 }
-/* line 219, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
 body .btn {
   width: 7.38133rem;
   height: 5.41867rem;
@@ -233,7 +232,7 @@ body .btn {
   background-size: 7.38133rem 5.41867rem;
   margin: 2.13333rem auto;
 }
-/* line 225, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 body .btn.off {
   height: 5.41867rem;
   background: url(../img/status3/btn-off.png) no-repeat;

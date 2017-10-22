@@ -113,26 +113,25 @@ body {
                     background: url(../img/status1/arrow.png) no-repeat;
                     background-size: 80%;
                     position: relative;
-                    top: rem(-320);
-                    left: rem(1760);
+                    top: rem(-360);
                     animation: arrowTransform 2s ease infinite alternate-reverse;
                 }
                 @keyframes arrowTransform {
                     0% {
                         opacity: 0;
-                        left: rem(170);
+                        left: rem(150);
                     }
                     50% {
                         opacity: 1;
-                        left: rem(170);
+                        left: rem(150);
                     }
                     75% {
                         opacity: 0;
-                        left: rem(520);
+                        left: rem(550);
                     }
                     100% {
                         opacity: 1;
-                        left: rem(520);
+                        left: rem(550);
                     }
                 }
                 @keyframes btnScale {
