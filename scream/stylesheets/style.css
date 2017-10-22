@@ -22,7 +22,7 @@ body .container .status {
 /* line 23, ../sass/style.scss */
 body .container .status#status1 {
   background: url(../img/status1/bg.png) no-repeat;
-  background-size: 16rem 100%;
+  background-size: 100% 100%;
   position: relative;
 }
 /* line 27, ../sass/style.scss */
@@ -30,8 +30,8 @@ body .container .status#status1 .title {
   width: 13.52533rem;
   height: 6.50667rem;
   display: block;
-  background: url(../img/status1/title.png) no-repeat;
-  background-size: 100% 100%;
+  background: url(../img/status1/title.png) center center no-repeat;
+  background-size: 100%;
   position: absolute;
   left: 50%;
   margin-left: -6.76267rem;
@@ -44,10 +44,10 @@ body .container .status#status1 .could {
   height: 6.784rem;
   margin: 0 auto;
   display: block;
-  background: url(../img/status3/cloud.png) no-repeat;
-  background-size: 100% 100%;
+  background: url(../img/status3/cloud.png) center center no-repeat;
+  background-size: 100%;
   position: relative;
-  top: 0.96rem;
+  top: 1.28rem;
   z-index: 6;
   animation: cloudShake 1s ease-in-out infinite alternate-reverse;
 }
@@ -56,85 +56,85 @@ body .container .status#status1 .cartoon {
   display: flex;
   width: 100%;
   position: relative;
+  top: -0.768rem;
   z-index: 20;
 }
-/* line 56, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 body .container .status#status1 .cartoon .boy {
   flex: 1 50%;
   height: 12.48rem;
   left: -7.89333rem;
   position: relative;
   background: url(../img/status1/boy.png) center right no-repeat;
-  background-size: 6.89067rem 12.48rem;
+  background-size: 80%;
   animation: formLeft 1s ease-in-out forwards;
 }
-/* line 65, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 body .container .status#status1 .cartoon .girl {
   flex: 1 50%;
   height: 12.48rem;
   background: url(../img/status1/girl.png) center left no-repeat;
-  background-size: 8.02133rem 10.79467rem;
+  background-size: 80%;
   position: relative;
   left: -0.32rem;
   animation: formRight 1s ease-in-out forwards;
 }
-/* line 75, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 body .container .status#status1 .coupon {
   width: 11.30667rem;
   height: 6.44267rem;
   margin: 0 auto;
-  background: url(../img/status1/coupon.png) no-repeat;
-  background-size: 11.30667rem 6.44267rem;
+  background: url(../img/status1/coupon.png) center center no-repeat;
+  background-size: 100%;
   position: relative;
   z-index: 30;
   animation: formTop 1s ease-in forwards;
 }
-/* line 85, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 body .container .status#status1 .btn-light {
   display: flex;
   width: 100%;
   position: relative;
-  top: -5.33333rem;
+  top: -6.82667rem;
   z-index: 50;
 }
-/* line 91, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 body .container .status#status1 .btn-light .btn-boy {
   flex: 1;
   display: block;
   height: 5.86667rem;
-  background: url(../img/status1/boy-light.png) no-repeat;
-  background-size: 8.02133rem 5.86667rem;
-  animation: btnScale 1s ease-in forwards;
+  background: url(../img/status1/boy-light.png) center right no-repeat;
+  background-size: 90%;
+  animation: btnScale 1s ease forwards;
 }
-/* line 99, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 body .container .status#status1 .btn-light .btn-girl {
   flex: 1;
   display: block;
   height: 5.86667rem;
-  background: url(../img/status1/girl-light.png) no-repeat;
-  background-size: 8.02133rem 5.86667rem;
-  animation: btnScale 1s ease-in forwards;
+  background: url(../img/status1/girl-light.png) center left no-repeat;
+  background-size: 90%;
+  animation: btnScale 1s ease forwards;
 }
-/* line 108, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 body .container .status#status1 .arrow {
   display: block;
   width: 2.26133rem;
   height: 2.00533rem;
   background: url(../img/status1/arrow.png) no-repeat;
-  background-size: 2.26133rem 2.00533rem;
+  background-size: 80%;
   position: relative;
-  top: -6.18667rem;
-  left: 2.13333rem;
+  top: -7.68rem;
   animation: arrowTransform 2s ease infinite alternate-reverse;
 }
 @keyframes arrowTransform {
   0% {
     opacity: 0;
-    left: 2.13333rem;
+    left: 3.2rem;
   }
   50% {
     opacity: 1;
-    left: 2.13333rem;
+    left: 3.2rem;
   }
   75% {
     opacity: 0;
@@ -161,19 +161,19 @@ body .container .status#status1 .arrow {
 }
 @keyframes formTop {
   0% {
-    top: -6.4rem;
+    top: -8.53333rem;
     opacity: 0;
   }
   50% {
-    top: -2.77333rem;
+    top: -3.41333rem;
     opacity: 1;
   }
   75% {
-    top: -3.2rem;
+    top: -4.05333rem;
     opacity: 1;
   }
   100% {
-    top: -2.77333rem;
+    top: -3.41333rem;
     opacity: 1;
   }
 }
@@ -199,7 +199,7 @@ body .container .status#status1 .arrow {
   }
   50% {
     transform: rotate(180deg);
-    top: 0.64rem;
+    top: 0.32rem;
     opacity: 1;
   }
   75% {
@@ -207,7 +207,7 @@ body .container .status#status1 .arrow {
   }
   100% {
     transform: rotate(360deg);
-    top: 0.64rem;
+    top: 0.32rem;
     opacity: 1;
   }
 }
