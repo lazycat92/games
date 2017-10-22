@@ -29,11 +29,12 @@ define(function(require) {
 	preload.loadManifest(manifest);
 	
 	function handleFileLoad() {
-		$(".preload-tips").hide();
+//		$(".preload-tips").hide();
 	}
 	
 	function handleOverallProgress(e) {
-		$(".preload-progress").html(parseInt(preload.progress * 100));
+		var progress = parseInt(preload.progres);
+		$(".preload-progress").html(progress * 100);
 		if(preload.progress == 1) {
 			$(".container").show();
 		}
