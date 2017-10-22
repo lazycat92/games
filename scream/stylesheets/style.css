@@ -119,7 +119,7 @@ body .container .status#status1 .btn-light .btn-boy {
   height: 5.86667rem;
   background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/boy-light.png") center right no-repeat;
   background-size: 95%;
-  animation: btnScale 1s ease infinite alternate-reverse;
+  animation: btnScale .8s linear infinite alternate-reverse;
 }
 /* line 113, ../sass/style.scss */
 body .container .status#status1 .btn-light .btn-girl {
@@ -128,7 +128,7 @@ body .container .status#status1 .btn-light .btn-girl {
   height: 5.86667rem;
   background: url("https://img04.aomygod.com/fontend/20171022/imgs/status1/girl-light.png") center left no-repeat;
   background-size: 95%;
-  animation: btnScale 1s ease infinite alternate-reverse;
+  animation: btnScale .8s linear infinite alternate-reverse;
 }
 /* line 122, ../sass/style.scss */
 body .container .status#status1 .arrow {

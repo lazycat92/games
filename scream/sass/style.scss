@@ -108,7 +108,7 @@ body {
                         height: rem(275);
                         background: url('https://img04.aomygod.com/fontend/20171022/imgs/status1/boy-light.png') center right no-repeat;
                         background-size: 95%;
-                        animation: btnScale 1s ease infinite alternate-reverse;
+                        animation: btnScale .8s linear infinite alternate-reverse;
                     }
                     .btn-girl {
                         flex: 1;
@@ -116,7 +116,7 @@ body {
                         height: rem(275);
                         background: url('https://img04.aomygod.com/fontend/20171022/imgs/status1/girl-light.png') center left no-repeat;
                         background-size: 95%;
-                        animation: btnScale 1s ease infinite alternate-reverse;
+                        animation: btnScale .8s linear infinite alternate-reverse;
                     }
                 }
                 .arrow {
