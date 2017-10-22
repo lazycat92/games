@@ -59,14 +59,14 @@ body {
                         left: rem(-370);
                         position: relative;
                         background: url(../img/status1/boy.png) center right no-repeat;
-                        background-size: 100%;
+                        background-size: 80%;
                         animation: formLeft 1s ease-in-out forwards;
                     }
                     .girl {
                         flex: 1 50%;
                         height: rem(585);
                         background: url(../img/status1/girl.png) center left no-repeat;
-                        background-size: 100%;
+                        background-size: 80%;
                         position: relative;
                         left: rem(-15);
                         animation: formRight 1s ease-in-out forwards;
@@ -93,7 +93,7 @@ body {
                         display: block;
                         height: rem(275);
                         background: url(../img/status1/boy-light.png) center right no-repeat;
-                        background-size: 80%;
+                        background-size: 100%;
                         animation: btnScale 1s ease forwards;
                     }
                     .btn-girl {
@@ -101,7 +101,7 @@ body {
                         display: block;
                         height: rem(275);
                         background: url(../img/status1/girl-light.png) center left no-repeat;
-                        background-size: 80%;
+                        background-size: 100%;
                         animation: btnScale 1s ease forwards;
                     }
                 }

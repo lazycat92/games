@@ -65,7 +65,7 @@ body .container .status#status1 .cartoon .boy {
   left: -7.89333rem;
   position: relative;
   background: url(../img/status1/boy.png) center right no-repeat;
-  background-size: 100%;
+  background-size: 80%;
   animation: formLeft 1s ease-in-out forwards;
 }
 /* line 65, ../sass/style.scss */
@@ -73,7 +73,7 @@ body .container .status#status1 .cartoon .girl {
   flex: 1 50%;
   height: 12.48rem;
   background: url(../img/status1/girl.png) center left no-repeat;
-  background-size: 100%;
+  background-size: 80%;
   position: relative;
   left: -0.32rem;
   animation: formRight 1s ease-in-out forwards;
@@ -103,7 +103,7 @@ body .container .status#status1 .btn-light .btn-boy {
   display: block;
   height: 5.86667rem;
   background: url(../img/status1/boy-light.png) center right no-repeat;
-  background-size: 80%;
+  background-size: 100%;
   animation: btnScale 1s ease forwards;
 }
 /* line 99, ../sass/style.scss */
@@ -112,7 +112,7 @@ body .container .status#status1 .btn-light .btn-girl {
   display: block;
   height: 5.86667rem;
   background: url(../img/status1/girl-light.png) center left no-repeat;
-  background-size: 80%;
+  background-size: 100%;
   animation: btnScale 1s ease forwards;
 }
 /* line 108, ../sass/style.scss */
