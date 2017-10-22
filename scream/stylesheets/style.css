@@ -95,7 +95,7 @@ body .container .status#status1 .btn-light {
   display: flex;
   width: 100%;
   position: relative;
-  top: -6.61333rem;
+  top: -6.82667rem;
   z-index: 50;
 }
 /* line 92, ../sass/style.scss */
@@ -150,13 +150,13 @@ body .container .status#status1 .arrow {
     transform: scale(1.2);
   }
   50% {
-    transform: scale(0.9);
+    transform: scale(1);
   }
   75% {
     transform: scale(1.2);
   }
   100% {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 }
 @keyframes formTop {
