@@ -1,59 +1,51 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>游戏</title>
-		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>游戏</title>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+</head>
 
-	<body>
-		<div class="container">
-			<div class="status" id="status1">
-				<i class="title"></i>
-				<i class="could"></i>
-				<div class="cartoon">
-					<p class="boy"></p>
-					<p class="girl"></p>
-				</div>
-				<p class="coupon"></p>
-				<div class="btn-light">
-					<a href="javascript:;" class="btn-boy"></a>
-					<a href="javascript:;" class="btn-girl"></a>
-				</div>
-				<i class="arrow"></i>
-			</div>
-			<div class="status" id="status2">
-				
-			</div>
-			<div class="status" id="status3">
-				
-			</div>
-			<div class="status" id="status4">
-				
-			</div>
-			<!--<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide swiper-no-swiping" id="status1">slider1</div>
-					<div class="swiper-slide swiper-no-swiping" id="status2">
-						<div class="btn"></div>
-						<time>10</time>
-						<button>再玩一次</button>
-						<p class="count"></p>
-					</div>
-					<div class="swiper-slide swiper-no-swiping" id="status3">slider3</div>
-					<div class="swiper-slide swiper-no-swiping" id="status4">slider4</div>
-				</div>
-			</div>-->
-		</div>
+<body>
 
-		<script src="js/require.js"></script>
-		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			require(['game'])
-		</script>
-	</body>
+    <div class="preload-tips">
+        游戏加载中<span class="preload-progress">0</span>%
+    </div>
+
+    <div class="container" style="display:none;">
+        <div class="status" id="status1">
+            <i class="title"></i>
+            <i class="could"></i>
+            <div class="cartoon">
+                <p class="boy"></p>
+                <p class="girl"></p>
+            </div>
+            <p class="coupon"></p>
+            <div class="btn-light">
+                <a href="javascript:;" class="btn-boy"></a>
+                <a href="javascript:;" class="btn-girl"></a>
+            </div>
+            <i class="arrow"></i>
+        </div>
+        <div class="status" id="status2">
+
+        </div>
+        <div class="status" id="status3">
+
+        </div>
+        <div class="status" id="status4">
+
+        </div>
+    </div>
+
+    <script src="js/require.js"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        require(['game'])
+    </script>
+</body>
 
 </html>
