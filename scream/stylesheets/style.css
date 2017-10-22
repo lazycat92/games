@@ -150,13 +150,13 @@ body .container .status#status1 .arrow {
     transform: scale(1.2);
   }
   50% {
-    transform: scale(1);
+    transform: scale(0.9);
   }
   75% {
     transform: scale(1.2);
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.9);
   }
 }
 @keyframes formTop {
