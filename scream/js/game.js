@@ -33,7 +33,7 @@ define(function(require) {
 	}
 	
 	function handleOverallProgress(e) {
-		var progress = parseInt(preload.progress);
+		var progress = preload.progress.toFixed(2);
 		console.log(progress);
 		$(".preload-progress").html(progress * 100);
 		if(preload.progress == 1) {
