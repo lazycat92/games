@@ -104,7 +104,7 @@ body .container .status#status1 .btn-light .btn-boy {
   display: block;
   height: 5.86667rem;
   background: url(../img/status1/boy-light.png) center right no-repeat;
-  background-size: 100%;
+  background-size: 90%;
   animation: btnScale 1s ease forwards;
 }
 /* line 100, ../sass/style.scss */
@@ -113,7 +113,7 @@ body .container .status#status1 .btn-light .btn-girl {
   display: block;
   height: 5.86667rem;
   background: url(../img/status1/girl-light.png) center left no-repeat;
-  background-size: 100%;
+  background-size: 90%;
   animation: btnScale 1s ease forwards;
 }
 /* line 109, ../sass/style.scss */
