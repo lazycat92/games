@@ -12,6 +12,19 @@ body {
     background: #eee;
     width: 100%;
     height: 100vh;
+    .preload-tips {
+        display: -webkit-box;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        font-size: rem(28);
+        color: #fff;
+    }
     .container {
         margin: 0 auto;
         width: rem(750);

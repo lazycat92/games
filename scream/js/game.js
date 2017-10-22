@@ -30,13 +30,10 @@ define(function(require) {
 	
 	function handleFileLoad() {
 		$(".preload-tips").hide();
-		$(".container").show();
 	}
 	
 	function handleOverallProgress(e) {
-		console.log(e);
-		console.log('progress', preload.progress);
-		$(".preload-progress").html(preload.progress * 100);
+		$(".preload-progress").html((preload.progress * 100).toFixed(2));
 	}
 	
 	function handleFileProgress(e) {
