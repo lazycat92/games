@@ -34,6 +34,9 @@ define(function(require) {
 	
 	function handleOverallProgress(e) {
 		$(".preload-progress").html(parseInt(preload.progress * 100));
+		if(preload.progress == 1) {
+			$(".container").show();
+		}
 	}
 	
 	function handleFileProgress(e) {
