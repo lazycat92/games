@@ -34,9 +34,6 @@ define(function(require) {
 	
 	function handleOverallProgress(e) {
 		$(".preload-progress").html((preload.progress * 100).toFixed(2));
-		if(preload.progress == 1) {
-			$(".container").show();
-		}
 	}
 	
 	function handleFileProgress(e) {
