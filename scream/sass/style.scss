@@ -29,7 +29,7 @@ body {
                     height: rem(305);
                     display: block;
                     background: url(../img/status1/title.png) center center no-repeat;
-                    background-size: 80%;
+                    background-size: 100%;
                     position: absolute;
                     left: 50%;
                     margin-left: rem(-317);
@@ -42,7 +42,7 @@ body {
                     margin: 0 auto;
                     display: block;
                     background: url(../img/status3/cloud.png) center center no-repeat;
-                    background-size: 80%;
+                    background-size: 100%;
                     position: relative;
                     top: rem(60);
                     z-index: 6;
@@ -59,14 +59,14 @@ body {
                         left: rem(-370);
                         position: relative;
                         background: url(../img/status1/boy.png) center right no-repeat;
-                        background-size: 80%;
+                        background-size: 100%;
                         animation: formLeft 1s ease-in-out forwards;
                     }
                     .girl {
                         flex: 1 50%;
                         height: rem(585);
                         background: url(../img/status1/girl.png) center left no-repeat;
-                        background-size: 80%;
+                        background-size: 100%;
                         position: relative;
                         left: rem(-15);
                         animation: formRight 1s ease-in-out forwards;

@@ -31,7 +31,7 @@ body .container .status#status1 .title {
   height: 6.50667rem;
   display: block;
   background: url(../img/status1/title.png) center center no-repeat;
-  background-size: 80%;
+  background-size: 100%;
   position: absolute;
   left: 50%;
   margin-left: -6.76267rem;
@@ -45,7 +45,7 @@ body .container .status#status1 .could {
   margin: 0 auto;
   display: block;
   background: url(../img/status3/cloud.png) center center no-repeat;
-  background-size: 80%;
+  background-size: 100%;
   position: relative;
   top: 1.28rem;
   z-index: 6;
@@ -65,7 +65,7 @@ body .container .status#status1 .cartoon .boy {
   left: -7.89333rem;
   position: relative;
   background: url(../img/status1/boy.png) center right no-repeat;
-  background-size: 80%;
+  background-size: 100%;
   animation: formLeft 1s ease-in-out forwards;
 }
 /* line 65, ../sass/style.scss */
@@ -73,7 +73,7 @@ body .container .status#status1 .cartoon .girl {
   flex: 1 50%;
   height: 12.48rem;
   background: url(../img/status1/girl.png) center left no-repeat;
-  background-size: 80%;
+  background-size: 100%;
   position: relative;
   left: -0.32rem;
   animation: formRight 1s ease-in-out forwards;
