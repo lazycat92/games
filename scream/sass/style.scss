@@ -94,7 +94,7 @@ body {
                         height: rem(275);
                         background: url(../img/status1/boy-light.png) no-repeat;
                         background-size: rem(376) rem(275);
-                        animation: btnScale 1s ease forwards;
+                        animation: btnScale 1s ease-in forwards;
                     }
                     .btn-girl {
                         flex: 1;
@@ -102,7 +102,7 @@ body {
                         height: rem(275);
                         background: url(../img/status1/girl-light.png) no-repeat;
                         background-size: rem(376) rem(275);
-                        animation: btnScale 1s ease forwards;
+                        animation: btnScale 1s ease-in forwards;
                     }
                 }
                 .arrow {
@@ -136,13 +136,13 @@ body {
                 }
                 @keyframes btnScale {
                     0% {
-                        transform: scale(1.2);
+                        transform: scale(1.1);
                     }
                     50% {
                         transform: scale(1);
                     }
                     75% {
-                        transform: scale(1.2);
+                        transform: scale(1.1);
                     }
                     100% {
                         transform: scale(1);

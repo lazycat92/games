@@ -104,7 +104,7 @@ body .container .status#status1 .btn-light .btn-boy {
   height: 5.86667rem;
   background: url(../img/status1/boy-light.png) no-repeat;
   background-size: 8.02133rem 5.86667rem;
-  animation: btnScale 1s ease forwards;
+  animation: btnScale 1s ease-in forwards;
 }
 /* line 99, ../sass/style.scss */
 body .container .status#status1 .btn-light .btn-girl {
@@ -113,7 +113,7 @@ body .container .status#status1 .btn-light .btn-girl {
   height: 5.86667rem;
   background: url(../img/status1/girl-light.png) no-repeat;
   background-size: 8.02133rem 5.86667rem;
-  animation: btnScale 1s ease forwards;
+  animation: btnScale 1s ease-in forwards;
 }
 /* line 108, ../sass/style.scss */
 body .container .status#status1 .arrow {
@@ -147,13 +147,13 @@ body .container .status#status1 .arrow {
 }
 @keyframes btnScale {
   0% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   50% {
     transform: scale(1);
   }
   75% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
