@@ -22,14 +22,14 @@ body {
             height: 100vh;
             &#status1 {
                 background: url(../img/status1/bg.png) no-repeat;
-                background-size: rem(750) 100%;
+                background-size: cover;
                 position: relative;
                 .title {
                     width: rem(634);
                     height: rem(305);
                     display: block;
-                    background: url(../img/status1/title.png) no-repeat;
-                    background-size: 100% 100%;
+                    background: url(../img/status1/title.png) center center no-repeat;
+                    background-size: 80%;
                     position: absolute;
                     left: 50%;
                     margin-left: rem(-317);
@@ -41,10 +41,10 @@ body {
                     height: rem(318);
                     margin: 0 auto;
                     display: block;
-                    background: url(../img/status3/cloud.png) no-repeat;
-                    background-size: 100% 100%;
+                    background: url(../img/status3/cloud.png) center center no-repeat;
+                    background-size: 80%;
                     position: relative;
-                    top: rem(45);
+                    top: rem(60);
                     z-index: 6;
                     animation: cloudShake 1s ease-in-out infinite alternate-reverse;
                 }
@@ -59,14 +59,14 @@ body {
                         left: rem(-370);
                         position: relative;
                         background: url(../img/status1/boy.png) center right no-repeat;
-                        background-size: rem(323) rem(585);
+                        background-size: 80%;
                         animation: formLeft 1s ease-in-out forwards;
                     }
                     .girl {
                         flex: 1 50%;
                         height: rem(585);
                         background: url(../img/status1/girl.png) center left no-repeat;
-                        background-size: rem(376) rem(506);
+                        background-size: 80%;
                         position: relative;
                         left: rem(-15);
                         animation: formRight 1s ease-in-out forwards;
@@ -76,8 +76,8 @@ body {
                     width: rem(530);
                     height: rem(302);
                     margin: 0 auto;
-                    background: url(../img/status1/coupon.png) no-repeat;
-                    background-size: rem(530) rem(302);
+                    background: url(../img/status1/coupon.png) center center no-repeat;
+                    background-size: 100%;
                     position: relative;
                     z-index: 30;
                     animation: formTop 1s ease-in forwards;
@@ -92,16 +92,16 @@ body {
                         flex: 1;
                         display: block;
                         height: rem(275);
-                        background: url(../img/status1/boy-light.png) no-repeat;
-                        background-size: rem(376) rem(275);
+                        background: url(../img/status1/boy-light.png) center right no-repeat;
+                        background-size: 80%;
                         animation: btnScale 1s ease forwards;
                     }
                     .btn-girl {
                         flex: 1;
                         display: block;
                         height: rem(275);
-                        background: url(../img/status1/girl-light.png) no-repeat;
-                        background-size: rem(376) rem(275);
+                        background: url(../img/status1/girl-light.png) center left no-repeat;
+                        background-size: 80%;
                         animation: btnScale 1s ease forwards;
                     }
                 }
@@ -110,28 +110,28 @@ body {
                     width: rem(106);
                     height: rem(94);
                     background: url(../img/status1/arrow.png) no-repeat;
-                    background-size: rem(106) rem(94);
+                    background-size: 80%;
                     position: relative;
-                    top: rem(-290);
-                    left: rem(100);
+                    top: rem(-320);
+                    left: rem(1760);
                     animation: arrowTransform 2s ease infinite alternate-reverse;
                 }
                 @keyframes arrowTransform {
                     0% {
                         opacity: 0;
-                        left: rem(100);
+                        left: rem(170);
                     }
                     50% {
                         opacity: 1;
-                        left: rem(100);
+                        left: rem(170);
                     }
                     75% {
                         opacity: 0;
-                        left: rem(550);
+                        left: rem(520);
                     }
                     100% {
                         opacity: 1;
-                        left: rem(550);
+                        left: rem(520);
                     }
                 }
                 @keyframes btnScale {
@@ -150,19 +150,19 @@ body {
                 }
                 @keyframes formTop {
                     0% {
-                        top: rem(-300);
+                        top: rem(-400);
                         opacity: 0;
                     }
                     50% {
-                        top: rem(-130);
+                        top: rem(-160);
                         opacity: 1;
                     }
                     75% {
-                        top: rem(-150);
+                        top: rem(-190);
                         opacity: 1;
                     }
                     100% {
-                        top: rem(-130);
+                        top: rem(-160);
                         opacity: 1;
                     }
                 }
