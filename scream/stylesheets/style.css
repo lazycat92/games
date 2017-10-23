@@ -121,28 +121,30 @@ body .container .status#status1 .btn-light {
   display: flex;
   width: 100%;
   position: relative;
-  top: -6.82667rem;
+  top: -6.18667rem;
   z-index: 50;
 }
 /* line 115, ../sass/style.scss */
 body .container .status#status1 .btn-light .btn-boy {
   flex: 1;
   display: block;
-  height: 5.86667rem;
+  width: 8.02133rem;
+  height: 6.848rem;
   background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png") center right no-repeat;
   background-size: 95%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
-/* line 123, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 body .container .status#status1 .btn-light .btn-girl {
   flex: 1;
   display: block;
-  height: 5.86667rem;
+  width: 7.97867rem;
+  height: 6.848rem;
   background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png") center left no-repeat;
   background-size: 95%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
-/* line 132, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 body .container .status#status1 .arrow {
   display: block;
   width: 2.26133rem;
@@ -239,33 +241,33 @@ body .container .status#status1 .arrow {
     left: -0.10667rem;
   }
 }
-/* line 228, ../sass/style.scss */
+/* line 230, ../sass/style.scss */
 body .container .status#status1 p {
   margin: 0;
   padding: 0;
 }
-/* line 234, ../sass/style.scss */
+/* line 236, ../sass/style.scss */
 body .container .status#status2 div {
   width: 100%;
   height: 100%;
   background: #eee;
 }
-/* line 238, ../sass/style.scss */
+/* line 240, ../sass/style.scss */
 body .container .status#status2 div img {
   width: 100%;
   display: block;
 }
-/* line 241, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 body .container .status#status2 div img:nth-child(2) {
   position: relative;
   top: -3.84rem;
 }
-/* line 245, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 body .container .status#status2 div img:nth-child(3) {
   position: relative;
   top: -8rem;
 }
-/* line 254, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 body .btn {
   width: 7.38133rem;
   height: 5.41867rem;
@@ -273,7 +275,7 @@ body .btn {
   background-size: 7.38133rem 5.41867rem;
   margin: 2.13333rem auto;
 }
-/* line 260, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 body .btn.off {
   height: 5.41867rem;
   background: url(../img/status3/btn-off.png) no-repeat;

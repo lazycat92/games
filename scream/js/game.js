@@ -8,7 +8,6 @@ define(function (require) {
 	// 阻止页面上下滑动
 	$("body").on("touchmove", function (e) {
 		e.preventDefault();
-		e.stopPropagation();
 	})
 
 	var pageEvent = function () {
@@ -18,6 +17,10 @@ define(function (require) {
 	pageEvent.prototype = {
 		init: function () {
 			this.preloadFile();
+		},
+		// 定义页面宽高，屏幕适应计算
+		calcScreen: function() {
+
 		},
 		// 图片预加载
 		preloadFile: function () {

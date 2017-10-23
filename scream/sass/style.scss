@@ -110,12 +110,13 @@ body {
                     display: flex;
                     width: 100%;
                     position: relative;
-                    top: rem(-320);
+                    top: rem(-290);
                     z-index: 50;
                     .btn-boy {
                         flex: 1;
                         display: block;
-                        height: rem(275);
+                        width: rem(376);
+                        height: rem(321);
                         background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png') center right no-repeat;
                         background-size: 95%;
                         animation: btnScale .8s linear infinite alternate-reverse;
@@ -123,7 +124,8 @@ body {
                     .btn-girl {
                         flex: 1;
                         display: block;
-                        height: rem(275);
+                        width: rem(374);
+                        height: rem(321);
                         background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png') center left no-repeat;
                         background-size: 95%;
                         animation: btnScale .8s linear infinite alternate-reverse;
