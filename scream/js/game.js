@@ -43,7 +43,7 @@ define(function (require) {
 			preload.loadManifest(manifest);
 
 			function handleFileLoad() {
-				//	$(".preload-tips").hide();
+					$(".preload-tips").hide();
 			}
 
 			function handleOverallProgress(e) {
