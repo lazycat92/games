@@ -5,6 +5,11 @@ define(function(require) {
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
 	
+	$("body").on("touchmove", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+	})
+	
 	var count = 0;
 
 	var manifest = [
