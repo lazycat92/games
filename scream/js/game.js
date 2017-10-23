@@ -5,6 +5,7 @@ define(function(require) {
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
 	
+	// 阻止页面上下滑动
 	$("body").on("touchmove", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
@@ -40,7 +41,7 @@ define(function(require) {
 	function handleOverallProgress(e) {
 		var progress = preload.progress.toFixed(2);
 		console.log(progress);
-		$(".preload-progress").html(progress * 100);
+		$(".preload-progress").html(parseInt(progress * 100));
 		if(preload.progress == 1) {
 			$(".container").show();
 		}

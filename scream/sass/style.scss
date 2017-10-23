@@ -21,9 +21,19 @@ body {
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.7);
         font-size: rem(28);
         color: #fff;
+        p {
+            font-size: rem(50);
+            color: #fff; 
+            img {
+                width: rem(293);
+                height: rem(107);
+                display: block;
+                margin: 0 auto rem(20);
+            }
+        }
     }
     .container {
         margin: 0 auto;
