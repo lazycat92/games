@@ -24,8 +24,8 @@ define(function (require) {
 			var manifest = [
 				"https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png",
 				"https://img04.aomygod.com/fontend/20171023/imgs/status1/bg.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png",
 				"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl.png",
 				"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy.png",
 				"https://img04.aomygod.com/fontend/20171023/imgs/status1/cloud.png",

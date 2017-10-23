@@ -129,7 +129,7 @@ body .container .status#status1 .btn-light .btn-boy {
   flex: 1;
   display: block;
   height: 5.86667rem;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light.png") center right no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png") center right no-repeat;
   background-size: 95%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
@@ -138,7 +138,7 @@ body .container .status#status1 .btn-light .btn-girl {
   flex: 1;
   display: block;
   height: 5.86667rem;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light.png") center left no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png") center left no-repeat;
   background-size: 95%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
