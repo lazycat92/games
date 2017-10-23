@@ -1,91 +1,100 @@
-define(function(require) {
+define(function (require) {
 	'use strict';
-	
+
 	var $ = require('jquery');
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
-	
+
 	// 阻止页面上下滑动
-	$("body").on("touchmove", function(e) {
+	$("body").on("touchmove", function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 	})
-	
-	var count = 0;
 
-	var manifest = [
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/arrow.png",
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/bg.png",
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/boy-light.png",
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/girl-light.png",
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/girl.png",
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/boy.png",
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/cloud.png",
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/coupon.png",
-		"https://img04.aomygod.com/fontend/20171022/imgs/status1/title.png"
-	];
+	var pageEvent = function () {
+		this.init();
+	};
 
-	var preload = new createjs.LoadQueue(true);
-	preload.on('fileload', handleFileLoad);
-	preload.on('progress', handleOverallProgress);
-	preload.on("fileprogress", handleFileProgress);
-	preload.on('error', handleFileError);
-	preload.setMaxConnections(10);
-	
-	preload.loadManifest(manifest);
-	
-	function handleFileLoad() {
-//		$(".preload-tips").hide();
-	}
-	
-	function handleOverallProgress(e) {
-		var progress = preload.progress.toFixed(2);
-		console.log(progress);
-		$(".preload-progress").html(parseInt(progress * 100));
-		if(preload.progress == 1) {
-			$(".container").show();
+	pageEvent.prototype = {
+		init: function () {
+			this.preloadFile();
+		},
+		// 图片预加载
+		preloadFile: function () {
+			var manifest = [
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/bg.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/cloud.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/coupon.png",
+				"https://img04.aomygod.com/fontend/20171023/imgs/status1/title.png"
+			];
+
+			var preload = new createjs.LoadQueue(true);
+			preload.on('fileload', handleFileLoad);
+			preload.on('progress', handleOverallProgress);
+			preload.on("fileprogress", handleFileProgress);
+			preload.on('error', handleFileError);
+			preload.setMaxConnections(10);
+
+			preload.loadManifest(manifest);
+
+			function handleFileLoad() {
+				//	$(".preload-tips").hide();
+			}
+
+			function handleOverallProgress(e) {
+				var progress = preload.progress.toFixed(2);
+				$(".preload-progress").html(parseInt(progress * 100));
+				if (preload.progress == 1) {
+					$(".container").show();
+				}
+			}
+
+			function handleFileProgress(e) {
+			}
+
+			function handleFileError(event) {
+				$(".preload-tips").html("error" + JSON.stringify(event));
+			}
+		},
+		// 游戏开始
+		gameBegin: function () {
+			var count = 0;
+
+			function countdown(a) {
+				$("time").html(a);
+				$(".btn").on("touchstart", function () {
+					count++;
+					$(this).addClass("off");
+				}).on("touchend", function () {
+					$(this).removeClass("off");
+					$(".count").html(count);
+				});
+				$("button").off("click", handler);
+				var timer = setInterval(function () {
+					a--
+					$("time").html(a);
+					if (a == 0) {
+						clearInterval(timer);
+						$(".btn").off("touchstart touchend");
+						$(".btn").removeClass("off");
+						$("button").on("click", handler);
+					}
+				}, 1000);
+			}
+
+			$("button").on("click", handler);
+
+			function handler() {
+				count = 0
+				countdown(10);
+			};
 		}
 	}
-	
-	function handleFileProgress(e) {
-		console.log(e);
-	}
-	
-	function handleFileError(event) {
-		$(".preload-tips").html("error" + JSON.stringify(event));
-	}
 
-	function countdown(a) {
-		$("time").html(a);
-		$(".btn").on("touchstart", function() {
-			count++;
-			$(this).addClass("off");
-		}).on("touchend", function() {
-			$(this).removeClass("off");
-			$(".count").html(count);
-		});
-		$("button").off("click", handler);
-		var timer = setInterval(function() {
-			a--
-			$("time").html(a);
-			if(a == 0) {
-				clearInterval(timer);
-				$(".btn").off("touchstart touchend");
-				$(".btn").removeClass("off");
-				$("button").on("click", handler);
-			}
-		}, 1000);
-	}
-
-	$("button").on("click", handler);
-
-	function handler() {
-		count = 0
-		countdown(10);
-	};
-	
-	new Swiper('.swiper-container', {
-		direction: "vertical",
-		noSwiping: true
-	})
-})
+	new pageEvent();
+});
