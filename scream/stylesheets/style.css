@@ -325,7 +325,7 @@ body .container .status#status2 div img.status2-ready {
     opacity: 1;
   }
 }
-/* line 310, ../sass/style.scss */
+/* line 313, ../sass/style.scss */
 body .btn {
   width: 7.38133rem;
   height: 5.41867rem;
@@ -333,7 +333,7 @@ body .btn {
   background-size: 7.38133rem 5.41867rem;
   margin: 2.13333rem auto;
 }
-/* line 316, ../sass/style.scss */
+/* line 319, ../sass/style.scss */
 body .btn.off {
   height: 5.41867rem;
   background: url(../img/status3/btn-off.png) no-repeat;
