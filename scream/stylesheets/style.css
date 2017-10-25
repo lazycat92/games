@@ -256,18 +256,76 @@ body .container .status#status2 div {
 body .container .status#status2 div img {
   width: 100%;
   display: block;
+  opacity: 0;
 }
-/* line 243, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 body .container .status#status2 div img:nth-child(2) {
   position: relative;
   top: -3.84rem;
 }
-/* line 247, ../sass/style.scss */
+/* line 248, ../sass/style.scss */
 body .container .status#status2 div img:nth-child(3) {
   position: relative;
   top: -8rem;
 }
+/* line 252, ../sass/style.scss */
+body .container .status#status2 div img.status2-head {
+  animation: head .8s ease 0s forwards;
+  position: relative;
+}
 /* line 256, ../sass/style.scss */
+body .container .status#status2 div img.status2-body {
+  animation: body .8s ease 0.8s forwards;
+  position: relative;
+}
+/* line 260, ../sass/style.scss */
+body .container .status#status2 div img.status2-foot {
+  animation: head .8s ease 1.6s forwards;
+  position: relative;
+}
+/* line 264, ../sass/style.scss */
+body .container .status#status2 div img.status2-ready {
+  width: 80%;
+  margin: 0 auto;
+  animation: head .8s ease 2.4s forwards;
+  position: relative;
+  top: -21.33333rem;
+}
+@keyframes head {
+  0% {
+    left: -16rem;
+  }
+  50% {
+    left: 1.06667rem;
+    transform: skew(-15deg);
+  }
+  75% {
+    opacity: .5;
+  }
+  100% {
+    transform: skew(0);
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes body {
+  0% {
+    right: -16rem;
+  }
+  50% {
+    right: 1.06667rem;
+    transform: skew(15deg);
+  }
+  75% {
+    opacity: .5;
+  }
+  100% {
+    transform: skew(0);
+    right: 0;
+    opacity: 1;
+  }
+}
+/* line 310, ../sass/style.scss */
 body .btn {
   width: 7.38133rem;
   height: 5.41867rem;
@@ -275,7 +333,7 @@ body .btn {
   background-size: 7.38133rem 5.41867rem;
   margin: 2.13333rem auto;
 }
-/* line 262, ../sass/style.scss */
+/* line 316, ../sass/style.scss */
 body .btn.off {
   height: 5.41867rem;
   background: url(../img/status3/btn-off.png) no-repeat;

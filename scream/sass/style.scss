@@ -240,6 +240,7 @@ body {
                     img {
                         width: 100%;
                         display: block;
+                        opacity: 0;
                         &:nth-child(2) {
                             position: relative;
                             top: rem(-180);
@@ -247,6 +248,59 @@ body {
                         &:nth-child(3) {
                             position: relative;
                             top: rem(-375);
+                        }
+                        &.status2-head {
+                            animation: head .8s ease 0s forwards;
+                            position: relative;
+                        }
+                        &.status2-body {
+                            animation: body .8s ease 0.8s forwards;
+                            position: relative;
+                        }
+                        &.status2-foot {
+                            animation: head .8s ease 1.6s forwards;
+                            position: relative;
+                        }
+                        &.status2-ready {
+                            width: 80%;
+                            margin: 0 auto;
+                            animation: head .8s ease 2.4s forwards;
+                            position: relative;
+                            top: rem(-1000);
+                        }
+                        @keyframes head {
+                            0% {
+                                left: rem(-750);
+                            }
+                            50% {
+                                left: rem(50);
+                                transform: skew(-15deg);
+                            }
+                            75% {
+                                opacity: .5;
+                            }
+                            100% {
+                                transform: skew(0);
+                                left: 0;
+                                opacity: 1;
+                            }
+                        }
+                        @keyframes body {
+                            0% {
+                                right: rem(-750);
+                            }
+                            50% {
+                                right: rem(50);
+                                transform: skew(15deg);
+                            }
+                            75% {
+                                opacity: .5;
+                            }
+                            100% {
+                                transform: skew(0);
+                                right: 0;
+                                opacity: 1;
+                            }
                         }
                     }
                 }
