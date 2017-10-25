@@ -49,6 +49,7 @@ define(function (require) {
 		},
 		// 图片预加载
 		preloadFile: function () {
+			var _this = that;
 			var preload = new createjs.LoadQueue(true);
 			preload.on('fileload', handleFileLoad);
 			preload.on('progress', handleOverallProgress);
@@ -76,39 +77,46 @@ define(function (require) {
 			function handleFileError(event) {
 				$(".preload-tips").html("error" + JSON.stringify(event));
 			}
+			
+			_this.gameBegin();
 		},
 		// 游戏开始
 		gameBegin: function () {
 			var count = 0;
-
+			
 			function countdown(a) {
-				$("time").html(a);
-				$(".btn").on("touchstart", function () {
-					count++;
-					$(this).addClass("off");
-				}).on("touchend", function () {
-					$(this).removeClass("off");
-					$(".count").html(count);
-				});
-				$("button").off("click", handler);
+//				$("time").html(a);
+//				$(".btn").on("touchstart", function () {
+//					count++;
+//					$(this).addClass("off");
+//				}).on("touchend", function () {
+//					$(this).removeClass("off");
+//					$(".count").html(count);
+//				});
+//				$("button").off("click", handler);
 				var timer = setInterval(function () {
 					a--
-					$("time").html(a);
+//					$("time").html(a);
+					if(a < 10) {
+						$(".count1").src("img/number/0.png");
+						$(".count2").src("img/number/" + a + ".png");
+					}
 					if (a == 0) {
 						clearInterval(timer);
-						$(".btn").off("touchstart touchend");
-						$(".btn").removeClass("off");
-						$("button").on("click", handler);
+//						$(".btn").off("touchstart touchend");
+//						$(".btn").removeClass("off");
+//						$("button").on("click", handler);
 					}
 				}, 1000);
 			}
 
-			$("button").on("click", handler);
+//			$("button").on("click", handler);
 
 			function handler() {
 				count = 0
 				countdown(10);
 			};
+			countdown(10);
 		},
 	}
 
