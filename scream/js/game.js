@@ -103,6 +103,8 @@ define(function (require) {
 					}
 					if (a == 0) {
 						clearInterval(timer);
+						$(".count1").src("img/number/0.png");
+						$(".count2").src("img/number/0.png");
 //						$(".btn").off("touchstart touchend");
 //						$(".btn").removeClass("off");
 //						$("button").on("click", handler);
