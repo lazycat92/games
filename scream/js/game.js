@@ -44,8 +44,8 @@ define(function (require) {
 				screenHeight = winHeight;
 				screenWidth = Math.floor(screenHeight * normalWidth / normalHeight);
 			}
-			container.width(screenWidth);
-			container.height(screenHeight);
+			// container.find(".status").width(screenWidth);
+			// container.find(".status").height(screenHeight);
 		},
 		// 图片预加载
 		preloadFile: function () {
