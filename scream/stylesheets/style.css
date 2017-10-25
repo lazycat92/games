@@ -289,7 +289,7 @@ body .container .status#status2 div img.status2-ready {
   margin: 0 auto;
   animation: head .8s ease 2.4s forwards;
   position: relative;
-  top: -21.33333rem;
+  top: -25.6rem;
 }
 @keyframes head {
   0% {
