@@ -49,7 +49,7 @@ define(function (require) {
 		},
 		// 图片预加载
 		preloadFile: function () {
-			var _this = that;
+			var _this = this;
 			var preload = new createjs.LoadQueue(true);
 			preload.on('fileload', handleFileLoad);
 			preload.on('progress', handleOverallProgress);
@@ -98,13 +98,13 @@ define(function (require) {
 					a--
 //					$("time").html(a);
 					if(a < 10) {
-						$(".count1").src("img/number/0.png");
-						$(".count2").src("img/number/" + a + ".png");
+						$(".count1").attr('src', "img/number/0.png");
+						$(".count2").attr('src', "img/number/" + a + ".png");
 					}
 					if (a == 0) {
 						clearInterval(timer);
-						$(".count1").src("img/number/0.png");
-						$(".count2").src("img/number/0.png");
+						$(".count1").attr('src', "img/number/0.png");
+						$(".count2").attr('src', "img/number/0.png");
 //						$(".btn").off("touchstart touchend");
 //						$(".btn").removeClass("off");
 //						$("button").on("click", handler);
