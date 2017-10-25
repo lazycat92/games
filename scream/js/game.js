@@ -10,32 +10,45 @@ define(function (require) {
 		e.preventDefault();
 	})
 
+	var manifest = [
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png",
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/bg.png",
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png",
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png",
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl.png",
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy.png",
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/cloud.png",
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/coupon.png",
+		"https://img04.aomygod.com/fontend/20171023/imgs/status1/title.png"
+	];
+
 	var pageEvent = function () {
 		this.init();
 	};
 
 	pageEvent.prototype = {
 		init: function () {
+			this.calcScreen();
 			this.preloadFile();
 		},
 		// 定义页面宽高，屏幕适应计算
 		calcScreen: function() {
-
+			var container = $(".container");
+			var winWidth = window.innerWidth, winHeight = window.innerHeight;
+			var normalWidth = 750, normalHeight = 1334;
+			var screenWidth, screenHeight;
+			if(normalWidth/normalHeight > winWidth/winHeight) {
+				screenWidth = winWidth;
+				screenHeight = Math.floor(screenWidth * normalHeight / normalWidth);
+			} else {
+				screenHeight = winHeight;
+				screenWidth = Math.floor(screenHeight * normalWidth / normalHeight);
+			}
+			container.width(screenWidth);
+			container.height(screenHeight);
 		},
 		// 图片预加载
 		preloadFile: function () {
-			var manifest = [
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/bg.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/cloud.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/coupon.png",
-				"https://img04.aomygod.com/fontend/20171023/imgs/status1/title.png"
-			];
-
 			var preload = new createjs.LoadQueue(true);
 			preload.on('fileload', handleFileLoad);
 			preload.on('progress', handleOverallProgress);
@@ -96,7 +109,7 @@ define(function (require) {
 				count = 0
 				countdown(10);
 			};
-		}
+		},
 	}
 
 	new pageEvent();
