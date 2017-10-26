@@ -565,7 +565,9 @@ body {
                     background: transparent;
                     display: flex;
                     p {
-                        flex: 1 20%;
+                        flex: 1;
+                        -webkit-flex: 1;
+                        width: 20%;
                         margin: 0;
                         padding: rem(20) 0;
                         box-sizing: border-box;
@@ -615,7 +617,7 @@ body {
                         font-weight: bold;
                         font-family: "微软雅黑";
                         position: absolute;
-                        left: 12%;
+                        left: 13%;
                         bottom: 40%;
                     }
                 }
