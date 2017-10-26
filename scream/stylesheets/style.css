@@ -418,10 +418,10 @@ body .container .status#status3 .person {
 /* line 385, ../sass/style.scss */
 body .container .status#status3 .person img:nth-child(1) {
   display: block;
-  width: 12.8rem;
+  width: 11.73333rem;
   position: absolute;
-  top: 10%;
-  left: 13%;
+  top: 12%;
+  left: 12%;
 }
 /* line 392, ../sass/style.scss */
 body .container .status#status3 .person img.mask {
