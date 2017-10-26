@@ -406,7 +406,7 @@ body .container .status#status3 .score .score-num img {
   position: relative;
   left: -0.93867rem;
   bottom: -8.74667rem;
-  border-radius: 0.32rem;
+  border-bottom: 0.32rem;
 }
 /* line 382, ../sass/style.scss */
 body .btn {
