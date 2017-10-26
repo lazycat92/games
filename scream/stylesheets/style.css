@@ -618,17 +618,18 @@ body .container .status#status4 .scream p {
   -webkit-flex: 1;
   float: left;
   width: 20%;
+  height: 100%;
   margin: 0;
   padding: 0.42667rem 0;
   box-sizing: border-box;
 }
-/* line 575, ../sass/style.scss */
+/* line 576, ../sass/style.scss */
 body .container .status#status4 .scream p img {
   margin: 0 auto;
   height: 100%;
   display: block;
 }
-/* line 582, ../sass/style.scss */
+/* line 583, ../sass/style.scss */
 body .container .status#status4 .btns {
   width: 100%;
   height: 2.73067rem;
@@ -637,13 +638,13 @@ body .container .status#status4 .btns {
   left: 50%;
   margin-left: -7.82933rem;
 }
-/* line 589, ../sass/style.scss */
+/* line 590, ../sass/style.scss */
 body .container .status#status4 .btns img {
   display: block;
   width: 13.54667rem;
   margin: 0 auto;
 }
-/* line 594, ../sass/style.scss */
+/* line 595, ../sass/style.scss */
 body .container .status#status4 .btns a {
   float: left;
   width: 40%;
@@ -654,7 +655,7 @@ body .container .status#status4 .btns a {
   position: relative;
   top: -2.73067rem;
 }
-/* line 605, ../sass/style.scss */
+/* line 606, ../sass/style.scss */
 body .container .status#status4 .coupon {
   width: 8.61867rem;
   height: 5.35467rem;
@@ -665,7 +666,7 @@ body .container .status#status4 .coupon {
   left: 50%;
   margin-left: -4.48rem;
 }
-/* line 614, ../sass/style.scss */
+/* line 615, ../sass/style.scss */
 body .container .status#status4 .coupon p {
   margin: 0;
   color: #fff;
