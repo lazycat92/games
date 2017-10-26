@@ -428,7 +428,7 @@ body {
                             width: rem(650);
                             position: absolute;
                             top: 14%;
-                            left: 12%;
+                            left: 10%;
                         }
                     }
                 }
@@ -438,11 +438,13 @@ body {
                     bottom: rem(-30);
                     width: 100%;
                     height: rem(333);
+                    z-index: 99;
                     .table {
                         display: block;
                         width: rem(750);
                         height: 100%;
                         margin: 0 auto;
+                        z-index: 0;
                     }
                     .btns {
                         position: absolute;
@@ -450,6 +452,7 @@ body {
                         height: 100%;
                         bottom: 0;
                         left: 0;
+                        z-index: 100;
                         &:focus {
                             border: 0;
                             background: transparent;
