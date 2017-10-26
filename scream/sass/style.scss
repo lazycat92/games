@@ -660,9 +660,9 @@ body {
                     }
                     p {
                         width: rem(400);
-                        height: rem(60);
                         margin: 0 auto;
                         border: rem(1) solid #ddd;
+                        padding: rem(5);
                         border-radius: rem(10);
                         margin-bottom: rem(30);
                         overflow: hidden;
@@ -678,11 +678,9 @@ body {
                             display: inline-block;
                             color: #fff;
                             background: #a40000;
-                            padding: rem(10) 0;
                             width: rem(150);
+                            line-height: rem(58);
                             text-decoration: none;
-                            position: relative;
-                            top: rem(5);
                             border-radius: rem(10);
                         }
                     }
