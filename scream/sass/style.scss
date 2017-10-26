@@ -426,7 +426,7 @@ body {
                 .btn-box {
                     position: absolute;
                     left: 0;
-                    bottom: 0;
+                    bottom: rem(-30);
                     width: 100%;
                     height: rem(333);
                     .table {
@@ -446,7 +446,7 @@ body {
                             height: rem(254);
                             background: url("../img/status3/btn-on.png") no-repeat;
                             background-size: 100% 100%; 
-                            margin: rem(50) auto 0;
+                            margin: rem(20) auto 0;
                             &.btn-off{
                                 background: url("../img/status3/btn-off.png") no-repeat;
                                 background-size: 100% 100%; 
