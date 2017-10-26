@@ -362,7 +362,6 @@ body {
                         background: transparent;
                         width: rem(30);
                         height: rem(410);
-                        // border-radius: rem(15);
                         border-bottom-right-radius: rem(15);
                         border-bottom-left-radius: rem(15);
                         position: absolute;
@@ -376,6 +375,27 @@ body {
                             bottom: rem(-410);
                             border-bottom-right-radius: rem(15);
                             border-bottom-left-radius: rem(15);
+                        }
+                    }
+                }
+                .person {
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        &:nth-child(1) {
+                            display: block;
+                            width: rem(600);
+                            position: absolute;
+                            top: 10%;
+                            left: 13%;
+                        }
+                        &.mask {
+                            width: 100%;
+                            height: 100%;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            display: none;
                         }
                     }
                 }

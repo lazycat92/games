@@ -102,6 +102,7 @@ define(function (require) {
 						$(".count2").attr('src', "img/number/" + a + ".png");
 					}
 					$(".score-num img").css('bottom', -(a * 41 / 46.875) + 'rem');
+					$(".person img[name=person]").attr('src', 'img/status3/boy/' + (a % 4) + '.png')
 					if (a == 0) {
 						clearInterval(timer);
 						$(".count1").attr('src', "img/number/0.png");
