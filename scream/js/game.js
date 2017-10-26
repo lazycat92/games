@@ -101,12 +101,12 @@ define(function (require) {
 					$(".score-num img").css('bottom', ((count * 4.5 - 410) / 46.875) + 'rem');
 					switch(true) {
 						case count >= 31 && count <= 50:
-						$("#status3 img[name=person]").attr('src', 'img/status3/boy/1.png');
+						$("#status3 img[name=person]").attr('src', 'img/status3/girl/1.png');
 						break;
 
 						case count >= 51:
 						var num = count % 2
-						$("#status3 img[name=person]").attr('src', 'img/status3/boy/2.png');
+						$("#status3 img[name=person]").attr('src', 'img/status3/girl/2.png');
 						$("#status3 .mask").show();
 						break;
 
