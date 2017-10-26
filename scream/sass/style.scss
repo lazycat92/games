@@ -620,6 +620,84 @@ body {
                 }
             }
         }
+        .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: rgba(0, 0, 0, 0.7);
+            .login {
+                width: rem(474);
+                height: rem(636);
+                background: url("../img/status4/3.png") no-repeat;
+                background-size: 100% 100%; 
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                margin-left: rem(-237);
+                &::after {
+                    display: block;
+                    content: "";
+                    width: rem(66);
+                    height: rem(66);
+                    background: url(../img/status4/cancel.png) no-repeat;
+                    background-size: 100% 100%; 
+                    position: absolute;
+                    top: rem(45);
+                    right: rem(-40);
+                }
+                .box {
+                    text-align: center;
+                    width: rem(420);
+                    height: rem(440);
+                    margin: rem(170) auto 0;
+                    box-sizing: border-box;
+                    h3 {
+                        margin: 0 0 rem(50) 0;
+                        font-size: rem(38);
+                        color: #484848;
+                    }
+                    p {
+                        width: rem(400);
+                        height: rem(60);
+                        margin: 0 auto;
+                        border: rem(1) solid #ddd;
+                        border-radius: rem(10);
+                        margin-bottom: rem(30);
+                        overflow: hidden;
+                        background: #fff;
+                        input {
+                            border: 0;
+                            line-height: rem(58);
+                            text-indent: 1em;
+                            float: left;
+                            width: rem(240);
+                        }
+                        .get-code {
+                            display: inline-block;
+                            color: #fff;
+                            background: #a40000;
+                            padding: rem(10) rem(20);
+                            text-decoration: none;
+                            position: relative;
+                            top: rem(5);
+                            border-radius: rem(10);
+                        }
+                    }
+                    .get-coupon {
+                        display: inline-block;
+                        color: #fff;
+                        background: #a40000;
+                        text-decoration: none;
+                        padding: rem(10) rem(50);
+                        border-radius: rem(10);
+                        margin-top: rem(40);
+                        font-size: rem(30);
+                    } 
+                }
+            }
+        }
     }
     
 }
