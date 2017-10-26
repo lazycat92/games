@@ -342,6 +342,39 @@ body {
                         }
                     }
                 }
+                .score {
+                    position: absolute;
+                    top: 16%;
+                    left: 3%;
+                    img:nth-child(1) {
+                        width: rem(131);
+                        height: rem(512);
+                    }
+                    img:nth-child(2) {
+                        width: rem(25);
+                        height: rem(122);
+                        position: absolute;
+                        top: 43%;
+                        left: 36%;
+                        z-index: 20;
+                    }
+                    .score-num {
+                        background: transparent;
+                        width: rem(30);
+                        height: rem(410);
+                        border-radius: rem(15);
+                        position: absolute;
+                        top: 17.6%;
+                        left: 39%;
+                        overflow: hidden;
+                        img {
+                            display: block;
+                            position:relative;
+                            left: rem(-44);
+                            bottom: rem(-410);
+                        }
+                    }
+                }
             }
         }
     }
