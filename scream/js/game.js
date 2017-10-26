@@ -130,7 +130,7 @@ define(function (require) {
 						$(".count2").attr('src', "img/number/0.png");
 						$(".btn").off("touchstart touchend");
 						$(".btn").removeClass("btn-off");
-						alert('score',count);
+						alert(count);
 					}
 				}, 1000);
 			}
