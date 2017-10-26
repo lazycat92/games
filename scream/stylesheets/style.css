@@ -657,23 +657,17 @@ body .container .status#status4 .btns a {
 }
 /* line 606, ../sass/style.scss */
 body .container .status#status4 .coupon {
-  width: 8.61867rem;
-  height: 5.35467rem;
-  background: url(../img/status4/coupon.png) center center no-repeat;
-  background-size: 100% 100%;
+  width: 100%;
   position: absolute;
   bottom: 0.21333rem;
-  left: 50%;
-  margin-left: -4.48rem;
+  left: 0;
 }
-/* line 615, ../sass/style.scss */
-body .container .status#status4 .coupon p {
-  margin: 0;
-  color: #fff;
-  font-size: 2.56rem;
-  font-weight: bold;
-  font-family: "微软雅黑";
-  position: absolute;
-  left: 13%;
-  bottom: 38%;
+/* line 612, ../sass/style.scss */
+body .container .status#status4 .coupon img {
+  width: 8.61867rem;
+  height: 5.35467rem;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  left: -0.21333rem;
 }
