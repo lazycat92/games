@@ -362,7 +362,9 @@ body {
                         background: transparent;
                         width: rem(30);
                         height: rem(410);
-                        border-radius: rem(15);
+                        // border-radius: rem(15);
+                        border-bottom-right-radius: rem(15);
+                        border-bottom-left-radius: rem(15);
                         position: absolute;
                         top: 17.4%;
                         left: 39%;
