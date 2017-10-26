@@ -337,7 +337,7 @@ body .container .status#status3 .background img {
 }
 /* line 317, ../sass/style.scss */
 body .container .status#status3 .time-box {
-  position: fixed;
+  position: absolute;
   top: 2%;
   left: 5%;
   width: 27.6%;
@@ -411,11 +411,34 @@ body .container .status#status3 .score .score-num img {
   border-bottom-left-radius: 0.32rem;
 }
 /* line 381, ../sass/style.scss */
+body .container .status#status3 .cloud {
+  position: absolute;
+  bottom: 3.2rem;
+  width: 100%;
+}
+/* line 386, ../sass/style.scss */
+body .container .status#status3 .cloud img {
+  width: 100%;
+  display: block;
+  transform-style: preserve-3d;
+  animation: cloudCircle .5s linear 0s infinite alternate-reverse forwards;
+}
+@keyframes cloudCircle {
+  0% {
+    opacity: .7;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(5deg);
+  }
+}
+/* line 403, ../sass/style.scss */
 body .container .status#status3 .person {
   width: 100%;
   height: 100%;
 }
-/* line 385, ../sass/style.scss */
+/* line 407, ../sass/style.scss */
 body .container .status#status3 .person img:nth-child(1) {
   display: block;
   width: 11.73333rem;
@@ -423,26 +446,29 @@ body .container .status#status3 .person img:nth-child(1) {
   top: 12%;
   left: 12%;
 }
-/* line 392, ../sass/style.scss */
+/* line 414, ../sass/style.scss */
 body .container .status#status3 .person img.mask {
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+}
+/* line 424, ../sass/style.scss */
+body .container .status#status3 .btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7.104rem;
+}
+/* line 430, ../sass/style.scss */
+body .container .status#status3 .btn .table {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 435, ../sass/style.scss */
+body .container .status#status3 .btn .btns {
   display: none;
-}
-/* line 405, ../sass/style.scss */
-body .btn {
-  width: 7.38133rem;
-  height: 5.41867rem;
-  background: url(../img/status3/btn-on.png) no-repeat;
-  background-size: 7.38133rem 5.41867rem;
-  margin: 2.13333rem auto;
-}
-/* line 411, ../sass/style.scss */
-body .btn.off {
-  height: 5.41867rem;
-  background: url(../img/status3/btn-off.png) no-repeat;
-  background-size: 7.38133rem 5.41867rem;
 }
