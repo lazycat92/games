@@ -460,7 +460,7 @@ body .container .status#status3 .person img.mask {
 }
 /* line 426, ../sass/style.scss */
 body .container .status#status3 .btn-box {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: -0.64rem;
   width: 100%;
@@ -469,10 +469,11 @@ body .container .status#status3 .btn-box {
 /* line 432, ../sass/style.scss */
 body .container .status#status3 .btn-box .table {
   display: block;
-  width: 100%;
+  width: 16rem;
   height: 100%;
+  margin: 0 auto;
 }
-/* line 437, ../sass/style.scss */
+/* line 438, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns {
   position: absolute;
   width: 100%;
@@ -480,7 +481,26 @@ body .container .status#status3 .btn-box .btns {
   bottom: 0;
   left: 0;
 }
-/* line 443, ../sass/style.scss */
+/* line 444, ../sass/style.scss */
+body .container .status#status3 .btn-box .btns .btn-begin {
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  margin-left: -1.64267rem;
+  width: 3.28533rem;
+  height: 2.944rem;
+  display: block;
+  animation: btnAnimation .7s linear 0s infinite alternate-reverse forwards;
+}
+@keyframes btnAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 462, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn {
   display: block;
   width: 7.38133rem;
@@ -489,7 +509,7 @@ body .container .status#status3 .btn-box .btns .btn {
   background-size: 100% 100%;
   margin: 0.42667rem auto 0;
 }
-/* line 450, ../sass/style.scss */
+/* line 469, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn.btn-off {
   background: url("../img/status3/btn-off.png") no-repeat;
   background-size: 100% 100%;
