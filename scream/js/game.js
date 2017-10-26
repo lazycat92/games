@@ -85,18 +85,19 @@ define(function (require) {
 			var count = 0;
 			
 			function countdown(a) {
-//				$("time").html(a);
-//				$(".btn").on("touchstart", function () {
-//					count++;
-//					$(this).addClass("off");
-//				}).on("touchend", function () {
-//					$(this).removeClass("off");
-//					$(".count").html(count);
-//				});
-//				$("button").off("click", handler);
+				$(".count1").attr('src', "img/number/1.png");
+				$(".count2").attr('src', "img/number/0.png");
+
+				$(".btn").on("touchstart", function (e) {
+					e.preventDefault();
+					count++;
+					$(this).addClass("btn-off");
+				}).on("touchend", function () {
+					$(this).removeClass("btn-off");
+					$(".count").html(count);
+				});
 				var timer = setInterval(function () {
 					a--
-//					$("time").html(a);
 					if(a < 10) {
 						$(".count1").attr('src', "img/number/0.png");
 						$(".count2").attr('src', "img/number/" + a + ".png");
@@ -107,9 +108,8 @@ define(function (require) {
 						clearInterval(timer);
 						$(".count1").attr('src', "img/number/0.png");
 						$(".count2").attr('src', "img/number/0.png");
-//						$(".btn").off("touchstart touchend");
-//						$(".btn").removeClass("off");
-//						$("button").on("click", handler);
+						$(".btn").off("touchstart touchend");
+						$(".btn").removeClass("off");
 					}
 				}, 1000);
 			}
