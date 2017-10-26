@@ -626,7 +626,7 @@ body .container .status#status4 .scream p {
 /* line 576, ../sass/style.scss */
 body .container .status#status4 .scream p img {
   margin: 0 auto;
-  height: 100%;
+  width: 0.85333rem;
   display: block;
 }
 /* line 583, ../sass/style.scss */
