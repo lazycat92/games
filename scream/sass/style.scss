@@ -441,13 +441,16 @@ body {
                         height: 100%;
                         bottom: 0;
                         left: 0;
-                        .btn-begin {
+                        &:focus {
+                            border: 0;
+                            background: transparent;
+                        }
+                        .arrow-begin {
                             position: absolute;
-                            top: -25%;
+                            top: -20%;
                             left: 50%;
-                            margin-left: rem(-77);
-                            width: rem(154);
-                            height: rem(138);
+                            margin-left: rem(-65);
+                            width: rem(130);
                             display: block;
                             animation: btnAnimation .7s linear 0s infinite alternate-reverse forwards;
                         }

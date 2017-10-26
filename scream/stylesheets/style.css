@@ -482,13 +482,17 @@ body .container .status#status3 .btn-box .btns {
   left: 0;
 }
 /* line 444, ../sass/style.scss */
-body .container .status#status3 .btn-box .btns .btn-begin {
+body .container .status#status3 .btn-box .btns:focus {
+  border: 0;
+  background: transparent;
+}
+/* line 448, ../sass/style.scss */
+body .container .status#status3 .btn-box .btns .arrow-begin {
   position: absolute;
-  top: -25%;
+  top: -20%;
   left: 50%;
-  margin-left: -1.64267rem;
-  width: 3.28533rem;
-  height: 2.944rem;
+  margin-left: -1.38667rem;
+  width: 2.77333rem;
   display: block;
   animation: btnAnimation .7s linear 0s infinite alternate-reverse forwards;
 }
@@ -500,7 +504,7 @@ body .container .status#status3 .btn-box .btns .btn-begin {
     opacity: 1;
   }
 }
-/* line 462, ../sass/style.scss */
+/* line 465, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn {
   display: block;
   width: 7.38133rem;
@@ -509,7 +513,7 @@ body .container .status#status3 .btn-box .btns .btn {
   background-size: 100% 100%;
   margin: 0.42667rem auto 0;
 }
-/* line 469, ../sass/style.scss */
+/* line 472, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn.btn-off {
   background: url("../img/status3/btn-off.png") no-repeat;
   background-size: 100% 100%;

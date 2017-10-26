@@ -1,96 +1,109 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>游戏</title>
-    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>游戏</title>
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+	</head>
 
-<body>
-    <!-- 图片预加载 -->
-    <div class="preload-tips">
-        <p>
-            <img src="https://img04.aomygod.com/fontend/20171023/imgs/logo.png" alt="logo">
-            loading<span class="preload-progress">0</span>%
-        </p>
-    </div>
+	<body>
+		<!-- 图片预加载 -->
+		<div class="preload-tips">
+			<p>
+				<img src="https://img04.aomygod.com/fontend/20171023/imgs/logo.png" alt="logo"> loading
+				<span class="preload-progress">0</span>%
+			</p>
+		</div>
 
-    <!-- 内容区域 -->
-    <div class="container" style="display: none;">
-        <div class="status" id="status1" style="display: none;">
-            <i class="title"></i>
-            <i class="could"></i>
-            <div class="cartoon">
-                <p class="boy"></p>
-                <p class="girl"></p>
-            </div>
-            <p class="coupon"></p>
-            <div class="btn-light">
-                <a href="javascript:;" class="btn-boy"></a>
-                <a href="javascript:;" class="btn-girl"></a>
-            </div>
-            <i class="arrow"></i>
-        </div>
-        <div class="status" id="status2" style="display: none;">   
-            <div class="for-boy" style="display: none;">
-                <img src="img/status2/boy/1.png" alt="" class="status2-head">
-                <img src="img/status2/boy/2.png" alt="" class="status2-body">
-                <img src="img/status2/boy/3.png" alt="" class="status2-foot">
-                <img src="img/status2/boy/4.png" alt="" class="status2-ready">
-            </div>
-            <div class="for-girl">
-                <img src="img/status2/girl/2.png" alt="" class="status2-head">
-                <img src="img/status2/girl/3.png" alt="" class="status2-body">
-                <img src="img/status2/girl/4.png" alt="" class="status2-foot">
-                <img src="img/status2/girl/1.png" alt="" class="status2-ready">
-            </div>
-        </div>
-        <div class="status" id="status3">
-    		<div class="background">
-                <img src="img/status3/boy/bg.png" alt="">
-            </div>
-            <div class="time-box">
-            	<img src="img/status3/time.png" class="time"/>
-            	<div class="time-count">
-            		<p><img src="img/number/1.png" class="count1"/></p>
-            		<p><img src="img/number/0.png" class="count2"/></p>
-            	</div>
-            </div>
-            <div class="score">
-                <img src="img/status3/12.png">
-                <img src="img/status3/13.png">
-                <div class="score-num">
-                    <img src="img/status3/33.png" alt="">
-                </div>
-            </div>
-            <div class="cloud">
-                <img src="img/status3/cloud.png" alt="">
-            </div>
-            <div class="person">
-                <img src="img/status3/boy/1.png" alt="" name="person">
-                <img src="img/status3/boy/5.png" alt="" class="mask">
-            </div>
-            <div class="btn-box">
-                <img src="img/status3/1.png" alt="" class="table">
-                <div class="btns">
-                    <img src="img/status3/begin.png" alt="" class="btn-begin">
-                    <a href="javascript:;" class="btn"></a>
-                </div>
-            </div>
-        </div>
-        <div class="status" id="status4">
+		<!-- 内容区域 -->
+		<div class="container" style="display: none;">
+			<div class="status" id="status1" style="display: none;">
+				<i class="title"></i>
+				<i class="could"></i>
+				<div class="cartoon">
+					<p class="boy"></p>
+					<p class="girl"></p>
+				</div>
+				<p class="coupon"></p>
+				<div class="btn-light">
+					<a href="javascript:;" class="btn-boy"></a>
+					<a href="javascript:;" class="btn-girl"></a>
+				</div>
+				<i class="arrow"></i>
+			</div>
+			<div class="status" id="status2" style="display: none;">
+				<div class="for-boy" style="display: none;">
+					<img src="img/status2/boy/1.png" alt="" class="status2-head">
+					<img src="img/status2/boy/2.png" alt="" class="status2-body">
+					<img src="img/status2/boy/3.png" alt="" class="status2-foot">
+					<img src="img/status2/boy/4.png" alt="" class="status2-ready">
+				</div>
+				<div class="for-girl">
+					<img src="img/status2/girl/2.png" alt="" class="status2-head">
+					<img src="img/status2/girl/3.png" alt="" class="status2-body">
+					<img src="img/status2/girl/4.png" alt="" class="status2-foot">
+					<img src="img/status2/girl/1.png" alt="" class="status2-ready">
+				</div>
+			</div>
+			<div class="status" id="status3">
+				<div class="background">
+					<img src="img/status3/boy/bg.png" alt="">
+				</div>
+				<div class="time-box">
+					<img src="img/status3/time.png" class="time" />
+					<div class="time-count">
+						<p><img src="img/number/1.png" class="count1" /></p>
+						<p><img src="img/number/0.png" class="count2" /></p>
+					</div>
+				</div>
+				<div class="score">
+					<img src="img/status3/12.png">
+					<img src="img/status3/13.png">
+					<div class="score-num">
+						<img src="img/status3/33.png" alt="">
+					</div>
+				</div>
+				<div class="cloud">
+					<img src="img/status3/cloud.png" alt="">
+				</div>
+				<div class="person">
+					<img src="img/status3/boy/0.png" alt="" name="person">
+					<img src="img/status3/boy/5.png" alt="" class="mask">
+				</div>
+				<div class="btn-box">
+					<img src="img/status3/1.png" alt="" class="table">
+					<div class="btns">
+						<img src="img/status3/begin.png" alt="" class="arrow-begin">
+						<a href="javascript:;" class="btn btn-begin"></a>
+					</div>
+				</div>
+			</div>
+			<div class="status" id="status4">
 
-        </div>
-    </div>
+			</div>
+		</div>
 
-    <script src="js/require.js"></script>
-    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        require(['game'])
-    </script>
-</body>
+		<script src="js/require.js"></script>
+		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var rate = {
+				"member_count": 0,
+				"coupons": [{
+					"coupon_id": 1364,
+					"coupon_desc": "5\u5143\u65e0\u95e8\u69db\u5238"
+				}, {
+					"coupon_id": 1363,
+					"coupon_desc": "10\u5143\u65e0\u95e8\u69db\u5238"
+				}, {
+					"coupon_id": 1362,
+					"coupon_desc": "\u6ee1198\u51cf100\u5238"
+				}]
+			};
+			require(['game']);
+		</script>
+	</body>
 
 </html>

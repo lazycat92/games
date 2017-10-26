@@ -1,10 +1,17 @@
+/*
+ *	author: Wu
+ *	data: 2017.10.26
+ *	version: 1.0.0
+ *	activityid: 20171111screamgame
+*/
+
 define(function (require) {
 	'use strict';
 
 	var $ = require('jquery');
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
-
+	console.log(rate);
 	// 阻止页面上下滑动
 	$("body").on("touchmove", function (e) {
 		e.preventDefault();
@@ -91,10 +98,25 @@ define(function (require) {
 				$(".btn").on("touchstart", function (e) {
 					e.preventDefault();
 					count++;
+					$(".score-num img").css('bottom', ((count * 5.8 - 410) / 46.875) + 'rem');
+					switch(true) {
+						case count >= 31 && count <= 50:
+						$("#status3 img[name=person]").attr('src', 'img/status3/boy/1.png');
+						break;
+
+						case count >= 51:
+						var num = count % 2
+						$("#status3 img[name=person]").attr('src', 'img/status3/boy/2.png');
+						$("#status3 .mask").show();
+						break;
+
+						default:
+						// $("#status3 img[name=person]").attr('src', 'img/status3/boy/0.png');
+						break;
+					}
 					$(this).addClass("btn-off");
 				}).on("touchend", function () {
 					$(this).removeClass("btn-off");
-					$(".count").html(count);
 				});
 				var timer = setInterval(function () {
 					a--
@@ -102,25 +124,26 @@ define(function (require) {
 						$(".count1").attr('src', "img/number/0.png");
 						$(".count2").attr('src', "img/number/" + a + ".png");
 					}
-					$(".score-num img").css('bottom', -(a * 41 / 46.875) + 'rem');
-					$(".person img[name=person]").attr('src', 'img/status3/boy/' + (a % 4) + '.png')
 					if (a == 0) {
 						clearInterval(timer);
 						$(".count1").attr('src', "img/number/0.png");
 						$(".count2").attr('src', "img/number/0.png");
 						$(".btn").off("touchstart touchend");
-						$(".btn").removeClass("off");
+						$(".btn").removeClass("btn-off");
+						console.log('score',count);
 					}
 				}, 1000);
 			}
 
-//			$("button").on("click", handler);
+			$(".btn-begin").on("click", handler);
 
 			function handler() {
+				console.log('begin');
+				$(".btn-begin").off('click', handler);
+				$(".arrow-begin").hide();
 				count = 0
 				countdown(10);
 			};
-			countdown(10);
 		},
 	}
 
