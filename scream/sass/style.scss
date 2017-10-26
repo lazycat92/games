@@ -620,13 +620,14 @@ body {
                 }
             }
         }
-        .mask {
+        .outside-mask {
             position: fixed;
             top: 0;
             left: 0;
             height: 100vh;
             width: 100vw;
             background: rgba(0, 0, 0, 0.7);
+            display: none;
             .login {
                 width: rem(474);
                 height: rem(636);
@@ -670,7 +671,7 @@ body {
                         box-sizing: border-box;
                         input {
                             border: 0;
-                            text-indent: rem(10);
+                            text-indent: rem(5);
                             float: left;
                             width: rem(210);
                             height: rem(50);

@@ -11,7 +11,15 @@ define(function (require) {
 	var $ = require('jquery');
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
-	console.log(rate);
+	
+	var urls = {
+		img: "https://img04.aomygod.com/fontend",
+		code: "",
+		setActivityId: "",
+		autoLogin: "",
+		getCoupon: ""
+	};
+	
 	// 阻止页面上下滑动
 	$("body").on("touchmove", function (e) {
 		e.preventDefault();
@@ -136,6 +144,7 @@ define(function (require) {
 		init: function () {
 			this.calcScreen();
 			this.preloadFile();
+			this.changeStatus();
 		},
 		// 定义页面宽高，屏幕适应计算
 		calcScreen: function () {
@@ -183,11 +192,10 @@ define(function (require) {
 			function handleFileError(event) {
 				$(".preload-tips").html("error" + JSON.stringify(event));
 			}
-
-			_this.gameBegin();
 		},
 		// 游戏开始
-		gameBegin: function () {
+		gameBegin: function (gender) {
+			var _this = this;
 			var count = 0;
 
 			function countdown(a) {
@@ -204,12 +212,16 @@ define(function (require) {
 					}
 					switch (true) {
 						case count >= 31 && count <= 50:
-							$("#status3 img[name=person]").attr('src', 'img/status3/boy/1.png');
+							$("#status3 img[name=person]").attr('src', 'img/status3/'+ gender +'/1.png');
 							break;
 
 						case count >= 51:
 							var num = count % 2 + 2;
-							$("#status3 img[name=person]").attr('src', 'img/status3/boy/' + num + '.png');
+							if(gender == 'girl') {
+								$("#status3 img[name=person]").attr('src', 'img/status3/girl/2.png');
+							} else {
+								$("#status3 img[name=person]").attr('src', 'img/status3/' + gender + '/' + num + '.png');
+							}
 							$("#status3 .mask, img[name=shadow1]").show();
 							break;
 
@@ -229,11 +241,10 @@ define(function (require) {
 					}
 					if (a == 0) {
 						clearInterval(timer);
-						$(".count1").attr('src', "img/number/0.png");
 						$(".count2").attr('src', "img/number/0.png");
 						$(".btn").off("touchstart touchend");
 						$(".btn").removeClass("btn-off");
-						alert(count);
+						_this.calcScore(count);
 					}
 				}, 1000);
 			}
@@ -248,6 +259,54 @@ define(function (require) {
 				countdown(10);
 			};
 		},
+		// 切换
+		changeStatus: function(e) {
+			var _this = this;
+			
+			$("#status1 .btn-light a").on('click', function(e) {
+				e.stopPropagation();
+				$(this).parents("#status1").hide();
+				$("#status2").show();
+				var isBoy = $(this).hasClass("btn-boy");
+				if(isBoy) {
+					$("#status2").find("div").eq(0).show();
+				} else {
+					$("#status2").find("div").eq(1).show();
+				}
+				
+				setTimeout(function() {
+					$("#status2").hide();
+					$("#status3").show();
+					if(isBoy) {
+						_this.gameBegin("boy");
+						$("#status3 .background").find("img").eq(0).show();
+						$("#status3 .background").find("img").eq(1).hide();
+						$("#status3 .boy").show();
+						$("#status3 .girl").hide();
+					} else {
+						_this.gameBegin("girl");
+						$("#status3 .background").find("img").eq(1).show();
+						$("#status3 .background").find("img").eq(0).hide();
+						$("#status3 .boy").hide();
+						$("#status3 .girl").show();
+					}
+				}, 4000);
+			});
+		},
+		// 计算成绩
+		calcScore: function(score) {
+			$("#status3").fadeOut();
+			$("#status4").fadeIn();
+			
+			// 根据产品要求，分两种所谓的规则
+			// 第一种情况， 参与游戏人数小于100时;
+			if(rate.member_count <= 100) {
+				var random = Math.floor(Math.random() * 10);
+				console.log('产生的随机数', random);
+			} else {
+				// 第二种情况，参与游戏人数大于100时
+			}
+		}
 	}
 
 	new pageEvent();
