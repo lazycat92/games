@@ -372,7 +372,8 @@ body {
                             position:relative;
                             left: rem(-44);
                             bottom: rem(-410);
-                            border-bottom: rem(15);
+                            border-bottom-right-radius: rem(15);
+                            border-bottom-left-radius: rem(15);
                         }
                     }
                 }
