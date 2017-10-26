@@ -732,44 +732,42 @@ body .container .mask .login .box p {
 /* line 671, ../sass/style.scss */
 body .container .mask .login .box p input {
   border: 0;
-  line-height: 1.23733rem;
   text-indent: 0.21333rem;
   float: left;
-  width: 4.26667rem;
+  width: 4.48rem;
   font-size: 0.512rem;
   box-sizing: border-box;
 }
-/* line 680, ../sass/style.scss */
+/* line 679, ../sass/style.scss */
 body .container .mask .login .box p input::-webkit-input-placeholder {
   /* WebKit browsers*/
   color: #999;
 }
-/* line 684, ../sass/style.scss */
+/* line 683, ../sass/style.scss */
 body .container .mask .login .box p input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18*/
   color: #999;
 }
-/* line 688, ../sass/style.scss */
+/* line 687, ../sass/style.scss */
 body .container .mask .login .box p input::-moz-placeholder {
   /* Mozilla Firefox 19+*/
   color: #999;
 }
-/* line 692, ../sass/style.scss */
+/* line 691, ../sass/style.scss */
 body .container .mask .login .box p input:-ms-input-placeholder {
   /* Internet Explorer 10+*/
   color: #999;
 }
-/* line 696, ../sass/style.scss */
+/* line 695, ../sass/style.scss */
 body .container .mask .login .box p .get-code {
   display: inline-block;
   color: #fff;
   background: #a40000;
   width: 3.2rem;
-  line-height: 1.23733rem;
   text-decoration: none;
   border-radius: 0.21333rem;
 }
-/* line 706, ../sass/style.scss */
+/* line 704, ../sass/style.scss */
 body .container .mask .login .box .get-coupon {
   display: inline-block;
   color: #fff;
