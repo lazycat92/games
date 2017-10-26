@@ -673,8 +673,9 @@ body {
                             line-height: rem(58);
                             text-indent: rem(10);
                             float: left;
-                            width: rem(220);
+                            width: rem(200);
                             font-size: rem(24);
+                            box-sizing: border-box;
                         }
                         input::-webkit-input-placeholder {
                             /* WebKit browsers*/
