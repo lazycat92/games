@@ -662,7 +662,7 @@ body {
                         width: rem(400);
                         margin: 0 auto;
                         border: rem(1) solid #ddd;
-                        padding: rem(5);
+                        padding: rem(15) rem(5);
                         border-radius: rem(10);
                         margin-bottom: rem(30);
                         overflow: hidden;
@@ -693,12 +693,15 @@ body {
                             color: #999;
                         }
                         .get-code {
-                            display: inline-block;
+                            display: block;
+                            float: right;
+                            height: 100%;
                             color: #fff;
                             background: #a40000;
                             width: rem(150);
                             text-decoration: none;
                             border-radius: rem(10);
+                            font-size: rem(24);
                         }
                     }
                     .get-coupon {
