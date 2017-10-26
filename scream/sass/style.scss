@@ -576,6 +576,49 @@ body {
                         }
                     }
                 }
+                .btns {
+                    width: 100%;
+                    height: rem(128);
+                    position: absolute;
+                    top: 63%;
+                    left: 50%;
+                    margin-left: rem(-367);
+                    img {
+                        display: block;
+                        width: rem(635);
+                        margin: 0 auto;
+                    }
+                    a {
+                        float: left;
+                        width: 40%;
+                        height: rem(128);
+                        display: block;
+                        background: transparent;
+                        margin: 0 5%;
+                        position: relative;
+                        top: rem(-128);
+                    }
+                }
+                .coupon {
+                    width: rem(404);
+                    height: rem(251);
+                    background: url(../img/status4/coupon.png) center center no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    bottom: rem(10);
+                    left: 50%;
+                    margin-left: rem(-210); 
+                    p {
+                        margin: 0;
+                        color: #fff;
+                        font-size: rem(100);
+                        font-weight: bold;
+                        font-family: "微软雅黑";
+                        position: absolute;
+                        left: 12%;
+                        bottom: 40%;
+                    }
+                }
             }
         }
     }

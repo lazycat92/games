@@ -625,3 +625,51 @@ body .container .status#status4 .scream p img {
   height: 100%;
   display: block;
 }
+/* line 579, ../sass/style.scss */
+body .container .status#status4 .btns {
+  width: 100%;
+  height: 2.73067rem;
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  margin-left: -7.82933rem;
+}
+/* line 586, ../sass/style.scss */
+body .container .status#status4 .btns img {
+  display: block;
+  width: 13.54667rem;
+  margin: 0 auto;
+}
+/* line 591, ../sass/style.scss */
+body .container .status#status4 .btns a {
+  float: left;
+  width: 40%;
+  height: 2.73067rem;
+  display: block;
+  background: transparent;
+  margin: 0 5%;
+  position: relative;
+  top: -2.73067rem;
+}
+/* line 602, ../sass/style.scss */
+body .container .status#status4 .coupon {
+  width: 8.61867rem;
+  height: 5.35467rem;
+  background: url(../img/status4/coupon.png) center center no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 0.21333rem;
+  left: 50%;
+  margin-left: -4.48rem;
+}
+/* line 611, ../sass/style.scss */
+body .container .status#status4 .coupon p {
+  margin: 0;
+  color: #fff;
+  font-size: 2.13333rem;
+  font-weight: bold;
+  font-family: "微软雅黑";
+  position: absolute;
+  left: 12%;
+  bottom: 40%;
+}
