@@ -337,22 +337,23 @@ body .container .status#status3 .background img {
 }
 /* line 317, ../sass/style.scss */
 body .container .status#status3 .time-box {
-  position: fixed;
+  position: absolute;
   top: 2%;
   left: 5%;
   width: 27.6%;
+  z-index: 10;
 }
-/* line 322, ../sass/style.scss */
+/* line 323, ../sass/style.scss */
 body .container .status#status3 .time-box .time {
   width: 100%;
 }
-/* line 325, ../sass/style.scss */
+/* line 326, ../sass/style.scss */
 body .container .status#status3 .time-box .time-count {
   position: absolute;
   bottom: 0.42667rem;
   left: 0.576rem;
 }
-/* line 329, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 body .container .status#status3 .time-box .time-count p {
   float: left;
   width: 0.85333rem;
@@ -360,27 +361,28 @@ body .container .status#status3 .time-box .time-count p {
   margin: 0;
   padding: 0;
 }
-/* line 335, ../sass/style.scss */
+/* line 336, ../sass/style.scss */
 body .container .status#status3 .time-box .time-count p:nth-child(1) {
   margin-right: 1.51467rem;
 }
-/* line 338, ../sass/style.scss */
+/* line 339, ../sass/style.scss */
 body .container .status#status3 .time-box .time-count p img {
   width: 100%;
   height: 100%;
 }
-/* line 345, ../sass/style.scss */
+/* line 346, ../sass/style.scss */
 body .container .status#status3 .score {
   position: absolute;
   top: 18%;
   left: 3%;
+  z-index: 10;
 }
-/* line 349, ../sass/style.scss */
+/* line 351, ../sass/style.scss */
 body .container .status#status3 .score img:nth-child(1) {
   width: 2.79467rem;
   height: 10.92267rem;
 }
-/* line 353, ../sass/style.scss */
+/* line 355, ../sass/style.scss */
 body .container .status#status3 .score img:nth-child(2) {
   width: 0.53333rem;
   height: 2.60267rem;
@@ -389,7 +391,7 @@ body .container .status#status3 .score img:nth-child(2) {
   left: 36%;
   z-index: 20;
 }
-/* line 361, ../sass/style.scss */
+/* line 363, ../sass/style.scss */
 body .container .status#status3 .score .score-num {
   background: transparent;
   width: 0.64rem;
@@ -401,7 +403,7 @@ body .container .status#status3 .score .score-num {
   left: 39%;
   overflow: hidden;
 }
-/* line 371, ../sass/style.scss */
+/* line 373, ../sass/style.scss */
 body .container .status#status3 .score .score-num img {
   display: block;
   position: relative;
@@ -410,39 +412,67 @@ body .container .status#status3 .score .score-num img {
   border-bottom-right-radius: 0.32rem;
   border-bottom-left-radius: 0.32rem;
 }
-/* line 381, ../sass/style.scss */
+/* line 383, ../sass/style.scss */
+body .container .status#status3 .cloud {
+  position: absolute;
+  bottom: 2.13333rem;
+  width: 100%;
+}
+/* line 387, ../sass/style.scss */
+body .container .status#status3 .cloud img {
+  width: 100%;
+  display: block;
+  animation: cloudCircle .5s linear 0s infinite alternate-reverse forwards;
+}
+@keyframes cloudCircle {
+  0% {
+    opacity: .7;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(5deg);
+  }
+}
+/* line 403, ../sass/style.scss */
 body .container .status#status3 .person {
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
-/* line 385, ../sass/style.scss */
+/* line 408, ../sass/style.scss */
 body .container .status#status3 .person img:nth-child(1) {
   display: block;
   width: 11.73333rem;
   position: absolute;
   top: 12%;
-  left: 12%;
+  left: 14%;
 }
-/* line 392, ../sass/style.scss */
+/* line 415, ../sass/style.scss */
 body .container .status#status3 .person img.mask {
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 0;
   display: none;
 }
-/* line 405, ../sass/style.scss */
-body .btn {
-  width: 7.38133rem;
-  height: 5.41867rem;
-  background: url(../img/status3/btn-on.png) no-repeat;
-  background-size: 7.38133rem 5.41867rem;
-  margin: 2.13333rem auto;
+/* line 426, ../sass/style.scss */
+body .container .status#status3 .btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7.104rem;
 }
-/* line 411, ../sass/style.scss */
-body .btn.off {
-  height: 5.41867rem;
-  background: url(../img/status3/btn-off.png) no-repeat;
-  background-size: 7.38133rem 5.41867rem;
+/* line 432, ../sass/style.scss */
+body .container .status#status3 .btn .table {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 437, ../sass/style.scss */
+body .container .status#status3 .btn .btns {
+  display: none;
 }
