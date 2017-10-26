@@ -722,7 +722,7 @@ body .container .mask .login .box p {
   width: 8.53333rem;
   margin: 0 auto;
   border: 0.02133rem solid #ddd;
-  padding: 0.32rem 0.10667rem;
+  padding: 0.10667rem;
   border-radius: 0.21333rem;
   margin-bottom: 0.64rem;
   overflow: hidden;
@@ -735,42 +735,44 @@ body .container .mask .login .box p input {
   text-indent: 0.21333rem;
   float: left;
   width: 4.48rem;
+  height: 1.06667rem;
   font-size: 0.512rem;
   box-sizing: border-box;
 }
-/* line 679, ../sass/style.scss */
+/* line 680, ../sass/style.scss */
 body .container .mask .login .box p input::-webkit-input-placeholder {
   /* WebKit browsers*/
   color: #999;
 }
-/* line 683, ../sass/style.scss */
+/* line 684, ../sass/style.scss */
 body .container .mask .login .box p input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18*/
   color: #999;
 }
-/* line 687, ../sass/style.scss */
+/* line 688, ../sass/style.scss */
 body .container .mask .login .box p input::-moz-placeholder {
   /* Mozilla Firefox 19+*/
   color: #999;
 }
-/* line 691, ../sass/style.scss */
+/* line 692, ../sass/style.scss */
 body .container .mask .login .box p input:-ms-input-placeholder {
   /* Internet Explorer 10+*/
   color: #999;
 }
-/* line 695, ../sass/style.scss */
+/* line 696, ../sass/style.scss */
 body .container .mask .login .box p .get-code {
   display: block;
   float: right;
-  height: 100%;
   color: #fff;
   background: #a40000;
   width: 3.2rem;
+  height: 1.06667rem;
+  line-height: 1.06667rem;
   text-decoration: none;
   border-radius: 0.21333rem;
   font-size: 0.512rem;
 }
-/* line 707, ../sass/style.scss */
+/* line 709, ../sass/style.scss */
 body .container .mask .login .box .get-coupon {
   display: inline-block;
   color: #fff;

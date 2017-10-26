@@ -662,7 +662,7 @@ body {
                         width: rem(400);
                         margin: 0 auto;
                         border: rem(1) solid #ddd;
-                        padding: rem(15) rem(5);
+                        padding: rem(5);
                         border-radius: rem(10);
                         margin-bottom: rem(30);
                         overflow: hidden;
@@ -673,6 +673,7 @@ body {
                             text-indent: rem(10);
                             float: left;
                             width: rem(210);
+                            height: rem(50);
                             font-size: rem(24);
                             box-sizing: border-box;
                         }
@@ -695,10 +696,11 @@ body {
                         .get-code {
                             display: block;
                             float: right;
-                            height: 100%;
                             color: #fff;
                             background: #a40000;
                             width: rem(150);
+                            height: rem(50);
+                            line-height: rem(50);
                             text-decoration: none;
                             border-radius: rem(10);
                             font-size: rem(24);
