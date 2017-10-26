@@ -356,7 +356,7 @@ body {
                         width: rem(25);
                         height: rem(122);
                         position: absolute;
-                        top: 43%;
+                        top: 46%;
                         left: 36%;
                         z-index: 20;
                     }
@@ -429,6 +429,26 @@ body {
                             position: absolute;
                             top: 16%;
                             left: 10%;
+                            z-index: 5;
+                        }
+                        img[name=shadow1] {
+                            position: absolute;
+                            top: 15%;
+                            left: 10%;
+                            width: rem(650);
+                            display: block;
+                            z-index: 2;
+                            animation: changeScale .5s ease-in 0s infinite forwards;
+                            display: none;
+                        }
+                        @keyframes changeScale {
+                            0% {}
+                            50% {
+                                transform: scale(1.1);
+                            }
+                            100% {
+                                transform: scale(1.2);
+                            }
                         }
                     }
                 }

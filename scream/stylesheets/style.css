@@ -387,7 +387,7 @@ body .container .status#status3 .score img:nth-child(2) {
   width: 0.53333rem;
   height: 2.60267rem;
   position: absolute;
-  top: 43%;
+  top: 46%;
   left: 36%;
   z-index: 20;
 }
@@ -465,8 +465,28 @@ body .container .status#status3 .person.girl img[name=person] {
   position: absolute;
   top: 16%;
   left: 10%;
+  z-index: 5;
 }
-/* line 435, ../sass/style.scss */
+/* line 434, ../sass/style.scss */
+body .container .status#status3 .person.girl img[name=shadow1] {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 13.86667rem;
+  display: block;
+  z-index: 2;
+  animation: changeScale .5s ease-in 0s infinite forwards;
+  display: none;
+}
+@keyframes changeScale {
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+/* line 455, ../sass/style.scss */
 body .container .status#status3 .btn-box {
   position: fixed;
   left: 0;
@@ -475,7 +495,7 @@ body .container .status#status3 .btn-box {
   height: 7.104rem;
   z-index: 99;
 }
-/* line 442, ../sass/style.scss */
+/* line 462, ../sass/style.scss */
 body .container .status#status3 .btn-box .table {
   display: block;
   width: 16rem;
@@ -483,7 +503,7 @@ body .container .status#status3 .btn-box .table {
   margin: 0 auto;
   z-index: 0;
 }
-/* line 449, ../sass/style.scss */
+/* line 469, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns {
   position: absolute;
   width: 100%;
@@ -492,12 +512,12 @@ body .container .status#status3 .btn-box .btns {
   left: 0;
   z-index: 100;
 }
-/* line 456, ../sass/style.scss */
+/* line 476, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns:focus {
   border: 0;
   background: transparent;
 }
-/* line 460, ../sass/style.scss */
+/* line 480, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .arrow-begin {
   position: absolute;
   top: -20%;
@@ -515,7 +535,7 @@ body .container .status#status3 .btn-box .btns .arrow-begin {
     opacity: 1;
   }
 }
-/* line 477, ../sass/style.scss */
+/* line 497, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn {
   display: block;
   width: 7.38133rem;
@@ -524,7 +544,7 @@ body .container .status#status3 .btn-box .btns .btn {
   background-size: 100% 100%;
   margin: 0.42667rem auto 0;
 }
-/* line 484, ../sass/style.scss */
+/* line 504, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn.btn-off {
   background: url("../img/status3/btn-off.png") no-repeat;
   background-size: 100% 100%;
