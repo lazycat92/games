@@ -515,8 +515,8 @@ body {
                 left: 0;
                 .background {
                     img {
-                        height: 100%;
-                        width: 100%;
+                        width: 100vw;
+                        height: 100vh;
                         display: block;
                     }
                 }
@@ -580,7 +580,7 @@ body {
                     width: 100%;
                     height: rem(128);
                     position: absolute;
-                    top: 63%;
+                    bottom: 23%;
                     left: 50%;
                     margin-left: rem(-367);
                     img {
