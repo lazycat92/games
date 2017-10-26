@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(../js/Swiper/swiper.min.css);
 /* line 9, ../sass/style.scss */
 body {
@@ -548,4 +549,79 @@ body .container .status#status3 .btn-box .btns .btn {
 body .container .status#status3 .btn-box .btns .btn.btn-off {
   background: url("../img/status3/btn-off.png") no-repeat;
   background-size: 100% 100%;
+}
+/* line 512, ../sass/style.scss */
+body .container .status#status4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 517, ../sass/style.scss */
+body .container .status#status4 .background img {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+/* line 523, ../sass/style.scss */
+body .container .status#status4 .score {
+  position: absolute;
+  top: 2.13333rem;
+  left: 0;
+  width: 100%;
+}
+/* line 528, ../sass/style.scss */
+body .container .status#status4 .score p {
+  text-align: center;
+  margin: 0 auto;
+  width: 9.792rem;
+  height: 1.62133rem;
+  background: url("../img/status4/1.png") no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.62133rem;
+  font-size: 0.85333rem;
+}
+/* line 539, ../sass/style.scss */
+body .container .status#status4 .score p span {
+  font-size: 1.06667rem;
+  color: #fff47d;
+}
+/* line 545, ../sass/style.scss */
+body .container .status#status4 .word {
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  width: 6.50667rem;
+  height: 6.05867rem;
+  background: url(../img/status4/2.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 0.53333rem 0.42667rem 0.42667rem 1.17333rem;
+  box-sizing: border-box;
+  color: #3d3d3d;
+  font: bold 0.64rem "微软雅黑";
+}
+/* line 558, ../sass/style.scss */
+body .container .status#status4 .scream {
+  width: 11.73333rem;
+  height: 2.34667rem;
+  position: absolute;
+  top: 52.5%;
+  left: 50%;
+  margin-left: -5.824rem;
+  background: transparent;
+  display: flex;
+}
+/* line 567, ../sass/style.scss */
+body .container .status#status4 .scream p {
+  flex: 1 20%;
+  margin: 0;
+  padding: 0.42667rem 0;
+  box-sizing: border-box;
+}
+/* line 572, ../sass/style.scss */
+body .container .status#status4 .scream p img {
+  margin: 0 auto;
+  height: 100%;
+  display: block;
 }
