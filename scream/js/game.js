@@ -98,7 +98,7 @@ define(function (require) {
 				$(".btn").on("touchstart", function (e) {
 					e.preventDefault();
 					count++;
-					$(".score-num img").css('bottom', ((count * 5.1 - 410) / 46.875) + 'rem');
+					$(".score-num img").css('bottom', ((count * 4.5 - 410) / 46.875) + 'rem');
 					switch(true) {
 						case count >= 31 && count <= 50:
 						$("#status3 img[name=person]").attr('src', 'img/status3/boy/1.png');
@@ -124,7 +124,7 @@ define(function (require) {
 						$(".count1").attr('src', "img/number/0.png");
 						$(".count2").attr('src', "img/number/" + a + ".png");
 					}
-					if (a == 0) {
+					if (a < 0) {
 						clearInterval(timer);
 						$(".count1").attr('src', "img/number/0.png");
 						$(".count2").attr('src', "img/number/0.png");
