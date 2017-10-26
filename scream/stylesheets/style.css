@@ -741,13 +741,14 @@ body .container .mask .login .box p .get-code {
   display: inline-block;
   color: #fff;
   background: #a40000;
-  padding: 0.21333rem 0.42667rem;
+  padding: 0.21333rem 0;
+  width: 3.2rem;
   text-decoration: none;
   position: relative;
   top: 0.10667rem;
   border-radius: 0.21333rem;
 }
-/* line 688, ../sass/style.scss */
+/* line 689, ../sass/style.scss */
 body .container .mask .login .box .get-coupon {
   display: inline-block;
   color: #fff;
