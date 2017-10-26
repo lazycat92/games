@@ -132,7 +132,7 @@ body .container .status#status1 .btn-light .btn-boy {
   width: 8.02133rem;
   height: 6.848rem;
   background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png") center left no-repeat;
-  background-size: 95%;
+  background-size: 100%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
 /* line 124, ../sass/style.scss */
@@ -142,7 +142,7 @@ body .container .status#status1 .btn-light .btn-girl {
   width: 7.97867rem;
   height: 6.848rem;
   background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png") center right no-repeat;
-  background-size: 95%;
+  background-size: 100%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
 /* line 134, ../sass/style.scss */
@@ -153,25 +153,25 @@ body .container .status#status1 .arrow {
   background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png") no-repeat;
   background-size: 80%;
   position: relative;
-  top: -7.68rem;
+  top: -8.10667rem;
   animation: arrowTransform 2s ease infinite alternate-reverse;
 }
 @keyframes arrowTransform {
   0% {
     opacity: 0;
-    left: 3.2rem;
+    left: 2.56rem;
   }
   50% {
     opacity: 1;
-    left: 3.2rem;
+    left: 2.56rem;
   }
   75% {
     opacity: 0;
-    left: 11.73333rem;
+    left: 13.01333rem;
   }
   100% {
     opacity: 1;
-    left: 11.73333rem;
+    left: 13.01333rem;
   }
 }
 @keyframes btnScale {

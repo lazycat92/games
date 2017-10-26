@@ -118,7 +118,7 @@ body {
                         width: rem(376);
                         height: rem(321);
                         background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png') center left no-repeat;
-                        background-size: 95%;
+                        background-size: 100%;
                         animation: btnScale .8s linear infinite alternate-reverse;
                     }
                     .btn-girl {
@@ -127,7 +127,7 @@ body {
                         width: rem(374);
                         height: rem(321);
                         background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png') center right no-repeat;
-                        background-size: 95%;
+                        background-size: 100%;
                         animation: btnScale .8s linear infinite alternate-reverse;
                     }
                 }
@@ -138,25 +138,25 @@ body {
                     background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png') no-repeat;
                     background-size: 80%;
                     position: relative;
-                    top: rem(-360);
+                    top: rem(-380);
                     animation: arrowTransform 2s ease infinite alternate-reverse;
                 }
                 @keyframes arrowTransform {
                     0% {
                         opacity: 0;
-                        left: rem(150);
+                        left: rem(120);
                     }
                     50% {
                         opacity: 1;
-                        left: rem(150);
+                        left: rem(120);
                     }
                     75% {
                         opacity: 0;
-                        left: rem(550);
+                        left: rem(610);
                     }
                     100% {
                         opacity: 1;
-                        left: rem(550);
+                        left: rem(610);
                     }
                 }
                 @keyframes btnScale {
