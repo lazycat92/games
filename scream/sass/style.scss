@@ -422,6 +422,15 @@ body {
                             display: none;
                         }
                     }
+                    &.girl {
+                        img[name=person] {
+                            display: block;
+                            width: rem(650);
+                            position: absolute;
+                            top: 14%;
+                            left: 12%;
+                        }
+                    }
                 }
                 .btn-box {
                     position: fixed;
