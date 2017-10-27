@@ -40,8 +40,7 @@ define(function (require) {
 
 	var sound1 = new Howl({
 		src: [urls.img + 'imgs/music/background-music.mp3'],
-		loop: true,
-		html5: true
+		loop: true
 	});
 
 	var regs = {
@@ -206,8 +205,7 @@ define(function (require) {
 			var _this = this;
 			var count = 0;
 			var sound2 = new Howl({
-				src: [urls.img + 'imgs/music/' + gender + '.mp3'],
-				html5: true
+				src: [urls.img + 'imgs/music/' + gender + '.mp3']
 			});
 			// 初始化页面
 			$(".score-num img").css('bottom', '-8.74667rem');
