@@ -210,11 +210,11 @@ define(function(require) {
 						$(".score-num img").css('bottom', ((count * 4.5 - 410) / 46.875) + 'rem');
 					}
 					switch(true) {
-						case count >= 31 && count <= 50:
+						case count >= 46 && count <= 90:
 							$("#status3 img[name=person]").attr('src', 'img/status3/' + gender + '/1.png');
 							break;
 
-						case count >= 51:
+						case count >= 91:
 							var num = count % 2 + 2;
 							if (gender == 'girl') {
 								$("#status3 img[name=person]").attr('src', 'img/status3/girl/2.png');
@@ -296,8 +296,8 @@ define(function(require) {
 			$("#status4").fadeIn();
 			var showScore = 179 * score; // 尖叫值
 			var random = Math.floor(Math.random() * 10); // 产生一个有用的随机数
-			var passOver = score < 100 ? Math.floor(score / 10) * 10 + random : 99; // 随机生成超过多少人
-			$("#status4 .score span").html(passOver + "%");
+			
+			
 
 			// 返回文案
 			var content = [
@@ -311,15 +311,21 @@ define(function(require) {
 			if(rate.member_count > 100) {
 
 				switch(true) {
-					case score >= 31 && score <= 50:
+					case score >= 46 && score <= 90:
+						var passOver = parseInt(1.3 * score - 39) ; 
+						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
 						break;
 
-					case score >= 51:
+					case score >= 91:
+						var passOver = score > 135 ? 99 : parseInt(0.4 * score + 44); 
+						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
 						break;
 
 					default:
+						var passOver = parseInt(0.4 * score) ; 
+						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
 						break;
 				}
@@ -327,15 +333,21 @@ define(function(require) {
 				// 第二种情况，参与游戏人数小于100时
 				
 				switch(true) {
-					case score >= 21 && score <= 40:
+					case score >= 40 && score <= 80:
+						var passOver = parseInt(1.5 * score - 40) ; 
+						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
 						break;
 
-					case score >= 41:
+					case score >= 81:
+						var passOver = score > 135? 99 : parseInt(0.36 * score + 51.2) ; 
+						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
 						break;
 
 					default:
+						var passOver = parseInt(0.5 * score) ; 
+						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
 						break;
 				}
