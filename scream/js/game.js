@@ -146,7 +146,7 @@ define(function (require) {
 			preload.loadManifest(manifest);
 
 			function handleFileLoad() {
-				$(".preload-tips").hide();
+				// $(".preload-tips").hide();
 				$(".for-boy").find("img").each(function(index, item) {
 					$(item).attr('src', urls.img + "imgs/status2/boy/" + (index+1) + ".png");
 				})
