@@ -100,7 +100,10 @@ define(function (require) {
 		urls.img + 'imgs/status3/girl/4.png',
 		urls.img + 'imgs/status3/girl/6.png',
 		urls.img + 'imgs/status3/girl/bg.png',
-		urls.img + 'imgs/status3/time.png'
+		urls.img + 'imgs/status3/time.png',
+		urls.img + 'imgs/music/background-music.mp3',
+		urls.img + 'imgs/music/boy.mp3',
+		urls.img + 'imgs/music/girl.mp3',
 	];
 
 	var pageEvent = function () {
