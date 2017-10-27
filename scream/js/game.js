@@ -40,6 +40,7 @@ define(function (require) {
 
 	var sound1 = new Howl({
 		src: [urls.img + 'imgs/music/background-music.mp3'],
+		autoplay: true,
 		loop: true
 	});
 
@@ -190,7 +191,6 @@ define(function (require) {
 				if (preload.progress == 1) {
 					$(".preload-tips").hide();
 					$(".container").show();
-					sound1.play();
 				}
 			}
 
