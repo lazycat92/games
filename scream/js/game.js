@@ -109,7 +109,8 @@ define(function(require) {
 
 		urls.img + 'imgs/music/background-music.mp3',
 		urls.img + 'imgs/music/boy.mp3',
-		urls.img + 'imgs/music/girl.mp3'
+		urls.img + 'imgs/music/girl.mp3',
+		"https://img04.aomygod.com/fontend/20171028/imgs/music/bgm1.mp3"
 	];
 	
 	
