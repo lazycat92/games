@@ -189,7 +189,7 @@ define(function(require) {
 					$(".preload-tips").hide();
 					$(".container").show();
 					var sound1 = new Howl({
-						src: [urls.img + 'imgs/music/background-music.mp3'],
+						src: [urls.img + 'imgs/music/boy.mp3'],
 						autoplay: true,
 						loop: true
 					});
