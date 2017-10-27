@@ -7,6 +7,28 @@
 	<title>游戏</title>
 	<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+	<script>
+		wx.config({
+			debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时会打印。
+			appId: "{{sign_package['appId']}}", // 必填，公众号的唯一标识
+			timestamp: "{{sign_package['timestamp']}}", // 必填，生成签名的时间戳
+			nonceStr: "{{sign_package['nonceStr']}}", // 必填，生成签名的随机串
+			signature: "{{sign_package['signature']}}",// 必填，签名，见附录1
+			jsApiList: [
+				'checkJsApi',
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage',
+				'onMenuShareQQ',
+				'onMenuShareWeibo',
+				'hideOptionMenu',
+				'showOptionMenu',
+				'hideMenuItems',
+				'showMenuItems',
+				'hideAllNonBaseMenuItem',
+				'showAllNonBaseMenuItem'
+			]
+		});
+	</script>
 </head>
 
 <body>
@@ -36,22 +58,21 @@
 		</div>
 		<div class="status" id="status2" style="display: none;">
 			<div class="for-boy" style="display: none;">
-				<img src="img/status2/boy/1.png" alt="" class="status2-head">
-				<img src="img/status2/boy/2.png" alt="" class="status2-body">
-				<img src="img/status2/boy/3.png" alt="" class="status2-foot">
-				<img src="img/status2/boy/4.png" alt="" class="status2-ready">
+				<img src="" alt="" class="status2-head">
+				<img src="" alt="" class="status2-body">
+				<img src="" alt="" class="status2-foot">
+				<img src="" alt="" class="status2-ready">
 			</div>
 			<div class="for-girl">
-				<img src="img/status2/girl/2.png" alt="" class="status2-head">
-				<img src="img/status2/girl/3.png" alt="" class="status2-body">
-				<img src="img/status2/girl/4.png" alt="" class="status2-foot">
-				<img src="img/status2/girl/1.png" alt="" class="status2-ready">
+				<img src="" alt="" class="status2-head">
+				<img src="" alt="" class="status2-body">
+				<img src="" alt="" class="status2-foot">
+				<img src="" alt="" class="status2-ready">
 			</div>
 		</div>
 		<div class="status" id="status3" style="display: none;">
 			<div class="background">
-				<img src="img/status3/boy/bg.png" alt="" style="display:none;">
-				<img src="img/status3/girl/bg.png" alt="">
+				<img src="" alt="" style="display:none;">
 			</div>
 			<div class="time-box">
 				<img src="img/status3/time.png" class="time" />
@@ -124,7 +145,7 @@
 				<a href="javascript:;" class="share"></a>
 			</div>
 			<div class="coupon">
-				<img src="img/status4/coupon1.png" alt="" class="btn-coupon" data-index="1" data-first="1">
+				<img src="" alt="" class="btn-coupon">
 			</div>
 		</div>
 		<div class="outside-mask">
@@ -151,13 +172,13 @@
 		var rate = {
 			"member_count": 0,
 			"coupons": [{
-				"coupon_id": 1364,
+				"coupon_id": 1421,
 				"coupon_desc": "5\u5143\u65e0\u95e8\u69db\u5238"
 			}, {
-				"coupon_id": 1363,
+				"coupon_id": 1422,
 				"coupon_desc": "10\u5143\u65e0\u95e8\u69db\u5238"
 			}, {
-				"coupon_id": 1362,
+				"coupon_id": 1423,
 				"coupon_desc": "\u6ee1198\u51cf100\u5238"
 			}]
 		};

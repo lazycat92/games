@@ -11,11 +11,26 @@ define(function (require) {
 	var $ = require('jquery');
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
+	// var cookie = require('js/common/base/cookie');
+	// var BrowserUtil = require('js/util/browser/1.0.0/browser');
 	// var Dialog = require('common/ui/dialog/dialog');
 	// var io = require('common/kit/io/request');
 
+	function getCookie(c_name) {
+		if(document.cookie.length > 0) {
+			c_start = document.cookie.indexOf(c_name + "=")
+			if(c_start != -1) {
+				c_start = c_start + c_name.length + 1
+				c_end = document.cookie.indexOf(";", c_start)
+				if(c_end == -1) c_end = document.cookie.length
+				return unescape(document.cookie.substring(c_start, c_end))
+			}
+		}
+		return ""
+	}
+
 	var urls = {
-		img: "https://img04.aomygod.com/fontend",
+		img: "https://img04.aomygod.com/fontend/20171026/",
 		code: "https://ssl.aomygod.com/passport/smsSendByMobile",
 		setActivityId: "https://ssl.aomygod.com/apimall/member/saveactive",  // https://ssl.aomygod.com/apimall/member/saveactive/{active_id}
 		autoLogin: "https://ssl.aomygod.com/passport/autoRegisterAndLogin",
@@ -33,114 +48,69 @@ define(function (require) {
 	})
 
 	var manifest = [
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png",
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/bg.png",
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png",
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png",
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/girl.png",
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/boy.png",
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/cloud.png",
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/coupon.png",
-		"https://img04.aomygod.com/fontend/20171023/imgs/status1/title.png",
-		'https://img04.aomygod.com/fontend/20171026/imgs/logo.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/0.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/1.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/2.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/3.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/4.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/5.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/6.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/7.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/8.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/number/9.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/arrow.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/bg.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/boy-light.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/boy-light2.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/boy.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/cloud.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/coupon.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/girl-light.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/girl-light2.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/girl.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/logo.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status1/title.png',
-		'https://img04.aomygod.com/fontend/20171026/imgs/status2/boy/1.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status2/boy/2.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status2/boy/3.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status2/boy/4.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status2/girl/1.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status2/girl/2.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status2/girl/3.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status2/girl/4.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/1.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/12.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/13.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/33.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/begin.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/boy/0.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/boy/1.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/boy/2.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/boy/3.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/boy/5.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/boy/bg.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/btn-off.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/btn-on.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/cloud.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/final-scream.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/girl/0.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/girl/1.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/girl/2.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/girl/3.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/girl/4.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/girl/6.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/girl/bg.png',
-
-		'https://img04.aomygod.com/fontend/20171026/imgs/status3/time.png',
-
+		urls.img + "imgs/status1/arrow.png",
+		urls.img + "imgs/status1/bg.png",
+		urls.img + "imgs/status1/boy-light2.png",
+		urls.img + "imgs/status1/girl-light2.png",
+		urls.img + "imgs/status1/girl.png",
+		urls.img + "imgs/status1/boy.png",
+		urls.img + "imgs/status1/cloud.png",
+		urls.img + "imgs/status1/coupon.png",
+		urls.img + "imgs/status1/title.png",
+		urls.img + 'imgs/logo.png',
+		urls.img + 'imgs/number/0.png',
+		urls.img + 'imgs/number/1.png',
+		urls.img + 'imgs/number/2.png',
+		urls.img + 'imgs/number/3.png',
+		urls.img + 'imgs/number/4.png',
+		urls.img + 'imgs/number/5.png',
+		urls.img + 'imgs/number/6.png',
+		urls.img + 'imgs/number/7.png',
+		urls.img + 'imgs/number/8.png',
+		urls.img + 'imgs/number/9.png',
+		urls.img + 'imgs/status1/arrow.png',
+		urls.img + 'imgs/status1/bg.png',
+		urls.img + 'imgs/status1/boy-light.png',
+		urls.img + 'imgs/status1/boy-light2.png',
+		urls.img + 'imgs/status1/boy.png',
+		urls.img + 'imgs/status1/cloud.png',
+		urls.img + 'imgs/status1/coupon.png',
+		urls.img + 'imgs/status1/girl-light.png',
+		urls.img + 'imgs/status1/girl-light2.png',
+		urls.img + 'imgs/status1/girl.png',
+		urls.img + 'imgs/status1/logo.png',
+		urls.img + 'imgs/status1/title.png',
+		urls.img + 'imgs/status2/boy/1.png',
+		urls.img + 'imgs/status2/boy/2.png',
+		urls.img + 'imgs/status2/boy/3.png',
+		urls.img + 'imgs/status2/boy/4.png',
+		urls.img + 'imgs/status2/girl/1.png',
+		urls.img + 'imgs/status2/girl/2.png',
+		urls.img + 'imgs/status2/girl/3.png',
+		urls.img + 'imgs/status2/girl/4.png',
+		urls.img + 'imgs/status3/1.png',
+		urls.img + 'imgs/status3/12.png',
+		urls.img + 'imgs/status3/13.png',
+		urls.img + 'imgs/status3/33.png',
+		urls.img + 'imgs/status3/begin.png',
+		urls.img + 'imgs/status3/boy/0.png',
+		urls.img + 'imgs/status3/boy/1.png',
+		urls.img + 'imgs/status3/boy/2.png',
+		urls.img + 'imgs/status3/boy/3.png',
+		urls.img + 'imgs/status3/boy/5.png',
+		urls.img + 'imgs/status3/boy/bg.png',
+		urls.img + 'imgs/status3/btn-off.png',
+		urls.img + 'imgs/status3/btn-on.png',
+		urls.img + 'imgs/status3/cloud.png',
+		urls.img + 'imgs/status3/final-scream.png',
+		urls.img + 'imgs/status3/girl/0.png',
+		urls.img + 'imgs/status3/girl/1.png',
+		urls.img + 'imgs/status3/girl/2.png',
+		urls.img + 'imgs/status3/girl/3.png',
+		urls.img + 'imgs/status3/girl/4.png',
+		urls.img + 'imgs/status3/girl/6.png',
+		urls.img + 'imgs/status3/girl/bg.png',
+		urls.img + 'imgs/status3/time.png'
 	];
 
 	var pageEvent = function () {
@@ -152,7 +122,8 @@ define(function (require) {
 			this.calcScreen();
 			this.preloadFile();
 			this.changeStatus();
-			this.getCoupons();
+			this.login();
+			// this.shareGame();
 		},
 		// 定义页面宽高，屏幕适应计算
 		calcScreen: function () {
@@ -186,6 +157,12 @@ define(function (require) {
 
 			function handleFileLoad() {
 				$(".preload-tips").hide();
+				$(".for-boy").find("img").each(function(index, item) {
+					$(item).attr('src', urls.img + "imgs/status2/boy/" + (index+1) + ".png");
+				})
+				$(".for-girl").find("img").each(function(index, item) {
+					$(item).attr('src', urls.img + "imgs/status2/girl/" + (index+1) + ".png");
+				})
 			}
 
 			function handleOverallProgress(e) {
@@ -259,7 +236,11 @@ define(function (require) {
 						$(".count2").attr('src', "img/number/0.png");
 						$(".btn").off("touchstart touchend");
 						$(".btn").removeClass("btn-off");
-						_this.calcScore(count);
+						setTimeout(function(e) {
+							alert("游戏结束");
+							_this.calcScore(count);
+						}, 1500);
+						
 					}
 				}, 1000);
 			}
@@ -284,8 +265,14 @@ define(function (require) {
 				$("#status2").show();
 				var isBoy = $(this).hasClass("btn-boy");
 				if (isBoy) {
+					$(".for-boy").find("img").each(function(index, item) {
+						$(item).attr('src', urls.img + "imgs/status2/boy/" + (index+1) + ".png");
+					})
 					$("#status2").find("div").eq(0).show();
 				} else {
+					$(".for-boy").find("img").each(function(index, item) {
+						$(item).attr('src', urls.img + "imgs/status2/girl/" + (index+1) + ".png");
+					})
 					$("#status2").find("div").eq(1).show();
 				}
 				setTimeout(function () {
@@ -293,14 +280,12 @@ define(function (require) {
 					$("#status3").show();
 					if (isBoy) {
 						_this.gameBegin("boy");
-						$("#status3 .background").find("img").eq(0).show();
-						$("#status3 .background").find("img").eq(1).hide();
+						$("#status3 .background").find("img").attr("src", urls.img + "imgs/status3/boy/bg.png");
 						$("#status3 .boy").show();
 						$("#status3 .girl").hide();
 					} else {
 						_this.gameBegin("girl");
-						$("#status3 .background").find("img").eq(1).show();
-						$("#status3 .background").find("img").eq(0).hide();
+						$("#status3 .background").find("img").attr("src", urls.img + "imgs/status3/girl/bg.png");
 						$("#status3 .boy").hide();
 						$("#status3 .girl").show();
 					}
@@ -320,7 +305,7 @@ define(function (require) {
 			$("#status3").fadeOut();
 			$("#status4").fadeIn();
 			var showScore = 179 * score; // 尖叫值
-			var random = Math.floor(Math.random() * 10); // 产生一个有用的随机数
+			var random = parseInt(Math.random() * 100); // 产生一个有用的随机数
 
 			// 文案
 			var content = [
@@ -357,18 +342,33 @@ define(function (require) {
 						var passOver = parseInt(1.3 * score - 38.5);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
+						if (random < 70) {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+						} else {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon1.png", "data-index": 0});
+						}
 						break;
 
 					case score >= 91:
 						var passOver = score > 135 ? 99 : parseInt(0.4 * score + 44);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
+						if (random < 88) {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+						} else {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon3.png", "data-index":2});
+						}
 						break;
 
 					default:
 						var passOver = parseInt(0.4 * score);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
+						if (random < 80) {
+							$("#status4 .btn-coupon").attr({"src":"img/status4/coupon1.png", "data-index": 0});
+						} else {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+						}
 						break;
 				}
 			} else {
@@ -379,42 +379,52 @@ define(function (require) {
 						var passOver = parseInt(1.5 * score - 40);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
+						if (random < 70) {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+						} else {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon1.png", "data-index": 0});
+						}
 						break;
 
 					case score >= 81:
 						var passOver = score > 135 ? 99 : parseInt(0.36 * score + 51.2);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
+						if (random < 88) {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+						} else {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon3.png", "data-index":2});
+						}
 						break;
 
 					default:
 						var passOver = parseInt(0.5 * score);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
+						if (random < 80) {
+							$("#status4 .btn-coupon").attr({"src":"img/status4/coupon1.png", "data-index": 0});
+						} else {
+							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+						}
 						break;
 				}
 			}
 		},
 		// 领券
-		getCoupons: function () {
+		login: function () {
 			var _this = this;
-
-			// 用户打标签
-			// io.get(urls.setActivityId + "/20171111screamgame", { active_id: "20171111screamgame",token: ""}, function (e) {
-			// 	console.log('打标签', e);
-			// }, function (e) {
-			// 	console.log('打标签失败');
-			// });
-			
+			var couponId;
 
 			$("body").on('click', ".btn-coupon", function (e) {
 				e.stopPropagation();
 				var $this = this;
-				var isFirst = $(this).data("first");
-				if(isFirst == 1) {
+				couponId = $(this).data("index");
+				var _nick = getCookie("_nick");
+				if(_nick) {
 					$(".outside-mask").show();
 				} else {
-					console.log('您已经领过券了，不要贪心哦');
+					_this.setActivity();
+					_this.getCoupon(couponId);
 				}
 				
 			}).on('click', ".get-code", function (e) {
@@ -423,18 +433,13 @@ define(function (require) {
 				if (!regs.mobile.test(phone)) {
 					console.log('请输入正确的手机号码');
 				} else {
-					// 获取验证码
-					// io.get(urls.code, { mobile: phone }, function (e) {
-					// 	console.log(e);
-					// 	console.log('验证码已发送，请注意查收');
-					// }, function (e) {
-					// 	console.log('操作失败');
-					// });
 
 					$.ajax({
 						url: urls.code,
 						type: "get",
-						dataType: "json",
+						dataType : "jsonp", 
+						jsonp: "callback",
+						async:false,
 						data: {
 							mobile: phone
 						},
@@ -457,32 +462,12 @@ define(function (require) {
 				} else if (!regs.code.test(code) || code.length != 6) {
 					console.log('请输入正确的验证码');
 				} else {
-
-					// 自动登录注册
-					// io.post(urls.autoLogin, {
-					// 	mobile: phone,
-					// 	code: code,
-					// 	tagId: '',
-					// 	activeId: '20171111screamgame'
-					// }, function (e) {
-					// 	console.log(e);
-
-					// 	// 用户领取优惠券
-					// 	io.post(urls.getCoupon, { coupon_id: "1364"}, function (e) {
-					// 		console.log('领取成功', e);
-					// 		$("..btn-coupon").attr("data-first", "0"); // 防止重复点击
-					// 	}, function (e) {
-					// 		console.log('领取失败', e);
-					// 	});
-
-					// }, function (e) {
-					// 	console.log('操作失败');
-					// });
-
 					$.ajax({
 						url: urls.autoLogin,
 						type: "get",
-						dataType: "json",
+						dataType : "jsonp", 
+						jsonp: "callback",
+						async:false,
 						data:{
 							mobile: phone,
 							code: code,
@@ -490,30 +475,9 @@ define(function (require) {
 							activeId: '20171111screamgame'
 						},
 						success: function(e) {
-							console.log('自动登录注册', e);
 							if(e.error == 0) {
-								$.ajax({
-									url: urls.setActivityId + "/20171111screamgame",
-									type: "get",
-									dataType: "json",
-									data: {
-										active_id: "20171111screamgame",
-										token: ""
-									},
-									success: function(e) {
-										console.log('打标签', e);
-									}
-								});
-	
-								$.ajax({
-									url: urls.getCoupon,
-									type: "get",
-									dataType: "json",
-									data: { coupon_id: "1364"},
-									success: function(e) {
-										console.log('领取成功', e);
-									}
-								})
+								_this.setActivity();
+								_this.getCoupon(couponId);
 							} else {
 								console.log('自动登录注册失败');
 							}
@@ -526,8 +490,142 @@ define(function (require) {
 				$(".outside-mask").hide();
 			})
 		},
-		shareGame: function() {
+		// 领取优惠券
+		getCoupon: function(e) {
+			var _this = this;
 
+			$.ajax({
+				url: urls.getCoupon,
+				type: "get",
+				dataType : "jsonp", 
+				jsonp: "callback",
+				async:false,
+				data: { coupon_id: rate.coupons[e].coupon_id},
+				success: function(e) {
+					if(e.code == 0) {
+						alert(e.msg);
+						setTimeout(function(){
+							$(".outside-mask").hide();
+						}, 1000);
+					} else {
+						alert(e.msg);
+					}
+				}
+			});
+		},
+		// 打标签
+		setActivity: function() {
+			$.ajax({
+				url: urls.setActivityId + "/20171111screamgame",
+				type: "get",
+				dataType : "jsonp", 
+				jsonp: "callback",
+				async:false,
+				data: {
+					active_id: "20171111screamgame",
+					token: ""
+				},
+				success: function(e) {
+					if(e.code == 0) {
+						console.log('打标签成功');
+					}
+				}
+			});
+		},
+		shareGame: function() {
+			var _this = this;
+			
+			var options = {
+				'initAppShareOption': {
+					'sharedURL': "https://m.aomygod.com/Activitycommon/scream",
+					'sharedImageURL': '',
+					'sharedTitle': "",
+					'shareSummary': ""
+				},
+				'publicHeaderOption': {
+					'sharedImageURL': '',
+					'sharedTitle': "",
+					'shareSummary': ""
+				}
+			};
+
+			function initWxShare() {
+				var self = this;
+				wx.ready(function() {
+					var title = options.initAppShareOption.sharedTitle;
+					var desc = options.initAppShareOption.shareSummary;
+					var url = options.initAppShareOption.sharedURL;
+					var imgUrl = options.initAppShareOption.sharedImageURL;
+					//朋友圈
+					wx.onMenuShareTimeline({
+						title: title,
+						link: url,
+						imgUrl: imgUrl,
+						success: function() {
+							Dialog.tips('分享朋友圈成功!');
+						},
+						cancel: function() {
+							Dialog.tips('分享朋友圈失败!');
+						}
+					});
+					//发送给朋友
+					wx.onMenuShareAppMessage({
+						title: title,
+						desc: desc,
+						link: url,
+						imgUrl: imgUrl,
+						success: function() {
+							Dialog.tips('分享给朋友成功!');
+						},
+						cancel: function() {
+							Dialog.tips('分享给朋友失败!');
+						}
+					});
+					wx.onMenuShareWeibo({
+						title: title,
+						desc: desc,
+						link: url,
+						imgUrl: imgUrl,
+						success: function() {
+							Dialog.tips('分享微博成功!');
+						},
+						cancel: function() {
+							Dialog.tips('分享微博失败!');
+						}
+					});
+					//分享到腾讯QQ
+					wx.onMenuShareQQ({
+						title: title,
+						desc: desc,
+						link: url,
+						imgUrl: imgUrl,
+						success: function() {
+							Dialog.tips('分享腾讯QQ成功!');
+						},
+						cancel: function() {
+							Dialog.tips('分享腾讯QQ失败!');
+						}
+					});
+					//分享到腾讯QQ空间
+					wx.onMenuShareQZone({
+						title: title,
+						desc: desc,
+						link: url,
+						imgUrl: imgUrl,
+						success: function() {
+							Dialog.tips('分享QQ空间成功!');
+						},
+						cancel: function() {
+							Dialog.tips('分享QQ空间失败!');
+						}
+					});
+				});
+		
+			};
+
+			if(BrowserUtil.isWeixin()) {
+				initWxShare();
+			} 
 		}
 	}
 
