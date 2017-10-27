@@ -193,6 +193,7 @@ define(function(require) {
 						autoplay: true,
 						loop: true
 					});
+					alert(urls.img + 'imgs/music/boy.mp3');
 				}
 
 			}
