@@ -109,7 +109,7 @@ define(function(require) {
 
 		urls.img + 'imgs/music/background-music.mp3',
 		urls.img + 'imgs/music/boy.mp3',
-		urls.img + 'imgs/music/girl.mp3',
+		urls.img + 'imgs/music/girl.mp3'
 	];
 	
 	
@@ -158,18 +158,17 @@ define(function(require) {
 		preloadFile: function() {
 			var _this = this;
 			var count = 0;
-
-			var preload = new createjs.LoadQueue(true);
-			preload.on('fileload', handleFileLoad);
+		
+			var preload = new createjs.LoadQueue(false);
+			preload.on('complete', handlerComplete);
 			preload.on('progress', handleOverallProgress);
 			preload.on("fileprogress", handleFileProgress);
 			preload.on('error', handleFileError);
-			preload.setMaxConnections(10);
+			preload.setMaxConnections(100);
 
 			preload.loadManifest(manifest);
 
-			function handleFileLoad() {
-
+			function handlerComplete(e) {
 				$(".for-boy").find("img").each(function(index, item) {
 					$(item).attr('src', urls.img + "imgs/status2/boy/" + (index + 1) + ".png");
 				})
@@ -178,23 +177,18 @@ define(function(require) {
 				});
 
 				$(".voice").find("img").attr("src", urls.img + 'imgs/music-on.png');
-
+				$(".preload-tips").hide();
+				$(".container").show();
+				var sound1 = new Howl({
+					src: ['bgm1.mp3'],
+					loop: true
+				});
+				sound1.play();
 			}
 
-			function handleOverallProgress(e) {
-				console.log(count++);
-				console.log(e)
-				$(".preload-progress").html((preload.progress * 100).toFixed(2));
-				if(preload.progress == 1) {
-					$(".preload-tips").hide();
-					$(".container").show();
-					var sound1 = new Howl({
-						src: ['bgm1.mp3'],
-						loop: true
-					});
-					sound1.play();
-				}
 
+			function handleOverallProgress(e) {
+				$(".preload-progress").html((preload.progress * 100).toFixed(2));
 			}
 
 			function handleFileProgress(e) {
