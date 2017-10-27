@@ -38,12 +38,6 @@ define(function (require) {
 		getCoupon: "https://m.aomygod.com/Activitycommon/fetchCoupon"
 	};
 
-	var sound1 = new Howl({
-		src: [urls.img + 'imgs/music/background-music.mp3'],
-		autoplay: true,
-		loop: true
-	});
-
 	var regs = {
 		mobile: /^0?(13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/,
 		code: /[0-9]*/g
@@ -191,6 +185,11 @@ define(function (require) {
 				if (preload.progress == 1) {
 					$(".preload-tips").hide();
 					$(".container").show();
+					var sound1 = new Howl({
+						src: [urls.img + 'imgs/music/background-music.mp3'],
+						autoplay: true,
+						loop: true
+					});
 				}
 			}
 
