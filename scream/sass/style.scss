@@ -579,9 +579,11 @@ body {
                         margin: 0;
                         padding: rem(20) 0;
                         box-sizing: border-box;
+                        overflow: hidden;
                         img {
                             margin: 0 auto;
                             width: rem(40);
+                            height: 100%;
                             display: block;
                         }
                     }
