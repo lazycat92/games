@@ -11,13 +11,22 @@ define(function (require) {
 	var $ = require('jquery');
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
+	// var Dialog = require('common/ui/dialog/dialog');
+	// var io = require('common/kit/io/request');
+
 	var urls = {
 		img: "https://img04.aomygod.com/fontend",
-		code: "",
-		setActivityId: "",
-		autoLogin: "",
-		getCoupon: ""
+		code: "https://ssl.aomygod.com/passport/smsSendByMobile",
+		setActivityId: "https://ssl.aomygod.com/apimall/member/saveactive",  // https://ssl.aomygod.com/apimall/member/saveactive/{active_id}
+		autoLogin: "https://ssl.aomygod.com/passport/autoRegisterAndLogin",
+		getCoupon: "https://m.aomygod.com/Activitycommon/fetchCoupon"
 	};
+
+	var regs = {
+		mobile: /^0?(13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/,
+		code: /[0-9]*/g
+	}
+
 	// 阻止页面上下滑动
 	$("body").on("touchmove", function (e) {
 		e.preventDefault();
@@ -143,6 +152,7 @@ define(function (require) {
 			this.calcScreen();
 			this.preloadFile();
 			this.changeStatus();
+			this.getCoupons();
 		},
 		// 定义页面宽高，屏幕适应计算
 		calcScreen: function () {
@@ -317,7 +327,26 @@ define(function (require) {
 				"你掰狂！</br>超越俺算啥本事！</br>再努力一点，追上TA！",
 				"真正的大师！</br>永远都怀着一颗学徒的心！</br>再来一次，你可以更好！",
 				"狂击10秒！</br>竟无一人超越我？！</br>哎哟喂，吓死宝宝了！</br>"
-			]
+			];
+
+			var arr = [];
+			// 显示尖叫值
+			while(showScore > 0) {
+				arr.push(showScore % 10);
+				showScore = parseInt(showScore / 10);
+			}
+			if(arr.length < 5) {
+				for(var i=arr.length; i < 5; i++) {
+					arr.push(0);
+				}
+			}
+
+			arr.reverse();
+
+			var scream = $("#status4 .scream");
+			for(var i=0, len=arr.length; i < len; i++) {
+				scream.find("p").eq(i).find("img").attr("src", "img/number/" + arr[i] + ".png");
+			}
 
 			// 根据产品要求，分两种所谓的规则
 			// 第一种情况， 参与游戏人数大于100时;
@@ -365,6 +394,140 @@ define(function (require) {
 						break;
 				}
 			}
+		},
+		// 领券
+		getCoupons: function () {
+			var _this = this;
+
+			// 用户打标签
+			// io.get(urls.setActivityId + "/20171111screamgame", { active_id: "20171111screamgame",token: ""}, function (e) {
+			// 	console.log('打标签', e);
+			// }, function (e) {
+			// 	console.log('打标签失败');
+			// });
+			
+
+			$("body").on('click', ".btn-coupon", function (e) {
+				e.stopPropagation();
+				var $this = this;
+				var isFirst = $(this).data("first");
+				if(isFirst == 1) {
+					$(".outside-mask").show();
+				} else {
+					console.log('您已经领过券了，不要贪心哦');
+				}
+				
+			}).on('click', ".get-code", function (e) {
+				e.stopPropagation();
+				var phone = $("input[name=phone]").val();
+				if (!regs.mobile.test(phone)) {
+					console.log('请输入正确的手机号码');
+				} else {
+					// 获取验证码
+					// io.get(urls.code, { mobile: phone }, function (e) {
+					// 	console.log(e);
+					// 	console.log('验证码已发送，请注意查收');
+					// }, function (e) {
+					// 	console.log('操作失败');
+					// });
+
+					$.ajax({
+						url: urls.code,
+						type: "get",
+						dataType: "json",
+						data: {
+							mobile: phone
+						},
+						success: function(e) {
+							if(e.error == 0) {
+								console.log('验证码已发送，请注意查收', e);
+							} else {
+								console.log("1 操作失败");
+							}
+						}
+					})
+				}
+			}).on('click', ".get-coupon", function (e) {
+				e.stopPropagation();
+				var phone = $("input[name=phone]").val();
+				var code = $("input[name=code]").val();
+
+				if (!regs.mobile.test(phone)) {
+					console.log('请输入正确的手机号码');
+				} else if (!regs.code.test(code) || code.length != 6) {
+					console.log('请输入正确的验证码');
+				} else {
+
+					// 自动登录注册
+					// io.post(urls.autoLogin, {
+					// 	mobile: phone,
+					// 	code: code,
+					// 	tagId: '',
+					// 	activeId: '20171111screamgame'
+					// }, function (e) {
+					// 	console.log(e);
+
+					// 	// 用户领取优惠券
+					// 	io.post(urls.getCoupon, { coupon_id: "1364"}, function (e) {
+					// 		console.log('领取成功', e);
+					// 		$("..btn-coupon").attr("data-first", "0"); // 防止重复点击
+					// 	}, function (e) {
+					// 		console.log('领取失败', e);
+					// 	});
+
+					// }, function (e) {
+					// 	console.log('操作失败');
+					// });
+
+					$.ajax({
+						url: urls.autoLogin,
+						type: "get",
+						dataType: "json",
+						data:{
+							mobile: phone,
+							code: code,
+							tagId: '',
+							activeId: '20171111screamgame'
+						},
+						success: function(e) {
+							console.log('自动登录注册', e);
+							if(e.error == 0) {
+								$.ajax({
+									url: urls.setActivityId + "/20171111screamgame",
+									type: "get",
+									dataType: "json",
+									data: {
+										active_id: "20171111screamgame",
+										token: ""
+									},
+									success: function(e) {
+										console.log('打标签', e);
+									}
+								});
+	
+								$.ajax({
+									url: urls.getCoupon,
+									type: "get",
+									dataType: "json",
+									data: { coupon_id: "1364"},
+									success: function(e) {
+										console.log('领取成功', e);
+									}
+								})
+							} else {
+								console.log('自动登录注册失败');
+							}
+						}
+					})
+
+				}
+			}).on('click', ".close", function(e) {
+				e.stopPropagation();
+				$(".outside-mask").hide();
+			})
+		},
+		shareGame: function() {
+
 		}
 	}
 

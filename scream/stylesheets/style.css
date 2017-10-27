@@ -698,9 +698,8 @@ body .container .outside-mask .login {
   margin-left: -5.056rem;
 }
 /* line 646, ../sass/style.scss */
-body .container .outside-mask .login::after {
+body .container .outside-mask .login .close {
   display: block;
-  content: "";
   width: 1.408rem;
   height: 1.408rem;
   background: url(../img/status4/cancel.png) no-repeat;
@@ -709,7 +708,7 @@ body .container .outside-mask .login::after {
   top: 0.96rem;
   right: -0.85333rem;
 }
-/* line 657, ../sass/style.scss */
+/* line 656, ../sass/style.scss */
 body .container .outside-mask .login .box {
   text-align: center;
   width: 8.96rem;
@@ -717,13 +716,13 @@ body .container .outside-mask .login .box {
   margin: 3.62667rem auto 0;
   box-sizing: border-box;
 }
-/* line 663, ../sass/style.scss */
+/* line 662, ../sass/style.scss */
 body .container .outside-mask .login .box h3 {
   margin: 0 0 0.64rem 0;
   font-size: 0.81067rem;
   color: #484848;
 }
-/* line 668, ../sass/style.scss */
+/* line 667, ../sass/style.scss */
 body .container .outside-mask .login .box p {
   width: 8.53333rem;
   margin: 0 auto;
@@ -735,7 +734,7 @@ body .container .outside-mask .login .box p {
   background: #fff;
   box-sizing: border-box;
 }
-/* line 678, ../sass/style.scss */
+/* line 677, ../sass/style.scss */
 body .container .outside-mask .login .box p input {
   border: 0;
   text-indent: 0.10667rem;
@@ -745,27 +744,27 @@ body .container .outside-mask .login .box p input {
   font-size: 0.512rem;
   box-sizing: border-box;
 }
-/* line 687, ../sass/style.scss */
+/* line 686, ../sass/style.scss */
 body .container .outside-mask .login .box p input::-webkit-input-placeholder {
   /* WebKit browsers*/
   color: #999;
 }
-/* line 691, ../sass/style.scss */
+/* line 690, ../sass/style.scss */
 body .container .outside-mask .login .box p input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18*/
   color: #999;
 }
-/* line 695, ../sass/style.scss */
+/* line 694, ../sass/style.scss */
 body .container .outside-mask .login .box p input::-moz-placeholder {
   /* Mozilla Firefox 19+*/
   color: #999;
 }
-/* line 699, ../sass/style.scss */
+/* line 698, ../sass/style.scss */
 body .container .outside-mask .login .box p input:-ms-input-placeholder {
   /* Internet Explorer 10+*/
   color: #999;
 }
-/* line 703, ../sass/style.scss */
+/* line 702, ../sass/style.scss */
 body .container .outside-mask .login .box p .get-code {
   display: block;
   float: right;
@@ -778,7 +777,7 @@ body .container .outside-mask .login .box p .get-code {
   border-radius: 0.21333rem;
   font-size: 0.512rem;
 }
-/* line 716, ../sass/style.scss */
+/* line 715, ../sass/style.scss */
 body .container .outside-mask .login .box .get-coupon {
   display: inline-block;
   color: #fff;
