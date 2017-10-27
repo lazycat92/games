@@ -12,8 +12,6 @@ define(function(require) {
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
 	var Howler = require("howler.js-master/howler.js-master/dist/howler.core.min");
-	var Sound = require('Sound');
-	var _ = require("https://code.createjs.com/createjs-2015.11.26.min.js");
 	// var cookie = require('js/common/base/cookie');
 	// var BrowserUtil = require('js/util/browser/1.0.0/browser');
 	// var Dialog = require('common/ui/dialog/dialog');
