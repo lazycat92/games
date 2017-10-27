@@ -179,11 +179,6 @@ define(function(require) {
 				$(".voice").find("img").attr("src", urls.img + 'imgs/music-on.png');
 				$(".preload-tips").hide();
 				$(".container").show();
-				var sound1 = new Howl({
-					src: ['bgm1.mp3'],
-					loop: true
-				});
-				sound1.play();
 			}
 
 
@@ -327,11 +322,11 @@ define(function(require) {
 			$(".music").on('click', function(e) {
 				e.stopPropagation();
 				if($(this).hasClass("off")) {
-					sound1.play();
 					$(this).attr("src", urls.img + 'imgs/music-on.png');
+					$("audio")[0].play();
 				} else {
 					$(this).attr("src", urls.img + 'imgs/music-off.png');
-					sound1.pause();
+					$("audio")[0].pause();
 				}
 				$(this).toggleClass("off");
 			})
