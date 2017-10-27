@@ -180,6 +180,8 @@ define(function (require) {
 					$(item).attr('src', urls.img + "imgs/status2/girl/" + (index+1) + ".png");
 				});
 
+				$(".voice").find("img").attr("src", urls.img + 'imgs/music-on.png');
+
 			}
 
 			function handleOverallProgress(e) {
@@ -322,6 +324,19 @@ define(function (require) {
 				$("#status1").show();
 				$("#status3 .girl img[name=person]").attr('src', urls.img + 'imgs/status3/girl/0.png');
 				$("#status3 .boy img[name=person]").attr('src', urls.img + 'imgs/status3/boy/0.png');
+			});
+
+			// 停止播放音乐
+			$(".music").on('click', function(e) {
+				e.stopPropagation();
+				if($(this).hasClass("off")) {
+					sound1.play();
+					$(this).attr("src",  urls.img + 'imgs/music-on.png');
+				} else {
+					$(this).attr("src",  urls.img + 'imgs/music-off.png');
+					sound1.pause();
+				}
+				$(this).toggleClass("off");
 			})
 		},
 		calcScore: function (score) {
