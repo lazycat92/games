@@ -167,6 +167,7 @@ define(function(require) {
 			preload.loadManifest(manifest);
 
 			function handlerComplete(e) {
+				alert("加载完了");
 				$(".for-boy").find("img").each(function(index, item) {
 					$(item).attr('src', urls.img + "imgs/status2/boy/" + (index + 1) + ".png");
 				})
