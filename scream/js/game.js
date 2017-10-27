@@ -158,7 +158,7 @@ define(function(require) {
 		preloadFile: function() {
 			var _this = this;
 			
-			var preload = new createjs.LoadQueue(false);
+			var preload = new createjs.LoadQueue(true);
 			preload.on('complete', handlerComplete);
 			preload.on('progress', handleOverallProgress);
 			preload.on('error', handleFileError);
