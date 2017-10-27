@@ -44,14 +44,14 @@ body {
             width: 100%;
             height: 100vh;
             &#status1 {
-                background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/bg.png') no-repeat;
+                background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/bg.png') no-repeat;
                 background-size: 100% 100%;
                 position: relative;
                 .title {
                     width: rem(634);
                     height: rem(305);
                     display: block;
-                    background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/title.png') center center no-repeat;
+                    background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/title.png') center center no-repeat;
                     background-size: 100%;
                     position: absolute;
                     left: 50%;
@@ -64,7 +64,7 @@ body {
                     height: rem(318);
                     margin: 0 auto;
                     display: block;
-                    background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/cloud.png') center center no-repeat;
+                    background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/cloud.png') center center no-repeat;
                     background-size: 100%;
                     position: relative;
                     top: rem(60);
@@ -82,14 +82,14 @@ body {
                         height: rem(585);
                         left: rem(-370);
                         position: relative;
-                        background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/boy.png') center right no-repeat;
+                        background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/boy.png') center right no-repeat;
                         background-size: 80%;
                         animation: formLeft 1s ease-in-out forwards;
                     }
                     .girl {
                         flex: 1 50%;
                         height: rem(585);
-                        background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/girl.png') center left no-repeat;
+                        background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/girl.png') center left no-repeat;
                         background-size: 80%;
                         position: relative;
                         left: rem(-15);
@@ -100,7 +100,7 @@ body {
                     width: rem(530);
                     height: rem(302);
                     margin: 0 auto;
-                    background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/coupon.png') center center no-repeat;
+                    background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/coupon.png') center center no-repeat;
                     background-size: 100%;
                     position: relative;
                     z-index: 30;
@@ -117,7 +117,7 @@ body {
                         display: block;
                         width: rem(376);
                         height: rem(321);
-                        background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png') center left no-repeat;
+                        background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/boy-light2.png') center left no-repeat;
                         background-size: 100%;
                         animation: btnScale .8s linear infinite alternate-reverse;
                     }
@@ -126,7 +126,7 @@ body {
                         display: block;
                         width: rem(374);
                         height: rem(321);
-                        background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png') center right no-repeat;
+                        background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/girl-light2.png') center right no-repeat;
                         background-size: 100%;
                         animation: btnScale .8s linear infinite alternate-reverse;
                     }
@@ -135,7 +135,7 @@ body {
                     display: block;
                     width: rem(106);
                     height: rem(94);
-                    background: url('https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png') no-repeat;
+                    background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/arrow.png') no-repeat;
                     background-size: 80%;
                     position: relative;
                     top: rem(-380);
@@ -504,11 +504,11 @@ body {
                             display: block;
                             width: rem(346);
                             height: rem(254);
-                            background: url("../img/status3/btn-on.png") no-repeat;
+                            background: url("https://img04.aomygod.com/fontend/20171027/imgs/status3/btn-on.png") no-repeat;
                             background-size: 100% 100%; 
                             margin: rem(20) auto 0;
                             &.btn-off{
-                                background: url("../img/status3/btn-off.png") no-repeat;
+                                background: url("https://img04.aomygod.com/fontend/20171027/imgs/status3/btn-off.png") no-repeat;
                                 background-size: 100% 100%; 
                             }
                         }
@@ -536,7 +536,7 @@ body {
                         margin: 0 auto;
                         width: rem(459);
                         height: rem(76);
-                        background: url("../img/status4/1.png") no-repeat;
+                        background: url("https://img04.aomygod.com/fontend/20171027/imgs/status4/1.png") no-repeat;
                         background-size: 100% 100%;
                         color: #fff;
                         font-weight: bold;
@@ -554,7 +554,7 @@ body {
                     right: 3%;
                     width: rem(305);
                     height: rem(284);
-                    background: url(../img/status4/2.png) no-repeat;
+                    background: url('https://img04.aomygod.com/fontend/20171027/imgs/status4/2.png') no-repeat;
                     background-size: 100% 100%;
                     padding: rem(25) rem(15) rem(20) rem(55);
                     box-sizing: border-box;
@@ -639,7 +639,7 @@ body {
             .login {
                 width: rem(474);
                 height: rem(636);
-                background: url("../img/status4/3.png") no-repeat;
+                background: url("https://img04.aomygod.com/fontend/20171027/imgs/status4/3.png") no-repeat;
                 background-size: 100% 100%; 
                 position: absolute;
                 top: 20%;
@@ -649,7 +649,7 @@ body {
                     display: block;
                     width: rem(66);
                     height: rem(66);
-                    background: url(../img/status4/cancel.png) no-repeat;
+                    background: url('https://img04.aomygod.com/fontend/20171027/imgs/status4/cancel.png') no-repeat;
                     background-size: 100% 100%; 
                     position: absolute;
                     top: rem(45);

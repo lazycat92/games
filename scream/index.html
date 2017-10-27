@@ -8,26 +8,26 @@
 	<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
 	<script>
-		wx.config({
-			debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时会打印。
-			appId: "{{sign_package['appId']}}", // 必填，公众号的唯一标识
-			timestamp: "{{sign_package['timestamp']}}", // 必填，生成签名的时间戳
-			nonceStr: "{{sign_package['nonceStr']}}", // 必填，生成签名的随机串
-			signature: "{{sign_package['signature']}}",// 必填，签名，见附录1
-			jsApiList: [
-				'checkJsApi',
-				'onMenuShareTimeline',
-				'onMenuShareAppMessage',
-				'onMenuShareQQ',
-				'onMenuShareWeibo',
-				'hideOptionMenu',
-				'showOptionMenu',
-				'hideMenuItems',
-				'showMenuItems',
-				'hideAllNonBaseMenuItem',
-				'showAllNonBaseMenuItem'
-			]
-		});
+		// wx.config({
+		// 	debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时会打印。
+		// 	appId: "{{sign_package['appId']}}", // 必填，公众号的唯一标识
+		// 	timestamp: "{{sign_package['timestamp']}}", // 必填，生成签名的时间戳
+		// 	nonceStr: "{{sign_package['nonceStr']}}", // 必填，生成签名的随机串
+		// 	signature: "{{sign_package['signature']}}",// 必填，签名，见附录1
+		// 	jsApiList: [
+		// 		'checkJsApi',
+		// 		'onMenuShareTimeline',
+		// 		'onMenuShareAppMessage',
+		// 		'onMenuShareQQ',
+		// 		'onMenuShareWeibo',
+		// 		'hideOptionMenu',
+		// 		'showOptionMenu',
+		// 		'hideMenuItems',
+		// 		'showMenuItems',
+		// 		'hideAllNonBaseMenuItem',
+		// 		'showAllNonBaseMenuItem'
+		// 	]
+		// });
 	</script>
 </head>
 
@@ -35,7 +35,7 @@
 	<!-- 图片预加载 -->
 	<div class="preload-tips">
 		<p>
-			<img src="https://img04.aomygod.com/fontend/20171023/imgs/logo.png" alt="logo"> loading
+			<img src="https://img04.aomygod.com/fontend/20171027/imgs/logo.png" alt="logo"> loading
 			<span class="preload-progress">0</span>%
 		</p>
 	</div>
@@ -72,49 +72,49 @@
 		</div>
 		<div class="status" id="status3" style="display: none;">
 			<div class="background">
-				<img src="" alt="" style="display:none;">
+				<img src="" alt="">
 			</div>
 			<div class="time-box">
-				<img src="img/status3/time.png" class="time" />
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/time.png" class="time" />
 				<div class="time-count">
 					<p>
-						<img src="img/number/1.png" class="count1" />
+						<img src="https://img04.aomygod.com/fontend/20171027/imgs/number/1.png" class="count1" />
 					</p>
 					<p>
-						<img src="img/number/0.png" class="count2" />
+						<img src="https://img04.aomygod.com/fontend/20171027/imgs/number/0.png" class="count2" />
 					</p>
 				</div>
 			</div>
 			<div class="score">
-				<img src="img/status3/12.png">
-				<img src="img/status3/13.png">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/12.png">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/13.png">
 				<div class="score-num">
-					<img src="img/status3/33.png" alt="">
+					<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/33.png" alt="">
 				</div>
 			</div>
 			<div class="cloud">
-				<img src="img/status3/cloud.png" alt="">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/cloud.png" alt="">
 			</div>
 			<div class="person boy">
-				<img src="img/status3/boy/0.png" alt="" name="person">
-				<img src="img/status3/boy/5.png" alt="" class="mask">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/0.png" alt="" name="person">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/5.png" alt="" class="mask">
 			</div>
 			<div class="person girl" style="display:none">
-				<img src="img/status3/girl/0.png" alt="" name="person">
-				<img src="img/status3/girl/3.png" alt="" name="shadow1">
-				<img src="img/status3/boy/5.png" alt="" class="mask">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/girl/0.png" alt="" name="person">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/girl/3.png" alt="" name="shadow1">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/5.png" alt="" class="mask">
 			</div>
 			<div class="btn-box">
-				<img src="img/status3/1.png" alt="" class="table">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/1.png" alt="" class="table">
 				<div class="btns">
-					<img src="img/status3/begin.png" alt="" class="arrow-begin">
+					<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/begin.png" alt="" class="arrow-begin">
 					<a href="javascript:;" class="btn btn-begin"></a>
 				</div>
 			</div>
 		</div>
 		<div class="status" id="status4" style="display: none;">
 			<div class="background">
-				<img src="img/status4/logo.png" alt="">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/logo.png" alt="">
 			</div>
 			<div class="score">
 				<p>你已打败全国
@@ -140,7 +140,7 @@
 				</p>
 			</div>
 			<div class="btns">
-				<img src="img/status4/btn.png" alt="">
+				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/btn.png" alt="">
 				<a href="javascript:;" class="play-again"></a>
 				<a href="javascript:;" class="share"></a>
 			</div>

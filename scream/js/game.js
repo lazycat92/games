@@ -30,7 +30,7 @@ define(function (require) {
 	}
 
 	var urls = {
-		img: "https://img04.aomygod.com/fontend/20171026/",
+		img: "https://img04.aomygod.com/fontend/20171027/",
 		code: "https://ssl.aomygod.com/passport/smsSendByMobile",
 		setActivityId: "https://ssl.aomygod.com/apimall/member/saveactive",  // https://ssl.aomygod.com/apimall/member/saveactive/{active_id}
 		autoLogin: "https://ssl.aomygod.com/passport/autoRegisterAndLogin",
@@ -68,16 +68,6 @@ define(function (require) {
 		urls.img + 'imgs/number/7.png',
 		urls.img + 'imgs/number/8.png',
 		urls.img + 'imgs/number/9.png',
-		urls.img + 'imgs/status1/arrow.png',
-		urls.img + 'imgs/status1/bg.png',
-		urls.img + 'imgs/status1/boy-light.png',
-		urls.img + 'imgs/status1/boy-light2.png',
-		urls.img + 'imgs/status1/boy.png',
-		urls.img + 'imgs/status1/cloud.png',
-		urls.img + 'imgs/status1/coupon.png',
-		urls.img + 'imgs/status1/girl-light.png',
-		urls.img + 'imgs/status1/girl-light2.png',
-		urls.img + 'imgs/status1/girl.png',
 		urls.img + 'imgs/status1/logo.png',
 		urls.img + 'imgs/status1/title.png',
 		urls.img + 'imgs/status2/boy/1.png',
@@ -167,6 +157,7 @@ define(function (require) {
 
 			function handleOverallProgress(e) {
 				var progress = preload.progress.toFixed(2);
+				console.log(progress);
 				$(".preload-progress").html(parseInt(progress * 100));
 				if (preload.progress == 1) {
 					$(".container").show();
@@ -186,11 +177,10 @@ define(function (require) {
 			console.log(gender);
 			// 初始化页面
 			$(".score-num img").css('bottom', '-8.74667rem');
-			$(".count1").attr('src', "img/number/1.png");
-			$(".count2").attr('src', "img/number/0.png");
+			$(".count1").attr('src', urls.img + "imgs/number/1.png");
+			$(".count2").attr('src', urls.img + "imgs/number/0.png");
 			$("#status2").find("div").hide();
 			$("#status3").find(".person").hide();
-			$("#status3").find(".background img").hide();
 
 			function countdown(a) {
 
@@ -204,15 +194,15 @@ define(function (require) {
 					}
 					switch (true) {
 						case count >= 46 && count <= 90:
-							$("#status3 ." + gender + " img[name=person]").attr('src', 'img/status3/' + gender + '/1.png');
+							$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/' + gender + '/1.png');
 							break;
 
 						case count >= 91:
 							var num = count % 2 + 2;
 							if (gender == 'girl') {
-								$("#status3 ." + gender + " img[name=person]").attr('src', 'img/status3/girl/2.png');
+								$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/girl/2.png');
 							} else {
-								$("#status3 ." + gender + " img[name=person]").attr('src', 'img/status3/' + gender + '/' + num + '.png');
+								$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/' + gender + '/' + num + '.png');
 							}
 							$("#status3 .mask, img[name=shadow1]").show();
 							break;
@@ -228,12 +218,12 @@ define(function (require) {
 				var timer = setInterval(function () {
 					a--
 					if (a < 10) {
-						$(".count1").attr('src', "img/number/0.png");
-						$(".count2").attr('src', "img/number/" + a + ".png");
+						$(".count1").attr('src', urls.img + "imgs/number/0.png");
+						$(".count2").attr('src', urls.img + "imgs/number/" + a + ".png");
 					}
 					if (a == 0) {
 						clearInterval(timer);
-						$(".count2").attr('src', "img/number/0.png");
+						$(".count2").attr('src', urls.img + "imgs/number/0.png");
 						$(".btn").off("touchstart touchend");
 						$(".btn").removeClass("btn-off");
 						setTimeout(function(e) {
@@ -264,6 +254,7 @@ define(function (require) {
 				$(this).parents("#status1").hide();
 				$("#status2").show();
 				var isBoy = $(this).hasClass("btn-boy");
+				$("#status3 .background").find("img").attr("src", isBoy? urls.img + "imgs/status3/boy/bg.png" : urls.img + "imgs/status3/girl/bg.png");
 				if (isBoy) {
 					$(".for-boy").find("img").each(function(index, item) {
 						$(item).attr('src', urls.img + "imgs/status2/boy/" + (index+1) + ".png");
@@ -280,12 +271,10 @@ define(function (require) {
 					$("#status3").show();
 					if (isBoy) {
 						_this.gameBegin("boy");
-						$("#status3 .background").find("img").attr("src", urls.img + "imgs/status3/boy/bg.png");
 						$("#status3 .boy").show();
 						$("#status3 .girl").hide();
 					} else {
 						_this.gameBegin("girl");
-						$("#status3 .background").find("img").attr("src", urls.img + "imgs/status3/girl/bg.png");
 						$("#status3 .boy").hide();
 						$("#status3 .girl").show();
 					}
@@ -296,8 +285,8 @@ define(function (require) {
 			$(".play-again").on("click", function () {
 				$("#status4").hide();
 				$("#status1").show();
-				$("#status3 .girl img[name=person]").attr('src', 'img/status3/girl/0.png');
-				$("#status3 .boy img[name=person]").attr('src', 'img/status3/boy/0.png');
+				$("#status3 .girl img[name=person]").attr('src', urls.img + 'imgs/status3/girl/0.png');
+				$("#status3 .boy img[name=person]").attr('src', urls.img + 'imgs/status3/boy/0.png');
 			})
 		},
 		calcScore: function (score) {
@@ -330,7 +319,7 @@ define(function (require) {
 
 			var scream = $("#status4 .scream");
 			for(var i=0, len=arr.length; i < len; i++) {
-				scream.find("p").eq(i).find("img").attr("src", "img/number/" + arr[i] + ".png");
+				scream.find("p").eq(i).find("img").attr("src", urls.img + "imgs/number/" + arr[i] + ".png");
 			}
 
 			// 根据产品要求，分两种所谓的规则
@@ -343,9 +332,9 @@ define(function (require) {
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
 						if (random < 70) {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon1.png", "data-index": 0});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon1.png", "data-index": 0});
 						}
 						break;
 
@@ -354,9 +343,9 @@ define(function (require) {
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
 						if (random < 88) {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon3.png", "data-index":2});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon3.png", "data-index":2});
 						}
 						break;
 
@@ -365,9 +354,9 @@ define(function (require) {
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
 						if (random < 80) {
-							$("#status4 .btn-coupon").attr({"src":"img/status4/coupon1.png", "data-index": 0});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon1.png", "data-index": 0});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
 						}
 						break;
 				}
@@ -380,9 +369,9 @@ define(function (require) {
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
 						if (random < 70) {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon1.png", "data-index": 0});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon1.png", "data-index": 0});
 						}
 						break;
 
@@ -391,9 +380,9 @@ define(function (require) {
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
 						if (random < 88) {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon3.png", "data-index":2});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon3.png", "data-index":2});
 						}
 						break;
 
@@ -402,9 +391,9 @@ define(function (require) {
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
 						if (random < 80) {
-							$("#status4 .btn-coupon").attr({"src":"img/status4/coupon1.png", "data-index": 0});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon1.png", "data-index": 0});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": "img/status4/coupon2.png", "data-index": 1});
+							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
 						}
 						break;
 				}

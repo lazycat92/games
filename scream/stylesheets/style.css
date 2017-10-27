@@ -48,7 +48,7 @@ body .container .status {
 }
 /* line 46, ../sass/style.scss */
 body .container .status#status1 {
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/bg.png") no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/bg.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
 }
@@ -57,7 +57,7 @@ body .container .status#status1 .title {
   width: 13.52533rem;
   height: 6.50667rem;
   display: block;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/title.png") center center no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/title.png") center center no-repeat;
   background-size: 100%;
   position: absolute;
   left: 50%;
@@ -71,7 +71,7 @@ body .container .status#status1 .could {
   height: 6.784rem;
   margin: 0 auto;
   display: block;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/cloud.png") center center no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/cloud.png") center center no-repeat;
   background-size: 100%;
   position: relative;
   top: 1.28rem;
@@ -92,7 +92,7 @@ body .container .status#status1 .cartoon .boy {
   height: 12.48rem;
   left: -7.89333rem;
   position: relative;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/boy.png") center right no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/boy.png") center right no-repeat;
   background-size: 80%;
   animation: formLeft 1s ease-in-out forwards;
 }
@@ -100,7 +100,7 @@ body .container .status#status1 .cartoon .boy {
 body .container .status#status1 .cartoon .girl {
   flex: 1 50%;
   height: 12.48rem;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/girl.png") center left no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/girl.png") center left no-repeat;
   background-size: 80%;
   position: relative;
   left: -0.32rem;
@@ -111,7 +111,7 @@ body .container .status#status1 .coupon {
   width: 11.30667rem;
   height: 6.44267rem;
   margin: 0 auto;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/coupon.png") center center no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/coupon.png") center center no-repeat;
   background-size: 100%;
   position: relative;
   z-index: 30;
@@ -131,7 +131,7 @@ body .container .status#status1 .btn-light .btn-boy {
   display: block;
   width: 8.02133rem;
   height: 6.848rem;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/boy-light2.png") center left no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/boy-light2.png") center left no-repeat;
   background-size: 100%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
@@ -141,7 +141,7 @@ body .container .status#status1 .btn-light .btn-girl {
   display: block;
   width: 7.97867rem;
   height: 6.848rem;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/girl-light2.png") center right no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/girl-light2.png") center right no-repeat;
   background-size: 100%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
@@ -150,7 +150,7 @@ body .container .status#status1 .arrow {
   display: block;
   width: 2.26133rem;
   height: 2.00533rem;
-  background: url("https://img04.aomygod.com/fontend/20171023/imgs/status1/arrow.png") no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/arrow.png") no-repeat;
   background-size: 80%;
   position: relative;
   top: -8.10667rem;
@@ -546,13 +546,13 @@ body .container .status#status3 .btn-box .btns .btn {
   display: block;
   width: 7.38133rem;
   height: 5.41867rem;
-  background: url("../img/status3/btn-on.png") no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status3/btn-on.png") no-repeat;
   background-size: 100% 100%;
   margin: 0.42667rem auto 0;
 }
 /* line 510, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn.btn-off {
-  background: url("../img/status3/btn-off.png") no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status3/btn-off.png") no-repeat;
   background-size: 100% 100%;
 }
 /* line 518, ../sass/style.scss */
@@ -580,7 +580,7 @@ body .container .status#status4 .score p {
   margin: 0 auto;
   width: 9.792rem;
   height: 1.62133rem;
-  background: url("../img/status4/1.png") no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status4/1.png") no-repeat;
   background-size: 100% 100%;
   color: #fff;
   font-weight: bold;
@@ -599,7 +599,7 @@ body .container .status#status4 .word {
   right: 3%;
   width: 6.50667rem;
   height: 6.05867rem;
-  background: url(../img/status4/2.png) no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status4/2.png") no-repeat;
   background-size: 100% 100%;
   padding: 0.53333rem 0.32rem 0.42667rem 1.17333rem;
   box-sizing: border-box;
@@ -692,7 +692,7 @@ body .container .outside-mask {
 body .container .outside-mask .login {
   width: 10.112rem;
   height: 13.568rem;
-  background: url("../img/status4/3.png") no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status4/3.png") no-repeat;
   background-size: 100% 100%;
   position: absolute;
   top: 20%;
@@ -704,7 +704,7 @@ body .container .outside-mask .login .close {
   display: block;
   width: 1.408rem;
   height: 1.408rem;
-  background: url(../img/status4/cancel.png) no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status4/cancel.png") no-repeat;
   background-size: 100% 100%;
   position: absolute;
   top: 0.96rem;
