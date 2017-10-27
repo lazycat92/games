@@ -182,6 +182,7 @@ define(function (require) {
 			$(".count2").attr('src', urls.img + "imgs/number/0.png");
 			$("#status2").find("div").hide();
 			$("#status3").find(".person").hide();
+			$("#status3 .mask, img[name=shadow1]").hide();
 
 			function countdown(a) {
 
@@ -194,11 +195,11 @@ define(function (require) {
 						$(".score-num img").css('bottom', ((count * 3 - 410) / 46.875) + 'rem');
 					}
 					switch (true) {
-						case count >= 46 && count <= 90:
+						case count >= 46 && count <= 60:
 							$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/' + gender + '/1.png');
 							break;
 
-						case count >= 91:
+						case count >= 61:
 							var num = count % 2 + 2;
 							if (gender == 'girl') {
 								$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/girl/2.png');
