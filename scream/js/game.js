@@ -11,6 +11,7 @@ define(function (require) {
 	var $ = require('jquery');
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
+	var Howler = require("howler.js-master/howler.js-master/dist/howler.core.min");
 	// var cookie = require('js/common/base/cookie');
 	// var BrowserUtil = require('js/util/browser/1.0.0/browser');
 	// var Dialog = require('common/ui/dialog/dialog');
@@ -37,6 +38,12 @@ define(function (require) {
 		getCoupon: "https://m.aomygod.com/Activitycommon/fetchCoupon"
 	};
 
+	var sound1 = new Howl({
+		src: [urls.img + 'imgs/music/background-music.mp3'],
+		loop: true,
+		html5: true
+	});
+
 	var regs = {
 		mobile: /^0?(13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/,
 		code: /[0-9]*/g
@@ -48,16 +55,20 @@ define(function (require) {
 	})
 
 	var manifest = [
+		urls.img + 'imgs/logo.png',
+		urls.img + 'imgs/music-off.png',
+		urls.img + 'imgs/music-on.png',
+		urls.img + 'imgs/new.png',
+
+		urls.img + 'imgs/status1/title.png',
 		urls.img + "imgs/status1/arrow.png",
 		urls.img + "imgs/status1/bg.png",
 		urls.img + "imgs/status1/boy-light2.png",
 		urls.img + "imgs/status1/girl-light2.png",
 		urls.img + "imgs/status1/girl.png",
 		urls.img + "imgs/status1/boy.png",
-		urls.img + "imgs/status1/cloud.png",
 		urls.img + "imgs/status1/coupon.png",
-		urls.img + "imgs/status1/title.png",
-		urls.img + 'imgs/logo.png',
+
 		urls.img + 'imgs/number/0.png',
 		urls.img + 'imgs/number/1.png',
 		urls.img + 'imgs/number/2.png',
@@ -68,8 +79,7 @@ define(function (require) {
 		urls.img + 'imgs/number/7.png',
 		urls.img + 'imgs/number/8.png',
 		urls.img + 'imgs/number/9.png',
-		urls.img + 'imgs/status1/logo.png',
-		urls.img + 'imgs/status1/title.png',
+
 		urls.img + 'imgs/status2/boy/1.png',
 		urls.img + 'imgs/status2/boy/2.png',
 		urls.img + 'imgs/status2/boy/3.png',
@@ -78,29 +88,42 @@ define(function (require) {
 		urls.img + 'imgs/status2/girl/2.png',
 		urls.img + 'imgs/status2/girl/3.png',
 		urls.img + 'imgs/status2/girl/4.png',
+
 		urls.img + 'imgs/status3/1.png',
 		urls.img + 'imgs/status3/12.png',
 		urls.img + 'imgs/status3/13.png',
 		urls.img + 'imgs/status3/33.png',
 		urls.img + 'imgs/status3/begin.png',
+		urls.img + 'imgs/status3/btn-off.png',
+		urls.img + 'imgs/status3/btn-on.png',
+		urls.img + 'imgs/status3/cloud.png',
+		urls.img + 'imgs/status3/time.png',
+
 		urls.img + 'imgs/status3/boy/0.png',
 		urls.img + 'imgs/status3/boy/1.png',
 		urls.img + 'imgs/status3/boy/2.png',
 		urls.img + 'imgs/status3/boy/3.png',
 		urls.img + 'imgs/status3/boy/5.png',
 		urls.img + 'imgs/status3/boy/bg.png',
-		urls.img + 'imgs/status3/btn-off.png',
-		urls.img + 'imgs/status3/btn-on.png',
-		urls.img + 'imgs/status3/cloud.png',
-		urls.img + 'imgs/status3/final-scream.png',
+		
 		urls.img + 'imgs/status3/girl/0.png',
 		urls.img + 'imgs/status3/girl/1.png',
 		urls.img + 'imgs/status3/girl/2.png',
 		urls.img + 'imgs/status3/girl/3.png',
 		urls.img + 'imgs/status3/girl/4.png',
-		urls.img + 'imgs/status3/girl/6.png',
 		urls.img + 'imgs/status3/girl/bg.png',
-		urls.img + 'imgs/status3/time.png',
+
+		urls.img + 'imgs/status4/1.png',
+		urls.img + 'imgs/status4/2.png',
+		urls.img + 'imgs/status4/3.png',
+		urls.img + 'imgs/status4/btn.png',
+		urls.img + 'imgs/status4/cancel.png',
+		urls.img + 'imgs/status4/coupon1.png',
+		urls.img + 'imgs/status4/coupon2.png',
+		urls.img + 'imgs/status4/coupon3.png',
+		urls.img + 'imgs/status4/logo.png',
+		urls.img + 'imgs/status4/share.png',
+
 		urls.img + 'imgs/music/background-music.mp3',
 		urls.img + 'imgs/music/boy.mp3',
 		urls.img + 'imgs/music/girl.mp3',
@@ -155,7 +178,8 @@ define(function (require) {
 				})
 				$(".for-girl").find("img").each(function(index, item) {
 					$(item).attr('src', urls.img + "imgs/status2/girl/" + (index+1) + ".png");
-				})
+				});
+
 			}
 
 			function handleOverallProgress(e) {
@@ -165,6 +189,7 @@ define(function (require) {
 				if (preload.progress == 1) {
 					$(".preload-tips").hide();
 					$(".container").show();
+					sound1.play();
 				}
 			}
 
@@ -178,7 +203,10 @@ define(function (require) {
 		gameBegin: function (gender) {
 			var _this = this;
 			var count = 0;
-			console.log(gender);
+			var sound2 = new Howl({
+				src: [urls.img + 'imgs/music/' + gender + '.mp3'],
+				html5: true
+			});
 			// 初始化页面
 			$(".score-num img").css('bottom', '-8.74667rem');
 			$(".count1").attr('src', urls.img + "imgs/number/1.png");
@@ -190,6 +218,7 @@ define(function (require) {
 			function countdown(a) {
 
 				$(".btn").on("touchstart", function (e) {
+					sound2.play();
 					e.preventDefault();
 					count++;
 					if (count >= 130) {
@@ -227,6 +256,7 @@ define(function (require) {
 						$(".count2").attr('src', urls.img + "imgs/number/" + a + ".png");
 					}
 					if (a == 0) {
+						sound2.pause();
 						clearInterval(timer);
 						$(".count2").attr('src', urls.img + "imgs/number/0.png");
 						$(".btn").off("touchstart touchend");
