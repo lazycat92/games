@@ -11,7 +11,6 @@ define(function (require) {
 	var $ = require('jquery');
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
-	
 	var urls = {
 		img: "https://img04.aomygod.com/fontend",
 		code: "",
@@ -19,7 +18,6 @@ define(function (require) {
 		autoLogin: "",
 		getCoupon: ""
 	};
-	
 	// 阻止页面上下滑动
 	$("body").on("touchmove", function (e) {
 		e.preventDefault();
@@ -205,19 +203,19 @@ define(function (require) {
 				$(".btn").on("touchstart", function (e) {
 					e.preventDefault();
 					count++;
-					if(count >= 90) {
+					if (count >= 90) {
 						$(".score-num img").css('bottom', '-8.74667rem');
 					} else {
 						$(".score-num img").css('bottom', ((count * 4.5 - 410) / 46.875) + 'rem');
 					}
 					switch (true) {
 						case count >= 31 && count <= 50:
-							$("#status3 img[name=person]").attr('src', 'img/status3/'+ gender +'/1.png');
+							$("#status3 img[name=person]").attr('src', 'img/status3/' + gender + '/1.png');
 							break;
 
 						case count >= 51:
 							var num = count % 2 + 2;
-							if(gender == 'girl') {
+							if (gender == 'girl') {
 								$("#status3 img[name=person]").attr('src', 'img/status3/girl/2.png');
 							} else {
 								$("#status3 img[name=person]").attr('src', 'img/status3/' + gender + '/' + num + '.png');
@@ -260,24 +258,24 @@ define(function (require) {
 			};
 		},
 		// 切换
-		changeStatus: function(e) {
+		changeStatus: function (e) {
 			var _this = this;
-			
-			$("#status1 .btn-light a").on('click', function(e) {
+
+			$("#status1 .btn-light a").on('click', function (e) {
 				e.stopPropagation();
 				$(this).parents("#status1").hide();
 				$("#status2").show();
 				var isBoy = $(this).hasClass("btn-boy");
-				if(isBoy) {
+				if (isBoy) {
 					$("#status2").find("div").eq(0).show();
 				} else {
 					$("#status2").find("div").eq(1).show();
 				}
-				
-				setTimeout(function() {
+
+				setTimeout(function () {
 					$("#status2").hide();
 					$("#status3").show();
-					if(isBoy) {
+					if (isBoy) {
 						_this.gameBegin("boy");
 						$("#status3 .background").find("img").eq(0).show();
 						$("#status3 .background").find("img").eq(1).hide();
@@ -294,13 +292,13 @@ define(function (require) {
 			});
 		},
 		// 计算成绩
-		calcScore: function(score) {
+		calcScore: function (score) {
 			$("#status3").fadeOut();
 			$("#status4").fadeIn();
-			
+
 			// 根据产品要求，分两种所谓的规则
 			// 第一种情况， 参与游戏人数小于100时;
-			if(rate.member_count <= 100) {
+			if (rate.member_count <= 100) {
 				var random = Math.floor(Math.random() * 10);
 				console.log('产生的随机数', random);
 			} else {
