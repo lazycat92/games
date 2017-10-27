@@ -134,7 +134,7 @@ define(function(require) {
 	pageEvent.prototype = {
 		init: function() {
 			this.calcScreen();
-//			this.preloadFile();
+			this.preloadFile();
 			this.changeStatus();
 			this.login();
 			// this.shareGame();
@@ -168,16 +168,6 @@ define(function(require) {
 			preload.setMaxConnections(100);
 
 			preload.loadManifest(manifest);
-			
-			var s = "bgm";
-			
-			createjs.Sound.registerSound("https://img04.aomygod.com/fontend/20171028/imgs/music/bgm1.mp3", s);
-			createjs.Sound.on("complete", hello);
-			
-			function hello(e) {
-				console.log(e)
-			}
-			
 			
 			function handlerComplete(e) {
 				$(".for-boy").find("img").each(function(index, item) {
