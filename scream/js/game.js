@@ -157,12 +157,10 @@ define(function(require) {
 		// 图片预加载
 		preloadFile: function() {
 			var _this = this;
-			var count = 0;
-		
+			
 			var preload = new createjs.LoadQueue(false);
 			preload.on('complete', handlerComplete);
 			preload.on('progress', handleOverallProgress);
-			preload.on("fileprogress", handleFileProgress);
 			preload.on('error', handleFileError);
 			preload.setMaxConnections(100);
 
@@ -175,22 +173,17 @@ define(function(require) {
 				$(".for-girl").find("img").each(function(index, item) {
 					$(item).attr('src', urls.img + "imgs/status2/girl/" + (index + 1) + ".png");
 				});
-
 				$(".voice").find("img").attr("src", urls.img + 'imgs/music-on.png');
 				$(".preload-tips").hide();
 				$(".container").show();
 			}
 
-
 			function handleOverallProgress(e) {
 				$(".preload-progress").html((preload.progress * 100).toFixed(2));
 			}
 
-			function handleFileProgress(e) {
-
-			}
-
 			function handleFileError(event) {
+				alert(event);
 				$(".preload-tips").html("error" + JSON.stringify(event));
 			}
 		},
