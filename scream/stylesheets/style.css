@@ -1,6 +1,11 @@
 @charset "UTF-8";
 @import url(../js/Swiper/swiper.min.css);
-/* line 9, ../sass/style.scss */
+/* line 8, ../sass/style.scss */
+html {
+  overflow: hidden;
+}
+
+/* line 11, ../sass/style.scss */
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +13,7 @@ body {
   width: 100%;
   height: 100vh;
 }
-/* line 15, ../sass/style.scss */
+/* line 17, ../sass/style.scss */
 body .preload-tips {
   display: -webkit-box;
   -webkit-box-align: center;
@@ -22,37 +27,37 @@ body .preload-tips {
   font-size: 0.59733rem;
   color: #fff;
 }
-/* line 27, ../sass/style.scss */
+/* line 29, ../sass/style.scss */
 body .preload-tips p {
   font-size: 1.06667rem;
   color: #fff;
 }
-/* line 30, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 body .preload-tips p img {
   width: 6.25067rem;
   height: 2.28267rem;
   display: block;
   margin: 0 auto 0.42667rem;
 }
-/* line 38, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 body .container {
   margin: 0 auto;
   width: 16rem;
   height: 100vh;
   overflow: hidden;
 }
-/* line 43, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 body .container .status {
   width: 100%;
   height: 100vh;
 }
-/* line 46, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 body .container .status#status1 {
   background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/bg.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
 }
-/* line 50, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 body .container .status#status1 .title {
   width: 13.52533rem;
   height: 6.50667rem;
@@ -65,20 +70,20 @@ body .container .status#status1 .title {
   animation: titleLoad 1.5s ease forwards;
   z-index: 10;
 }
-/* line 62, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 body .container .status#status1 .could {
-  width: 15.70133rem;
-  height: 6.784rem;
+  width: 15.46667rem;
+  height: 7.18933rem;
   margin: 0 auto;
   display: block;
-  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/cloud.png") center center no-repeat;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/new.png") center center no-repeat;
   background-size: 100%;
   position: relative;
   top: 1.28rem;
   z-index: 6;
   animation: cloudShake 1s ease-in-out infinite alternate-reverse;
 }
-/* line 74, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 body .container .status#status1 .cartoon {
   display: flex;
   width: 100%;
@@ -86,7 +91,7 @@ body .container .status#status1 .cartoon {
   top: -0.768rem;
   z-index: 20;
 }
-/* line 80, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 body .container .status#status1 .cartoon .boy {
   flex: 1 50%;
   height: 12.48rem;
@@ -96,7 +101,7 @@ body .container .status#status1 .cartoon .boy {
   background-size: 80%;
   animation: formLeft 1s ease-in-out forwards;
 }
-/* line 89, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 body .container .status#status1 .cartoon .girl {
   flex: 1 50%;
   height: 12.48rem;
@@ -106,7 +111,7 @@ body .container .status#status1 .cartoon .girl {
   left: -0.32rem;
   animation: formRight 1s ease-in-out forwards;
 }
-/* line 99, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
 body .container .status#status1 .coupon {
   width: 11.30667rem;
   height: 6.44267rem;
@@ -117,7 +122,7 @@ body .container .status#status1 .coupon {
   z-index: 30;
   animation: formTop 1s ease-in forwards;
 }
-/* line 109, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 body .container .status#status1 .btn-light {
   display: flex;
   width: 100%;
@@ -125,27 +130,27 @@ body .container .status#status1 .btn-light {
   top: -6.4rem;
   z-index: 50;
 }
-/* line 115, ../sass/style.scss */
+/* line 117, ../sass/style.scss */
 body .container .status#status1 .btn-light .btn-boy {
   flex: 1;
   display: block;
   width: 8.02133rem;
   height: 6.848rem;
-  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/boy-light2.png") center left no-repeat;
-  background-size: 100%;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/boy-light2.png") center right no-repeat;
+  background-size: 90%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
-/* line 124, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 body .container .status#status1 .btn-light .btn-girl {
   flex: 1;
   display: block;
   width: 7.97867rem;
   height: 6.848rem;
-  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/girl-light2.png") center right no-repeat;
-  background-size: 100%;
+  background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/girl-light2.png") center left no-repeat;
+  background-size: 90%;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
-/* line 134, ../sass/style.scss */
+/* line 136, ../sass/style.scss */
 body .container .status#status1 .arrow {
   display: block;
   width: 2.26133rem;
@@ -153,25 +158,25 @@ body .container .status#status1 .arrow {
   background: url("https://img04.aomygod.com/fontend/20171027/imgs/status1/arrow.png") no-repeat;
   background-size: 80%;
   position: relative;
-  top: -8.10667rem;
+  top: -8.53333rem;
   animation: arrowTransform 2s ease infinite alternate-reverse;
 }
 @keyframes arrowTransform {
   0% {
     opacity: 0;
-    left: 2.56rem;
+    left: 2.88rem;
   }
   50% {
     opacity: 1;
-    left: 2.56rem;
+    left: 2.88rem;
   }
   75% {
     opacity: 0;
-    left: 13.01333rem;
+    left: 11.62667rem;
   }
   100% {
     opacity: 1;
-    left: 13.01333rem;
+    left: 11.62667rem;
   }
 }
 @keyframes btnScale {
@@ -242,54 +247,54 @@ body .container .status#status1 .arrow {
     left: -0.10667rem;
   }
 }
-/* line 230, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 body .container .status#status1 p {
   margin: 0;
   padding: 0;
 }
-/* line 236, ../sass/style.scss */
+/* line 238, ../sass/style.scss */
 body .container .status#status2 div {
   width: 100%;
   height: 100%;
   background: #eee;
 }
-/* line 241, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 body .container .status#status2 div.for-boy .status2-foot {
   position: relative;
   top: -7.616rem;
 }
-/* line 246, ../sass/style.scss */
+/* line 248, ../sass/style.scss */
 body .container .status#status2 div img {
   width: 100%;
   display: block;
   opacity: 0;
 }
-/* line 250, ../sass/style.scss */
+/* line 252, ../sass/style.scss */
 body .container .status#status2 div img:nth-child(2) {
   position: relative;
   top: -3.79733rem;
 }
-/* line 254, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 body .container .status#status2 div img:nth-child(3) {
   position: relative;
   top: -7.808rem;
 }
-/* line 258, ../sass/style.scss */
+/* line 260, ../sass/style.scss */
 body .container .status#status2 div img.status2-head {
   animation: head .8s ease 0s forwards;
   position: relative;
 }
-/* line 262, ../sass/style.scss */
+/* line 264, ../sass/style.scss */
 body .container .status#status2 div img.status2-body {
   animation: body .8s ease 0.8s forwards;
   position: relative;
 }
-/* line 266, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 body .container .status#status2 div img.status2-foot {
   animation: head .8s ease 1.6s forwards;
   position: relative;
 }
-/* line 270, ../sass/style.scss */
+/* line 272, ../sass/style.scss */
 body .container .status#status2 div img.status2-ready {
   width: 80%;
   margin: 0 auto;
@@ -331,17 +336,17 @@ body .container .status#status2 div img.status2-ready {
     opacity: 1;
   }
 }
-/* line 314, ../sass/style.scss */
+/* line 316, ../sass/style.scss */
 body .container .status#status3 {
   position: relative;
 }
-/* line 317, ../sass/style.scss */
+/* line 319, ../sass/style.scss */
 body .container .status#status3 .background img {
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 323, ../sass/style.scss */
+/* line 325, ../sass/style.scss */
 body .container .status#status3 .time-box {
   position: absolute;
   top: 2%;
@@ -349,17 +354,17 @@ body .container .status#status3 .time-box {
   width: 27.6%;
   z-index: 10;
 }
-/* line 329, ../sass/style.scss */
+/* line 331, ../sass/style.scss */
 body .container .status#status3 .time-box .time {
   width: 100%;
 }
-/* line 332, ../sass/style.scss */
+/* line 334, ../sass/style.scss */
 body .container .status#status3 .time-box .time-count {
   position: absolute;
   bottom: 0.42667rem;
   left: 0.576rem;
 }
-/* line 336, ../sass/style.scss */
+/* line 338, ../sass/style.scss */
 body .container .status#status3 .time-box .time-count p {
   float: left;
   width: 0.85333rem;
@@ -367,28 +372,28 @@ body .container .status#status3 .time-box .time-count p {
   margin: 0;
   padding: 0;
 }
-/* line 342, ../sass/style.scss */
+/* line 344, ../sass/style.scss */
 body .container .status#status3 .time-box .time-count p:nth-child(1) {
   margin-right: 1.51467rem;
 }
-/* line 345, ../sass/style.scss */
+/* line 347, ../sass/style.scss */
 body .container .status#status3 .time-box .time-count p img {
   width: 100%;
   height: 100%;
 }
-/* line 352, ../sass/style.scss */
+/* line 354, ../sass/style.scss */
 body .container .status#status3 .score {
   position: absolute;
   top: 18%;
   left: 3%;
   z-index: 10;
 }
-/* line 357, ../sass/style.scss */
+/* line 359, ../sass/style.scss */
 body .container .status#status3 .score img:nth-child(1) {
   width: 2.79467rem;
   height: 10.92267rem;
 }
-/* line 361, ../sass/style.scss */
+/* line 363, ../sass/style.scss */
 body .container .status#status3 .score img:nth-child(2) {
   width: 0.53333rem;
   height: 2.60267rem;
@@ -397,7 +402,7 @@ body .container .status#status3 .score img:nth-child(2) {
   left: 36%;
   z-index: 20;
 }
-/* line 369, ../sass/style.scss */
+/* line 371, ../sass/style.scss */
 body .container .status#status3 .score .score-num {
   background: transparent;
   width: 0.64rem;
@@ -409,7 +414,7 @@ body .container .status#status3 .score .score-num {
   left: 39%;
   overflow: hidden;
 }
-/* line 379, ../sass/style.scss */
+/* line 381, ../sass/style.scss */
 body .container .status#status3 .score .score-num img {
   display: block;
   position: relative;
@@ -418,13 +423,13 @@ body .container .status#status3 .score .score-num img {
   border-bottom-right-radius: 0.32rem;
   border-bottom-left-radius: 0.32rem;
 }
-/* line 389, ../sass/style.scss */
+/* line 391, ../sass/style.scss */
 body .container .status#status3 .cloud {
   position: absolute;
   bottom: 2.13333rem;
   width: 100%;
 }
-/* line 393, ../sass/style.scss */
+/* line 395, ../sass/style.scss */
 body .container .status#status3 .cloud img {
   width: 100%;
   display: block;
@@ -440,13 +445,13 @@ body .container .status#status3 .cloud img {
     transform: rotate(5deg);
   }
 }
-/* line 409, ../sass/style.scss */
+/* line 411, ../sass/style.scss */
 body .container .status#status3 .person {
   width: 100%;
   height: 100%;
   z-index: 1;
 }
-/* line 414, ../sass/style.scss */
+/* line 416, ../sass/style.scss */
 body .container .status#status3 .person img:nth-child(1) {
   display: block;
   width: 11.73333rem;
@@ -454,7 +459,7 @@ body .container .status#status3 .person img:nth-child(1) {
   top: 12%;
   left: 15%;
 }
-/* line 421, ../sass/style.scss */
+/* line 423, ../sass/style.scss */
 body .container .status#status3 .person img.mask {
   width: 100%;
   height: 100%;
@@ -464,7 +469,7 @@ body .container .status#status3 .person img.mask {
   z-index: 1;
   display: none;
 }
-/* line 432, ../sass/style.scss */
+/* line 434, ../sass/style.scss */
 body .container .status#status3 .person.girl img[name=person] {
   display: block;
   width: 13.86667rem;
@@ -473,7 +478,7 @@ body .container .status#status3 .person.girl img[name=person] {
   left: 10%;
   z-index: 5;
 }
-/* line 440, ../sass/style.scss */
+/* line 442, ../sass/style.scss */
 body .container .status#status3 .person.girl img[name=shadow1] {
   position: absolute;
   top: 15%;
@@ -492,7 +497,7 @@ body .container .status#status3 .person.girl img[name=shadow1] {
     transform: scale(1.2);
   }
 }
-/* line 461, ../sass/style.scss */
+/* line 463, ../sass/style.scss */
 body .container .status#status3 .btn-box {
   position: fixed;
   left: 0;
@@ -501,7 +506,7 @@ body .container .status#status3 .btn-box {
   height: 7.104rem;
   z-index: 99;
 }
-/* line 468, ../sass/style.scss */
+/* line 470, ../sass/style.scss */
 body .container .status#status3 .btn-box .table {
   display: block;
   width: 16rem;
@@ -509,7 +514,7 @@ body .container .status#status3 .btn-box .table {
   margin: 0 auto;
   z-index: 0;
 }
-/* line 475, ../sass/style.scss */
+/* line 477, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns {
   position: absolute;
   width: 100%;
@@ -518,12 +523,12 @@ body .container .status#status3 .btn-box .btns {
   left: 0;
   z-index: 100;
 }
-/* line 482, ../sass/style.scss */
+/* line 484, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns:focus {
   border: 0;
   background: transparent;
 }
-/* line 486, ../sass/style.scss */
+/* line 488, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .arrow-begin {
   position: absolute;
   top: -20%;
@@ -541,7 +546,7 @@ body .container .status#status3 .btn-box .btns .arrow-begin {
     opacity: 1;
   }
 }
-/* line 503, ../sass/style.scss */
+/* line 505, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn {
   display: block;
   width: 7.38133rem;
@@ -550,31 +555,31 @@ body .container .status#status3 .btn-box .btns .btn {
   background-size: 100% 100%;
   margin: 0.42667rem auto 0;
 }
-/* line 510, ../sass/style.scss */
+/* line 512, ../sass/style.scss */
 body .container .status#status3 .btn-box .btns .btn.btn-off {
   background: url("https://img04.aomygod.com/fontend/20171027/imgs/status3/btn-off.png") no-repeat;
   background-size: 100% 100%;
 }
-/* line 518, ../sass/style.scss */
+/* line 520, ../sass/style.scss */
 body .container .status#status4 {
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 523, ../sass/style.scss */
+/* line 525, ../sass/style.scss */
 body .container .status#status4 .background img {
   width: 100vw;
   height: 100vh;
   display: block;
 }
-/* line 529, ../sass/style.scss */
+/* line 531, ../sass/style.scss */
 body .container .status#status4 .score {
   position: absolute;
   top: 2.13333rem;
   left: 0;
   width: 100%;
 }
-/* line 534, ../sass/style.scss */
+/* line 536, ../sass/style.scss */
 body .container .status#status4 .score p {
   text-align: center;
   margin: 0 auto;
@@ -587,12 +592,12 @@ body .container .status#status4 .score p {
   line-height: 1.62133rem;
   font-size: 0.85333rem;
 }
-/* line 545, ../sass/style.scss */
+/* line 547, ../sass/style.scss */
 body .container .status#status4 .score p span {
   font-size: 1.06667rem;
   color: #fff47d;
 }
-/* line 551, ../sass/style.scss */
+/* line 553, ../sass/style.scss */
 body .container .status#status4 .word {
   position: absolute;
   top: 17%;
@@ -606,7 +611,7 @@ body .container .status#status4 .word {
   color: #3d3d3d;
   font: bold 0.64rem "微软雅黑";
 }
-/* line 564, ../sass/style.scss */
+/* line 566, ../sass/style.scss */
 body .container .status#status4 .scream {
   width: 11.73333rem;
   height: 2.34667rem;
@@ -617,7 +622,7 @@ body .container .status#status4 .scream {
   background: transparent;
   display: flex;
 }
-/* line 573, ../sass/style.scss */
+/* line 575, ../sass/style.scss */
 body .container .status#status4 .scream p {
   flex: 1;
   -webkit-flex: 1;
@@ -629,14 +634,14 @@ body .container .status#status4 .scream p {
   box-sizing: border-box;
   overflow: hidden;
 }
-/* line 583, ../sass/style.scss */
+/* line 585, ../sass/style.scss */
 body .container .status#status4 .scream p img {
   margin: 0 auto;
   width: 0.85333rem;
   height: 100%;
   display: block;
 }
-/* line 591, ../sass/style.scss */
+/* line 593, ../sass/style.scss */
 body .container .status#status4 .btns {
   width: 100%;
   height: 2.73067rem;
@@ -645,13 +650,13 @@ body .container .status#status4 .btns {
   left: 50%;
   margin-left: -7.82933rem;
 }
-/* line 598, ../sass/style.scss */
+/* line 600, ../sass/style.scss */
 body .container .status#status4 .btns img {
   display: block;
   width: 13.54667rem;
   margin: 0 auto;
 }
-/* line 603, ../sass/style.scss */
+/* line 605, ../sass/style.scss */
 body .container .status#status4 .btns a {
   float: left;
   width: 40%;
@@ -662,14 +667,14 @@ body .container .status#status4 .btns a {
   position: relative;
   top: -2.73067rem;
 }
-/* line 614, ../sass/style.scss */
+/* line 616, ../sass/style.scss */
 body .container .status#status4 .coupon {
   width: 100%;
   position: absolute;
   bottom: 0.10667rem;
   left: 0;
 }
-/* line 620, ../sass/style.scss */
+/* line 622, ../sass/style.scss */
 body .container .status#status4 .coupon img {
   width: 8.61867rem;
   height: 5.35467rem;
@@ -678,7 +683,7 @@ body .container .status#status4 .coupon img {
   position: relative;
   left: -0.21333rem;
 }
-/* line 631, ../sass/style.scss */
+/* line 633, ../sass/style.scss */
 body .container .outside-mask {
   position: fixed;
   top: 0;
@@ -688,7 +693,7 @@ body .container .outside-mask {
   background: rgba(0, 0, 0, 0.7);
   display: none;
 }
-/* line 639, ../sass/style.scss */
+/* line 641, ../sass/style.scss */
 body .container .outside-mask .login {
   width: 10.112rem;
   height: 13.568rem;
@@ -699,7 +704,7 @@ body .container .outside-mask .login {
   left: 50%;
   margin-left: -5.056rem;
 }
-/* line 648, ../sass/style.scss */
+/* line 650, ../sass/style.scss */
 body .container .outside-mask .login .close {
   display: block;
   width: 1.408rem;
@@ -710,7 +715,7 @@ body .container .outside-mask .login .close {
   top: 0.96rem;
   right: -0.85333rem;
 }
-/* line 658, ../sass/style.scss */
+/* line 660, ../sass/style.scss */
 body .container .outside-mask .login .box {
   text-align: center;
   width: 8.96rem;
@@ -718,13 +723,13 @@ body .container .outside-mask .login .box {
   margin: 3.62667rem auto 0;
   box-sizing: border-box;
 }
-/* line 664, ../sass/style.scss */
+/* line 666, ../sass/style.scss */
 body .container .outside-mask .login .box h3 {
   margin: 0 0 0.64rem 0;
   font-size: 0.81067rem;
   color: #484848;
 }
-/* line 669, ../sass/style.scss */
+/* line 671, ../sass/style.scss */
 body .container .outside-mask .login .box p {
   width: 8.53333rem;
   margin: 0 auto;
@@ -736,7 +741,7 @@ body .container .outside-mask .login .box p {
   background: #fff;
   box-sizing: border-box;
 }
-/* line 679, ../sass/style.scss */
+/* line 681, ../sass/style.scss */
 body .container .outside-mask .login .box p input {
   border: 0;
   text-indent: 0.10667rem;
@@ -746,27 +751,27 @@ body .container .outside-mask .login .box p input {
   font-size: 0.512rem;
   box-sizing: border-box;
 }
-/* line 688, ../sass/style.scss */
+/* line 690, ../sass/style.scss */
 body .container .outside-mask .login .box p input::-webkit-input-placeholder {
   /* WebKit browsers*/
   color: #999;
 }
-/* line 692, ../sass/style.scss */
+/* line 694, ../sass/style.scss */
 body .container .outside-mask .login .box p input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18*/
   color: #999;
 }
-/* line 696, ../sass/style.scss */
+/* line 698, ../sass/style.scss */
 body .container .outside-mask .login .box p input::-moz-placeholder {
   /* Mozilla Firefox 19+*/
   color: #999;
 }
-/* line 700, ../sass/style.scss */
+/* line 702, ../sass/style.scss */
 body .container .outside-mask .login .box p input:-ms-input-placeholder {
   /* Internet Explorer 10+*/
   color: #999;
 }
-/* line 704, ../sass/style.scss */
+/* line 706, ../sass/style.scss */
 body .container .outside-mask .login .box p .get-code {
   display: block;
   float: right;
@@ -779,7 +784,7 @@ body .container .outside-mask .login .box p .get-code {
   border-radius: 0.21333rem;
   font-size: 0.512rem;
 }
-/* line 717, ../sass/style.scss */
+/* line 719, ../sass/style.scss */
 body .container .outside-mask .login .box .get-coupon {
   display: inline-block;
   color: #fff;
