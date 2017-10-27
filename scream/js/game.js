@@ -160,6 +160,7 @@ define(function (require) {
 				console.log(progress);
 				$(".preload-progress").html(parseInt(progress * 100));
 				if (preload.progress == 1) {
+					$(".preload-tips").hide();
 					$(".container").show();
 				}
 			}
