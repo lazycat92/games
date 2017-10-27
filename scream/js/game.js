@@ -5,7 +5,7 @@
  *	activityid: 20171111screamgame
  */
 
-define(function (require) {
+define(function(require) {
 	'use strict';
 
 	var $ = require('jquery');
@@ -29,24 +29,13 @@ define(function (require) {
 		}
 		return ""
 	}
-
 	var urls = {
 		img: "https://img04.aomygod.com/fontend/20171027/",
 		code: "https://ssl.aomygod.com/passport/smsSendByMobile",
-		setActivityId: "https://ssl.aomygod.com/apimall/member/saveactive",  // https://ssl.aomygod.com/apimall/member/saveactive/{active_id}
+		setActivityId: "https://ssl.aomygod.com/apimall/member/saveactive", // https://ssl.aomygod.com/apimall/member/saveactive/{active_id}
 		autoLogin: "https://ssl.aomygod.com/passport/autoRegisterAndLogin",
 		getCoupon: "https://m.aomygod.com/Activitycommon/fetchCoupon"
 	};
-
-	var regs = {
-		mobile: /^0?(13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/,
-		code: /[0-9]*/g
-	}
-
-	// 阻止页面上下滑动
-	$("body").on("touchmove", function (e) {
-		e.preventDefault();
-	})
 
 	var manifest = [
 		urls.img + 'imgs/logo.png',
@@ -99,7 +88,7 @@ define(function (require) {
 		urls.img + 'imgs/status3/boy/3.png',
 		urls.img + 'imgs/status3/boy/5.png',
 		urls.img + 'imgs/status3/boy/bg.png',
-		
+
 		urls.img + 'imgs/status3/girl/0.png',
 		urls.img + 'imgs/status3/girl/1.png',
 		urls.img + 'imgs/status3/girl/2.png',
@@ -122,13 +111,25 @@ define(function (require) {
 		urls.img + 'imgs/music/boy.mp3',
 		urls.img + 'imgs/music/girl.mp3',
 	];
+	
+	
+	var regs = {
+		mobile: /^0?(13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/,
+		code: /[0-9]*/g
+	}
 
-	var pageEvent = function () {
+	// 阻止页面上下滑动
+	$("body").on("touchmove", function(e) {
+		e.preventDefault();
+	})
+
+
+	var pageEvent = function() {
 		this.init();
 	};
 
 	pageEvent.prototype = {
-		init: function () {
+		init: function() {
 			this.calcScreen();
 			this.preloadFile();
 			this.changeStatus();
@@ -136,14 +137,14 @@ define(function (require) {
 			// this.shareGame();
 		},
 		// 定义页面宽高，屏幕适应计算
-		calcScreen: function () {
+		calcScreen: function() {
 			var container = $(".container");
 			var winWidth = window.innerWidth,
 				winHeight = window.innerHeight;
 			var normalWidth = 750,
 				normalHeight = 1334;
 			var screenWidth, screenHeight;
-			if (normalWidth / normalHeight > winWidth / winHeight) {
+			if(normalWidth / normalHeight > winWidth / winHeight) {
 				screenWidth = winWidth;
 				screenHeight = Math.floor(screenWidth * normalHeight / normalWidth);
 			} else {
@@ -154,9 +155,11 @@ define(function (require) {
 			// container.find(".status").height(screenHeight);
 		},
 		// 图片预加载
-		preloadFile: function () {
+		preloadFile: function() {
 			var _this = this;
-			var preload = new createjs.LoadQueue(true);
+			var count = 0;
+
+			var preload = new createjs.LoadQueue(false);
 			preload.on('fileload', handleFileLoad);
 			preload.on('progress', handleOverallProgress);
 			preload.on("fileprogress", handleFileProgress);
@@ -166,12 +169,12 @@ define(function (require) {
 			preload.loadManifest(manifest);
 
 			function handleFileLoad() {
-				// $(".preload-tips").hide();
+
 				$(".for-boy").find("img").each(function(index, item) {
-					$(item).attr('src', urls.img + "imgs/status2/boy/" + (index+1) + ".png");
+					$(item).attr('src', urls.img + "imgs/status2/boy/" + (index + 1) + ".png");
 				})
 				$(".for-girl").find("img").each(function(index, item) {
-					$(item).attr('src', urls.img + "imgs/status2/girl/" + (index+1) + ".png");
+					$(item).attr('src', urls.img + "imgs/status2/girl/" + (index + 1) + ".png");
 				});
 
 				$(".voice").find("img").attr("src", urls.img + 'imgs/music-on.png');
@@ -179,10 +182,10 @@ define(function (require) {
 			}
 
 			function handleOverallProgress(e) {
-				var progress = preload.progress.toFixed(2);
-				console.log(progress);
-				$(".preload-progress").html(parseInt(progress * 100));
-				if (preload.progress == 1) {
+				console.log(count++);
+				console.log(e)
+				$(".preload-progress").html((preload.progress * 100).toFixed(2));
+				if(preload.progress == 1) {
 					$(".preload-tips").hide();
 					$(".container").show();
 					var sound1 = new Howl({
@@ -191,16 +194,19 @@ define(function (require) {
 						loop: true
 					});
 				}
+
 			}
 
-			function handleFileProgress(e) { }
+			function handleFileProgress(e) {
+
+			}
 
 			function handleFileError(event) {
 				$(".preload-tips").html("error" + JSON.stringify(event));
 			}
 		},
 		// 游戏开始
-		gameBegin: function (gender) {
+		gameBegin: function(gender) {
 			var _this = this;
 			var count = 0;
 			var sound2 = new Howl({
@@ -216,23 +222,23 @@ define(function (require) {
 
 			function countdown(a) {
 
-				$(".btn").on("touchstart", function (e) {
+				$(".btn").on("touchstart", function(e) {
 					sound2.play();
 					e.preventDefault();
 					count++;
-					if (count >= 130) {
+					if(count >= 130) {
 						$(".score-num img").css('bottom', '0');
 					} else {
 						$(".score-num img").css('bottom', ((count * 3 - 410) / 46.875) + 'rem');
 					}
-					switch (true) {
+					switch(true) {
 						case count >= 46 && count <= 90:
 							$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/' + gender + '/1.png');
 							break;
 
 						case count >= 91:
 							var num = count % 2 + 2;
-							if (gender == 'girl') {
+							if(gender == 'girl') {
 								$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/girl/2.png');
 							} else {
 								$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/' + gender + '/' + num + '.png');
@@ -245,16 +251,16 @@ define(function (require) {
 							break;
 					}
 					$(this).addClass("btn-off");
-				}).on("touchend", function () {
+				}).on("touchend", function() {
 					$(this).removeClass("btn-off");
 				});
-				var timer = setInterval(function () {
+				var timer = setInterval(function() {
 					a--
-					if (a < 10) {
+					if(a < 10) {
 						$(".count1").attr('src', urls.img + "imgs/number/0.png");
 						$(".count2").attr('src', urls.img + "imgs/number/" + a + ".png");
 					}
-					if (a == 0) {
+					if(a == 0) {
 						sound2.pause();
 						clearInterval(timer);
 						$(".count2").attr('src', urls.img + "imgs/number/0.png");
@@ -264,7 +270,7 @@ define(function (require) {
 							alert("游戏结束");
 							_this.calcScore(count);
 						}, 1500);
-						
+
 					}
 				}, 1000);
 			}
@@ -280,30 +286,30 @@ define(function (require) {
 			};
 		},
 		// 切换
-		changeStatus: function (e) {
+		changeStatus: function(e) {
 			var _this = this;
 
-			$("#status1 .btn-light a").on('click', function (e) {
+			$("#status1 .btn-light a").on('click', function(e) {
 				e.stopPropagation();
 				$(this).parents("#status1").hide();
 				$("#status2").show();
 				var isBoy = $(this).hasClass("btn-boy");
-				$("#status3 .background").find("img").attr("src", isBoy? urls.img + "imgs/status3/boy/bg.png" : urls.img + "imgs/status3/girl/bg.png");
-				if (isBoy) {
+				$("#status3 .background").find("img").attr("src", isBoy ? urls.img + "imgs/status3/boy/bg.png" : urls.img + "imgs/status3/girl/bg.png");
+				if(isBoy) {
 					$(".for-boy").find("img").each(function(index, item) {
-						$(item).attr('src', urls.img + "imgs/status2/boy/" + (index+1) + ".png");
+						$(item).attr('src', urls.img + "imgs/status2/boy/" + (index + 1) + ".png");
 					})
 					$("#status2").find("div").eq(0).show();
 				} else {
 					$(".for-boy").find("img").each(function(index, item) {
-						$(item).attr('src', urls.img + "imgs/status2/girl/" + (index+1) + ".png");
+						$(item).attr('src', urls.img + "imgs/status2/girl/" + (index + 1) + ".png");
 					})
 					$("#status2").find("div").eq(1).show();
 				}
-				setTimeout(function () {
+				setTimeout(function() {
 					$("#status2").hide();
 					$("#status3").show();
-					if (isBoy) {
+					if(isBoy) {
 						_this.gameBegin("boy");
 						$("#status3 .boy").show();
 						$("#status3 .girl").hide();
@@ -316,7 +322,7 @@ define(function (require) {
 			});
 
 			// play again 
-			$(".play-again").on("click", function () {
+			$(".play-again").on("click", function() {
 				$("#status4").hide();
 				$("#status1").show();
 				$("#status3 .girl img[name=person]").attr('src', urls.img + 'imgs/status3/girl/0.png');
@@ -328,15 +334,15 @@ define(function (require) {
 				e.stopPropagation();
 				if($(this).hasClass("off")) {
 					sound1.play();
-					$(this).attr("src",  urls.img + 'imgs/music-on.png');
+					$(this).attr("src", urls.img + 'imgs/music-on.png');
 				} else {
-					$(this).attr("src",  urls.img + 'imgs/music-off.png');
+					$(this).attr("src", urls.img + 'imgs/music-off.png');
 					sound1.pause();
 				}
 				$(this).toggleClass("off");
 			})
 		},
-		calcScore: function (score) {
+		calcScore: function(score) {
 			console.log(score);
 			$("#status3").fadeOut();
 			$("#status4").fadeIn();
@@ -357,7 +363,7 @@ define(function (require) {
 				showScore = parseInt(showScore / 10);
 			}
 			if(arr.length < 5) {
-				for(var i=arr.length; i < 5; i++) {
+				for(var i = arr.length; i < 5; i++) {
 					arr.push(0);
 				}
 			}
@@ -365,23 +371,29 @@ define(function (require) {
 			arr.reverse();
 
 			var scream = $("#status4 .scream");
-			for(var i=0, len=arr.length; i < len; i++) {
+			for(var i = 0, len = arr.length; i < len; i++) {
 				scream.find("p").eq(i).find("img").attr("src", urls.img + "imgs/number/" + arr[i] + ".png");
 			}
 
 			// 根据产品要求，分两种所谓的规则
 			// 第一种情况， 参与游戏人数大于100时;
-			if (rate.member_count > 100) {
+			if(rate.member_count > 100) {
 
-				switch (true) {
+				switch(true) {
 					case score >= 46 && score <= 90:
 						var passOver = parseInt(1.3 * score - 38.5);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
-						if (random < 70) {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
+						if(random < 70) {
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon2.png",
+								"data-index": 1
+							});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon1.png", "data-index": 0});
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon1.png",
+								"data-index": 0
+							});
 						}
 						break;
 
@@ -389,10 +401,16 @@ define(function (require) {
 						var passOver = score > 135 ? 99 : parseInt(0.4 * score + 44);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
-						if (random < 88) {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
+						if(random < 88) {
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon2.png",
+								"data-index": 1
+							});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon3.png", "data-index":2});
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon3.png",
+								"data-index": 2
+							});
 						}
 						break;
 
@@ -400,25 +418,37 @@ define(function (require) {
 						var passOver = parseInt(0.4 * score);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
-						if (random < 80) {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon1.png", "data-index": 0});
+						if(random < 80) {
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon1.png",
+								"data-index": 0
+							});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon2.png",
+								"data-index": 1
+							});
 						}
 						break;
 				}
 			} else {
 				// 第二种情况，参与游戏人数小于100时
 
-				switch (true) {
+				switch(true) {
 					case score >= 40 && score <= 80:
 						var passOver = parseInt(1.5 * score - 40);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
-						if (random < 70) {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
+						if(random < 70) {
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon2.png",
+								"data-index": 1
+							});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon1.png", "data-index": 0});
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon1.png",
+								"data-index": 0
+							});
 						}
 						break;
 
@@ -426,10 +456,16 @@ define(function (require) {
 						var passOver = score > 135 ? 99 : parseInt(0.36 * score + 51.2);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
-						if (random < 88) {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
+						if(random < 88) {
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon2.png",
+								"data-index": 1
+							});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon3.png", "data-index":2});
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon3.png",
+								"data-index": 2
+							});
 						}
 						break;
 
@@ -437,21 +473,27 @@ define(function (require) {
 						var passOver = parseInt(0.5 * score);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
-						if (random < 80) {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon1.png", "data-index": 0});
+						if(random < 80) {
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon1.png",
+								"data-index": 0
+							});
 						} else {
-							$("#status4 .btn-coupon").attr({"src": urls.img + "imgs/status4/coupon2.png", "data-index": 1});
+							$("#status4 .btn-coupon").attr({
+								"src": urls.img + "imgs/status4/coupon2.png",
+								"data-index": 1
+							});
 						}
 						break;
 				}
 			}
 		},
 		// 领券
-		login: function () {
+		login: function() {
 			var _this = this;
 			var couponId;
 
-			$("body").on('click', ".btn-coupon", function (e) {
+			$("body").on('click', ".btn-coupon", function(e) {
 				e.stopPropagation();
 				var $this = this;
 				couponId = $(this).data("index");
@@ -462,20 +504,20 @@ define(function (require) {
 					_this.setActivity();
 					_this.getCoupon(couponId);
 				}
-				
-			}).on('click', ".get-code", function (e) {
+
+			}).on('click', ".get-code", function(e) {
 				e.stopPropagation();
 				var phone = $("input[name=phone]").val();
-				if (!regs.mobile.test(phone)) {
+				if(!regs.mobile.test(phone)) {
 					console.log('请输入正确的手机号码');
 				} else {
 
 					$.ajax({
 						url: urls.code,
 						type: "get",
-						dataType : "jsonp", 
+						dataType: "jsonp",
 						jsonp: "callback",
-						async:false,
+						async: false,
 						data: {
 							mobile: phone
 						},
@@ -488,23 +530,23 @@ define(function (require) {
 						}
 					})
 				}
-			}).on('click', ".get-coupon", function (e) {
+			}).on('click', ".get-coupon", function(e) {
 				e.stopPropagation();
 				var phone = $("input[name=phone]").val();
 				var code = $("input[name=code]").val();
 
-				if (!regs.mobile.test(phone)) {
+				if(!regs.mobile.test(phone)) {
 					console.log('请输入正确的手机号码');
-				} else if (!regs.code.test(code) || code.length != 6) {
+				} else if(!regs.code.test(code) || code.length != 6) {
 					console.log('请输入正确的验证码');
 				} else {
 					$.ajax({
 						url: urls.autoLogin,
 						type: "get",
-						dataType : "jsonp", 
+						dataType: "jsonp",
 						jsonp: "callback",
-						async:false,
-						data:{
+						async: false,
+						data: {
 							mobile: phone,
 							code: code,
 							tagId: '',
@@ -533,14 +575,16 @@ define(function (require) {
 			$.ajax({
 				url: urls.getCoupon,
 				type: "get",
-				dataType : "jsonp", 
+				dataType: "jsonp",
 				jsonp: "callback",
-				async:false,
-				data: { coupon_id: rate.coupons[e].coupon_id},
+				async: false,
+				data: {
+					coupon_id: rate.coupons[e].coupon_id
+				},
 				success: function(e) {
 					if(e.code == 0) {
 						alert(e.msg);
-						setTimeout(function(){
+						setTimeout(function() {
 							$(".outside-mask").hide();
 						}, 1000);
 					} else {
@@ -554,9 +598,9 @@ define(function (require) {
 			$.ajax({
 				url: urls.setActivityId + "/20171111screamgame",
 				type: "get",
-				dataType : "jsonp", 
+				dataType: "jsonp",
 				jsonp: "callback",
-				async:false,
+				async: false,
 				data: {
 					active_id: "20171111screamgame",
 					token: ""
@@ -570,7 +614,7 @@ define(function (require) {
 		},
 		shareGame: function() {
 			var _this = this;
-			
+
 			var options = {
 				'initAppShareOption': {
 					'sharedURL': "https://m.aomygod.com/Activitycommon/scream",
@@ -656,12 +700,12 @@ define(function (require) {
 						}
 					});
 				});
-		
+
 			};
 
 			if(BrowserUtil.isWeixin()) {
 				initWxShare();
-			} 
+			}
 		}
 	}
 
