@@ -159,7 +159,7 @@ define(function(require) {
 			var _this = this;
 			var count = 0;
 
-			var preload = new createjs.LoadQueue(false);
+			var preload = new createjs.LoadQueue(true);
 			preload.on('fileload', handleFileLoad);
 			preload.on('progress', handleOverallProgress);
 			preload.on("fileprogress", handleFileProgress);
