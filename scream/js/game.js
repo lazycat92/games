@@ -190,9 +190,9 @@ define(function(require) {
 					$(".container").show();
 					var sound1 = new Howl({
 						src: ['bgm1.mp3'],
-						autoplay: true,
 						loop: true
 					});
+					sound1.play();
 				}
 
 			}
