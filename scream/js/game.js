@@ -12,6 +12,8 @@ define(function(require) {
 	var Swiper = require('Swiper');
 	var Preload = require('Preload');
 	var Howler = require("howler.js-master/howler.js-master/dist/howler.core.min");
+	var Sound = require('Sound');
+	var _ = require("https://code.createjs.com/createjs-2015.11.26.min.js");
 	// var cookie = require('js/common/base/cookie');
 	// var BrowserUtil = require('js/util/browser/1.0.0/browser');
 	// var Dialog = require('common/ui/dialog/dialog');
@@ -132,7 +134,7 @@ define(function(require) {
 	pageEvent.prototype = {
 		init: function() {
 			this.calcScreen();
-			this.preloadFile();
+//			this.preloadFile();
 			this.changeStatus();
 			this.login();
 			// this.shareGame();
@@ -166,7 +168,17 @@ define(function(require) {
 			preload.setMaxConnections(100);
 
 			preload.loadManifest(manifest);
-
+			
+			var s = "bgm";
+			
+			createjs.Sound.registerSound("https://img04.aomygod.com/fontend/20171028/imgs/music/bgm1.mp3", s);
+			createjs.Sound.on("complete", hello);
+			
+			function hello(e) {
+				console.log(e)
+			}
+			
+			
 			function handlerComplete(e) {
 				$(".for-boy").find("img").each(function(index, item) {
 					$(item).attr('src', urls.img + "imgs/status2/boy/" + (index + 1) + ".png");
@@ -187,6 +199,8 @@ define(function(require) {
 				alert(event);
 				$(".preload-tips").html("error" + JSON.stringify(event));
 			}
+			
+			
 		},
 		// 游戏开始
 		gameBegin: function(gender) {
