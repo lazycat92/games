@@ -195,11 +195,11 @@ define(function (require) {
 						$(".score-num img").css('bottom', ((count * 3 - 410) / 46.875) + 'rem');
 					}
 					switch (true) {
-						case count >= 46 && count <= 60:
+						case count >= 46 && count <= 90:
 							$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/' + gender + '/1.png');
 							break;
 
-						case count >= 61:
+						case count >= 91:
 							var num = count % 2 + 2;
 							if (gender == 'girl') {
 								$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/girl/2.png');
