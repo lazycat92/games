@@ -5,7 +5,7 @@
  *	activityid: 20171111screamgame
  */
 
-define(function(require) {
+define(function (require) {
 	'use strict';
 
 	var $ = require('jquery');
@@ -19,7 +19,7 @@ define(function(require) {
 		getCoupon: ""
 	};
 	// 阻止页面上下滑动
-	$("body").on("touchmove", function(e) {
+	$("body").on("touchmove", function (e) {
 		e.preventDefault();
 	})
 
@@ -134,25 +134,25 @@ define(function(require) {
 
 	];
 
-	var pageEvent = function() {
+	var pageEvent = function () {
 		this.init();
 	};
 
 	pageEvent.prototype = {
-		init: function() {
+		init: function () {
 			this.calcScreen();
 			this.preloadFile();
 			this.changeStatus();
 		},
 		// 定义页面宽高，屏幕适应计算
-		calcScreen: function() {
+		calcScreen: function () {
 			var container = $(".container");
 			var winWidth = window.innerWidth,
 				winHeight = window.innerHeight;
 			var normalWidth = 750,
 				normalHeight = 1334;
 			var screenWidth, screenHeight;
-			if(normalWidth / normalHeight > winWidth / winHeight) {
+			if (normalWidth / normalHeight > winWidth / winHeight) {
 				screenWidth = winWidth;
 				screenHeight = Math.floor(screenWidth * normalHeight / normalWidth);
 			} else {
@@ -163,7 +163,7 @@ define(function(require) {
 			// container.find(".status").height(screenHeight);
 		},
 		// 图片预加载
-		preloadFile: function() {
+		preloadFile: function () {
 			var _this = this;
 			var preload = new createjs.LoadQueue(true);
 			preload.on('fileload', handleFileLoad);
@@ -181,45 +181,51 @@ define(function(require) {
 			function handleOverallProgress(e) {
 				var progress = preload.progress.toFixed(2);
 				$(".preload-progress").html(parseInt(progress * 100));
-				if(preload.progress == 1) {
+				if (preload.progress == 1) {
 					$(".container").show();
 				}
 			}
 
-			function handleFileProgress(e) {}
+			function handleFileProgress(e) { }
 
 			function handleFileError(event) {
 				$(".preload-tips").html("error" + JSON.stringify(event));
 			}
 		},
 		// 游戏开始
-		gameBegin: function(gender) {
+		gameBegin: function (gender) {
 			var _this = this;
 			var count = 0;
+			console.log(gender);
+			// 初始化页面
+			$(".score-num img").css('bottom', '-8.74667rem');
+			$(".count1").attr('src', "img/number/1.png");
+			$(".count2").attr('src', "img/number/0.png");
+			$("#status2").find("div").hide();
+			$("#status3").find(".person").hide();
+			$("#status3").find(".background img").hide();
 
 			function countdown(a) {
-				$(".count1").attr('src', "img/number/1.png");
-				$(".count2").attr('src', "img/number/0.png");
 
-				$(".btn").on("touchstart", function(e) {
+				$(".btn").on("touchstart", function (e) {
 					e.preventDefault();
 					count++;
-					if (count >= 90) {
-						$(".score-num img").css('bottom', '-8.74667rem');
+					if (count >= 130) {
+						$(".score-num img").css('bottom', '0');
 					} else {
-						$(".score-num img").css('bottom', ((count * 4.5 - 410) / 46.875) + 'rem');
+						$(".score-num img").css('bottom', ((count * 3 - 410) / 46.875) + 'rem');
 					}
-					switch(true) {
+					switch (true) {
 						case count >= 46 && count <= 90:
-							$("#status3 img[name=person]").attr('src', 'img/status3/' + gender + '/1.png');
+							$("#status3 ." + gender + " img[name=person]").attr('src', 'img/status3/' + gender + '/1.png');
 							break;
 
 						case count >= 91:
 							var num = count % 2 + 2;
 							if (gender == 'girl') {
-								$("#status3 img[name=person]").attr('src', 'img/status3/girl/2.png');
+								$("#status3 ." + gender + " img[name=person]").attr('src', 'img/status3/girl/2.png');
 							} else {
-								$("#status3 img[name=person]").attr('src', 'img/status3/' + gender + '/' + num + '.png');
+								$("#status3 ." + gender + " img[name=person]").attr('src', 'img/status3/' + gender + '/' + num + '.png');
 							}
 							$("#status3 .mask, img[name=shadow1]").show();
 							break;
@@ -229,16 +235,16 @@ define(function(require) {
 							break;
 					}
 					$(this).addClass("btn-off");
-				}).on("touchend", function() {
+				}).on("touchend", function () {
 					$(this).removeClass("btn-off");
 				});
-				var timer = setInterval(function() {
+				var timer = setInterval(function () {
 					a--
-					if(a < 10) {
+					if (a < 10) {
 						$(".count1").attr('src', "img/number/0.png");
 						$(".count2").attr('src', "img/number/" + a + ".png");
 					}
-					if(a == 0) {
+					if (a == 0) {
 						clearInterval(timer);
 						$(".count2").attr('src', "img/number/0.png");
 						$(".btn").off("touchstart touchend");
@@ -254,14 +260,15 @@ define(function(require) {
 				console.log('begin');
 				$(".btn-begin").off('click', handler);
 				$(".arrow-begin").hide();
-				count = 0
+				var count = 0
 				countdown(10);
 			};
 		},
 		// 切换
 		changeStatus: function (e) {
 			var _this = this;
-			$("#status1 .btn-light a").on('click', function(e) {
+
+			$("#status1 .btn-light a").on('click', function (e) {
 				e.stopPropagation();
 				$(this).parents("#status1").hide();
 				$("#status2").show();
@@ -289,17 +296,23 @@ define(function(require) {
 					}
 				}, 4000);
 			});
+
+			// play again 
+			$(".play-again").on("click", function () {
+				$("#status4").hide();
+				$("#status1").show();
+				$("#status3 .girl img[name=person]").attr('src', 'img/status3/girl/0.png');
+				$("#status3 .boy img[name=person]").attr('src', 'img/status3/boy/0.png');
+			})
 		},
-		calcScore: function(score) {
+		calcScore: function (score) {
 			console.log(score);
 			$("#status3").fadeOut();
 			$("#status4").fadeIn();
 			var showScore = 179 * score; // 尖叫值
 			var random = Math.floor(Math.random() * 10); // 产生一个有用的随机数
-			
-			
 
-			// 返回文案
+			// 文案
 			var content = [
 				"你掰狂！</br>超越俺算啥本事！</br>再努力一点，追上TA！",
 				"真正的大师！</br>永远都怀着一颗学徒的心！</br>再来一次，你可以更好！",
@@ -308,45 +321,45 @@ define(function(require) {
 
 			// 根据产品要求，分两种所谓的规则
 			// 第一种情况， 参与游戏人数大于100时;
-			if(rate.member_count > 100) {
+			if (rate.member_count > 100) {
 
-				switch(true) {
+				switch (true) {
 					case score >= 46 && score <= 90:
-						var passOver = parseInt(1.3 * score - 39) ; 
+						var passOver = parseInt(1.3 * score - 38.5);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
 						break;
 
 					case score >= 91:
-						var passOver = score > 135 ? 99 : parseInt(0.4 * score + 44); 
+						var passOver = score > 135 ? 99 : parseInt(0.4 * score + 44);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
 						break;
 
 					default:
-						var passOver = parseInt(0.4 * score) ; 
+						var passOver = parseInt(0.4 * score);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
 						break;
 				}
 			} else {
 				// 第二种情况，参与游戏人数小于100时
-				
-				switch(true) {
+
+				switch (true) {
 					case score >= 40 && score <= 80:
-						var passOver = parseInt(1.5 * score - 40) ; 
+						var passOver = parseInt(1.5 * score - 40);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[1]);
 						break;
 
 					case score >= 81:
-						var passOver = score > 135? 99 : parseInt(0.36 * score + 51.2) ; 
+						var passOver = score > 135 ? 99 : parseInt(0.36 * score + 51.2);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
 						break;
 
 					default:
-						var passOver = parseInt(0.5 * score) ; 
+						var passOver = parseInt(0.5 * score);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[0]);
 						break;
