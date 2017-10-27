@@ -29,11 +29,21 @@ body {
         p {
             font-size: rem(50);
             color: #fff; 
+            overflow: hidden;
             img {
                 width: rem(293);
                 height: rem(107);
                 display: block;
                 margin: 0 auto rem(20);
+                animation: fly 2s linear 0s infinite forwards;
+            }
+            @keyframes fly {
+                0% { 
+                    transform: translate(rem(-200));
+                }
+                100% { 
+                    transform: translate(rem(250));
+                }
             }
         }
     }
