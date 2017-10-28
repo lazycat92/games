@@ -194,6 +194,7 @@ define(function(require) {
 		gameBegin: function(gender) {
 			var _this = this;
 			var count = 0;
+			console.log(urls.img + 'imgs/music/' + gender + '.mp3');
 			var sound2 = new Howl({
 				src: [urls.img + 'imgs/music/' + gender + '.mp3']
 			});
@@ -208,8 +209,8 @@ define(function(require) {
 			function countdown(a) {
 
 				$(".btn").on("touchstart", function(e) {
-					sound2.play();
 					e.preventDefault();
+					sound2.play();
 					count++;
 					if(count >= 130) {
 						$(".score-num img").css('bottom', '0');
@@ -245,7 +246,7 @@ define(function(require) {
 						$(".count1").attr('src', urls.img + "imgs/number/0.png");
 						$(".count2").attr('src', urls.img + "imgs/number/" + a + ".png");
 					}
-					if(a == 0) {
+					if(a < 0) {
 						sound2.pause();
 						clearInterval(timer);
 						$(".count2").attr('src', urls.img + "imgs/number/0.png");
@@ -386,7 +387,7 @@ define(function(require) {
 						var passOver = score > 135 ? 99 : parseInt(0.4 * score + 44);
 						$("#status4 .score span").html(passOver + "%");
 						$("#status4 .word").html(content[2]);
-						if(random < 88) {
+						if(random < 95) {
 							$("#status4 .btn-coupon").attr({
 								"src": urls.img + "imgs/status4/coupon2.png",
 								"data-index": 1
