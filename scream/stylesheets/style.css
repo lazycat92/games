@@ -137,7 +137,7 @@ body .container .status#status1 .cartoon .girl {
 body .container .status#status1 .coupon {
   width: 100%;
   position: absolute;
-  bottom: 12%;
+  bottom: 10%;
   left: 0;
   z-index: 30;
   animation: formTop 1s ease-in forwards;
@@ -166,7 +166,7 @@ body .container .status#status1 .btn-light div {
 /* line 147, ../sass/style.scss */
 body .container .status#status1 .btn-light div .btn-boy {
   display: block;
-  width: auto;
+  width: 100%;
   height: 100%;
   float: right;
   animation: btnScale .8s linear infinite alternate-reverse;
@@ -174,7 +174,7 @@ body .container .status#status1 .btn-light div .btn-boy {
 /* line 154, ../sass/style.scss */
 body .container .status#status1 .btn-light div .btn-girl {
   display: block;
-  width: auto;
+  width: 100%;
   height: 100%;
   float: left;
   animation: btnScale .8s linear infinite alternate-reverse;
@@ -218,18 +218,18 @@ body .container .status#status1 .arrow {
 }
 @keyframes formTop {
   0% {
-    bottom: 18%;
+    bottom: 16%;
     opacity: 0;
   }
   50% {
-    bottom: 12%;
+    bottom: 10%;
     opacity: 1;
   }
   75% {
     bottom: 13%;
   }
   100% {
-    bottom: 12%;
+    bottom: 10%;
     opacity: 1;
   }
 }
