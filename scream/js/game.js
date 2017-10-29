@@ -531,13 +531,15 @@ define(function(require) {
 					})
 
 				}
-			}).on('click', ".close", function(e) {
-				e.stopPropagation();
-				$(".outside-mask").hide();
 			}).on('click', '.share', function(e) {
 				$(".share-mask").show();
 			}).on('click', '.share-mask', function(e) {
 				$(".share-mask").hide();
+			});
+			
+			$(".outside-mask .close").on('click', function(e) {
+				e.stopPropagation();
+				$(".outside-mask").hide();
 			});
 			
 			$(".get-code").on('click', function (e) {
@@ -546,7 +548,7 @@ define(function(require) {
 				var phone = $("input[name=phone]").val();
 				var isSend = $(this).data("send");
 				if (!regs.mobile.test(phone)) {
-					Dialog.tips('请输入正确的手机号码');
+					alert('请输入正确的手机号码');
 				} else {
 
 					if(isSend == 1) {
@@ -561,16 +563,16 @@ define(function(require) {
 							},
 							success: function (e) {
 								if (e.error == 0) {
-									Dialog.tips('验证码已发送，请注意查收');
+									alert('验证码已发送，请注意查收');
 									countTime(60);
 									$this.data("send", "0");
 								} else {
-									Dialog.tips(e.msg);
+									alert(e.msg);
 								}
 							}
 						})
 					} else {
-						Dialog.tips('请稍后再试');
+						alert('请稍后再试');
 					}
 					
 				}
@@ -638,9 +640,9 @@ define(function(require) {
 			var options = {
 				'initAppShareOption': {
 					'sharedURL': "https://m.aomygod.com/Activitycommon/scream",
-					'sharedImageURL': '',
-					'sharedTitle': "",
-					'shareSummary': ""
+					'sharedImageURL': 'https://img04.aomygod.com/fontend/20171027/imgs/status4/share.png',
+					'sharedTitle': "奥买家-尖叫值挑战赛",
+					'shareSummary': "奥买家 尖叫值挑战赛 全球约站 从不怠慢"
 				},
 				'publicHeaderOption': {
 					'sharedImageURL': '',
@@ -662,10 +664,10 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
-							Dialog.tips('分享朋友圈成功!');
+							alert('分享朋友圈成功!');
 						},
 						cancel: function() {
-							Dialog.tips('分享朋友圈失败!');
+							alert('分享朋友圈失败!');
 						}
 					});
 					//发送给朋友
@@ -675,10 +677,10 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
-							Dialog.tips('分享给朋友成功!');
+							alert('分享给朋友成功!');
 						},
 						cancel: function() {
-							Dialog.tips('分享给朋友失败!');
+							alert('分享给朋友失败!');
 						}
 					});
 					wx.onMenuShareWeibo({
@@ -687,10 +689,10 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
-							Dialog.tips('分享微博成功!');
+							alert('分享微博成功!');
 						},
 						cancel: function() {
-							Dialog.tips('分享微博失败!');
+							alert('分享微博失败!');
 						}
 					});
 					//分享到腾讯QQ
@@ -700,10 +702,10 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
-							Dialog.tips('分享腾讯QQ成功!');
+							alert('分享腾讯QQ成功!');
 						},
 						cancel: function() {
-							Dialog.tips('分享腾讯QQ失败!');
+							alert('分享腾讯QQ失败!');
 						}
 					});
 					//分享到腾讯QQ空间
@@ -713,10 +715,10 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
-							Dialog.tips('分享QQ空间成功!');
+							alert('分享QQ空间成功!');
 						},
 						cancel: function() {
-							Dialog.tips('分享QQ空间失败!');
+							alert('分享QQ空间失败!');
 						}
 					});
 				});
