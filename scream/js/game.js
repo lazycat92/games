@@ -487,8 +487,10 @@ define(function(require) {
 		login: function() {
 			var _this = this;
 			var couponId;
-
+			alert("321");
+			
 			$("body").on('click', ".btn-coupon", function(e) {
+				alert("113");
 				e.stopPropagation();
 				var $this = this;
 				couponId = $(this).data("index");
