@@ -214,12 +214,10 @@
 			alert("播放音乐", bgm.paused);
 			document.addEventListener("WeixinJSBridgeReady", function() {
 				
-				if(bgm.paused) {
-					alert("自动播放音乐");
-					bgm.play();
-				}
+				alert("自动播放音乐");
+				bgm.play();
 				
-			}, false);
+			}, true);
 		};
 	</script>
 </body>
