@@ -163,10 +163,10 @@ define(function(require) {
 				screenHeight = winHeight;
 				screenWidth = Math.floor(screenHeight * normalWidth / normalHeight);
 			}
-			 container.find(".status").width(screenWidth);
-			 container.find(".status").height(screenHeight);
-			alert("宽", screenWidth)
-			alert('高', screenHeight);
+//			 container.find(".status").width(screenWidth);
+//			 container.find(".status").height(screenHeight);
+			alert("宽", winWidth)
+			alert('高', winHeight);
 		},
 		// 图片预加载
 		preloadFile: function() {
