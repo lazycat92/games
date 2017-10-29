@@ -667,8 +667,6 @@ define(function(require) {
 				
 				wx.ready(function() {
 					
-					alert("微信ready");
-					
 					var title = options.initAppShareOption.sharedTitle;
 					var desc = options.initAppShareOption.shareSummary;
 					var url = options.initAppShareOption.sharedURL;
