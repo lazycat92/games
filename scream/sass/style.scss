@@ -119,14 +119,17 @@ body {
                     }
                 }
                 .coupon {
-                    width: rem(530);
-                    height: rem(302);
-                    margin: 0 auto;
-                    background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/coupon.png') center center no-repeat;
-                    background-size: 100%;
-                    position: relative;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 12%;
+                    left: 0;
                     z-index: 30;
                     animation: formTop 1s ease-in forwards;
+                    img {
+                        display: block;
+                        width: 70%;
+                        margin: 0 auto;
+                    }
                 }
                 .btn-light {
                     display: flex;
@@ -139,13 +142,13 @@ body {
                         flex: 1;
                         .btn-boy {
                             display: block;
-                            width: 80%;
+                            width: 90%;
                             float: right;
                             animation: btnScale .8s linear infinite alternate-reverse;
                         }
                         .btn-girl {
                             display: block;
-                            width: 80%;
+                            width: 90%;
                            float: left;
                             animation: btnScale .8s linear infinite alternate-reverse;
                         }
@@ -190,19 +193,18 @@ body {
                 }
                 @keyframes formTop {
                     0% {
-                        top: rem(-400);
+                        bottom: 18%;
                         opacity: 0;
                     }
                     50% {
-                        top: rem(-160);
+                        bottom: 12%;
                         opacity: 1;
                     }
                     75% {
-                        top: rem(-190);
-                        opacity: 1;
+                        bottom: 13%;
                     }
                     100% {
-                        top: rem(-160);
+                        bottom: 12%;
                         opacity: 1;
                     }
                 }

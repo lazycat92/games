@@ -165,8 +165,6 @@ define(function(require) {
 			}
 //			container.find(".status").width(screenWidth);
 			container.find(".status").height(winHeight);
-			alert("宽"+winWidth)
-			alert('高'+ winHeight);
 		},
 		// 图片预加载
 		preloadFile: function() {
@@ -666,6 +664,7 @@ define(function(require) {
 
 			function initWxShare() {
 				var self = this;
+				var bgm = document.getElementById("bgm");
 				wx.ready(function() {
 					
 					alert("微信ready");
@@ -674,21 +673,12 @@ define(function(require) {
 					var desc = options.initAppShareOption.shareSummary;
 					var url = options.initAppShareOption.sharedURL;
 					var imgUrl = options.initAppShareOption.sharedImageURL;
-					// 微信中自动播放音乐
-					var evalWXjsApi = function(jsApiFun) {
-					    if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
-					        jsApiFun();
-					    } else {
-					        document.attachEvent && document.attachEvent("WeixinJSBridgeReady", jsApiFun);
-					        document.addEventListener && document.addEventListener("WeixinJSBridgeReady", jsApiFun);
-					    }
-					}
 					
-					var bgm = document.getElementById("bgm");
-					function jsApiFun() {
+					// 微信中自动播放音乐
+					document.addEventListener("WeixinJSBridgeReady", function () {
 						alert("自动播放音乐");
 						bgm.play();
-					}
+					});
 					
 					//朋友圈
 					wx.onMenuShareTimeline({
