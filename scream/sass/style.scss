@@ -148,14 +148,14 @@ body {
                         .btn-boy {
                             display: block;
                             width: 100%;
-                            height: 100%;
+                            height: rem(200);
                             float: right;
                             animation: btnScale .8s linear infinite alternate-reverse;
                         }
                         .btn-girl {
                             display: block;
                             width:  100%;
-                            height: 100%;
+                            height: rem(200);
                             float: left;
                             animation: btnScale .8s linear infinite alternate-reverse;
                         }
