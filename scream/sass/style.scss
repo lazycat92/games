@@ -162,12 +162,9 @@ body {
                 }
                 .arrow {
                     display: block;
-                    width: rem(106);
-                    height: rem(94);
-                    background: url('https://img04.aomygod.com/fontend/20171027/imgs/status1/arrow.png') no-repeat;
-                    background-size: 80%;
+                    width: rem(80);
                     position: absolute;
-                    bottom: -2%;
+                    bottom: -1%;
                     animation: arrowTransform 2s ease infinite alternate-reverse;
                 }
                 @keyframes arrowTransform {
