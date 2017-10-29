@@ -107,10 +107,9 @@ define(function(require) {
 		urls.img + 'imgs/status4/logo.png',
 		urls.img + 'imgs/status4/share.png',
 
-		urls.img + 'imgs/music/background-music.mp3',
-		urls.img + 'imgs/music/boy.mp3',
-		urls.img + 'imgs/music/girl.mp3',
-		"https://img04.aomygod.com/fontend/20171028/imgs/music/bgm1.mp3"
+		'https://img04.aomygod.com/fontend/20171028/imgs/music/bgm.mp3',
+		'https://img04.aomygod.com/fontend/20171028/imgs/music/boy.mp3',
+		urls.img + 'imgs/music/girl.mp3'
 	];
 	
 	
@@ -180,7 +179,7 @@ define(function(require) {
 			}
 
 			function handleOverallProgress(e) {
-				$(".preload-progress").html((preload.progress * 100).toFixed(2));
+				$(".preload-progress").html(parseInt(preload.progress * 100));
 			}
 
 			function handleFileError(event) {
@@ -194,10 +193,14 @@ define(function(require) {
 		gameBegin: function(gender) {
 			var _this = this;
 			var count = 0;
-			console.log(urls.img + 'imgs/music/' + gender + '.mp3');
-			var sound2 = new Howl({
-				src: [urls.img + 'imgs/music/' + gender + '.mp3']
-			});
+//			var musics = [
+//				"https://img04.aomygod.com/fontend/20171028/imgs/music/boy.mp3",
+//				urls.img + 'imgs/music/girl.mp3'
+//			];
+//			var sound2 = new Howl({
+//				src: [gender == boy ? musics[0]: musics[1]]
+//			});
+			
 			// 初始化页面
 			$(".score-num img").css('bottom', '-8.74667rem');
 			$(".count1").attr('src', urls.img + "imgs/number/1.png");
@@ -208,23 +211,28 @@ define(function(require) {
 
 			function countdown(a) {
 
-				$(".btn").on("touchstart", function(e) {
+				$(".btn").on("touchstart", function (e) {
 					e.preventDefault();
-					sound2.play();
+					if($(".music").hasClass("off")) {
+						$("audio#" + gender)[0].play();
+					} else {
+						$("audio#" + gender)[0].pause();
+					}
+					
 					count++;
-					if(count >= 130) {
+					if (count >= 130) {
 						$(".score-num img").css('bottom', '0');
 					} else {
 						$(".score-num img").css('bottom', ((count * 3 - 410) / 46.875) + 'rem');
 					}
-					switch(true) {
+					switch (true) {
 						case count >= 46 && count <= 90:
 							$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/' + gender + '/1.png');
 							break;
 
 						case count >= 91:
 							var num = count % 2 + 2;
-							if(gender == 'girl') {
+							if (gender == 'girl') {
 								$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/girl/2.png');
 							} else {
 								$("#status3 ." + gender + " img[name=person]").attr('src', urls.img + 'imgs/status3/' + gender + '/' + num + '.png');
@@ -237,26 +245,25 @@ define(function(require) {
 							break;
 					}
 					$(this).addClass("btn-off");
-				}).on("touchend", function() {
+				}).on("touchend", function () {
 					$(this).removeClass("btn-off");
 				});
-				var timer = setInterval(function() {
+				var timer = setInterval(function () {
 					a--
-					if(a < 10) {
+					if (a < 10 && a > 0) {
 						$(".count1").attr('src', urls.img + "imgs/number/0.png");
 						$(".count2").attr('src', urls.img + "imgs/number/" + a + ".png");
 					}
-					if(a < 0) {
-						sound2.pause();
-						clearInterval(timer);
+					if (a <= 0) {
+						// sound2.pause();
+						$("audio#" + gender)[0].pause();
 						$(".count2").attr('src', urls.img + "imgs/number/0.png");
 						$(".btn").off("touchstart touchend");
 						$(".btn").removeClass("btn-off");
-						setTimeout(function(e) {
-							alert("游戏结束");
+						clearInterval(timer);
+						setTimeout(function (e) {
 							_this.calcScore(count);
 						}, 1500);
-
 					}
 				}, 1000);
 			}
@@ -323,7 +330,9 @@ define(function(require) {
 					$("audio")[0].play();
 				} else {
 					$(this).attr("src", urls.img + 'imgs/music-off.png');
-					$("audio")[0].pause();
+					$("audio").each(function(index, item) {
+						item.pause();
+					})
 				}
 				$(this).toggleClass("off");
 			})
@@ -484,38 +493,13 @@ define(function(require) {
 				var $this = this;
 				couponId = $(this).data("index");
 				var _nick = getCookie("_nick");
-				if(_nick) {
+				if(!_nick) {
 					$(".outside-mask").show();
 				} else {
 					_this.setActivity();
 					_this.getCoupon(couponId);
 				}
 
-			}).on('click', ".get-code", function(e) {
-				e.stopPropagation();
-				var phone = $("input[name=phone]").val();
-				if(!regs.mobile.test(phone)) {
-					console.log('请输入正确的手机号码');
-				} else {
-
-					$.ajax({
-						url: urls.code,
-						type: "get",
-						dataType: "jsonp",
-						jsonp: "callback",
-						async: false,
-						data: {
-							mobile: phone
-						},
-						success: function(e) {
-							if(e.error == 0) {
-								console.log('验证码已发送，请注意查收', e);
-							} else {
-								console.log("1 操作失败");
-							}
-						}
-					})
-				}
 			}).on('click', ".get-coupon", function(e) {
 				e.stopPropagation();
 				var phone = $("input[name=phone]").val();
@@ -552,7 +536,55 @@ define(function(require) {
 			}).on('click', ".close", function(e) {
 				e.stopPropagation();
 				$(".outside-mask").hide();
-			})
+			});
+			
+			$(".get-code").on('click', function (e) {
+				e.stopPropagation();
+				var $this = $(this);
+				var phone = $("input[name=phone]").val();
+				var isSend = $(this).data("send");
+				if (!regs.mobile.test(phone)) {
+					Dialog.tips('请输入正确的手机号码');
+				} else {
+
+					if(isSend == 1) {
+						$.ajax({
+							url: urls.code,
+							type: "get",
+							dataType: "jsonp",
+							jsonp: "callback",
+							async: false,
+							data: {
+								mobile: phone
+							},
+							success: function (e) {
+								if (e.error == 0) {
+									Dialog.tips('验证码已发送，请注意查收');
+									countTime(60);
+									$this.data("send", "0");
+								} else {
+									Dialog.tips(e.msg);
+								}
+							}
+						})
+					} else {
+						Dialog.tips('请稍后再试');
+					}
+					
+				}
+			});
+
+			function countTime(time) {
+				$(".get-code").html(time + "s");
+				var timer = setInterval(function() {
+					$(".get-code").html(time + "s");
+					time--;
+					if(time < 0) {
+						clearInterval(timer);
+						$(".get-code").html("获取验证码");
+					}
+				}, 1000);
+			}	
 		},
 		// 领取优惠券
 		getCoupon: function(e) {
