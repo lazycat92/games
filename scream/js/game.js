@@ -134,14 +134,13 @@ define(function(require) {
 			this.preloadFile();
 			this.changeStatus();
 			this.login();
-			this.autoPlayBgm();
-			 this.shareGame();
+		 	
 		},
 		// 在微信中自动播放背景音乐
 		autoPlayBgm: function(e) {
-			alert(1);
 			var bgm = document.getElementById("bgm");
 			document.addEventListener("WeixinJSBridgeReady", function() {
+				alert(2);
 			    bgm.play();
 			}, false);
 			document.addEventListener('YixinJSBridgeReady', function() {
@@ -188,6 +187,8 @@ define(function(require) {
 				$(".voice").find("img").attr("src", urls.img + 'imgs/music-on.png');
 				$(".preload-tips").hide();
 				$(".container").show();
+				_this.autoPlayBgm();
+				_this.shareGame();
 			}
 
 			function handleOverallProgress(e) {
@@ -218,7 +219,8 @@ define(function(require) {
 
 				$(".btn").on("touchstart", function (e) {
 					e.preventDefault();
-					if($(".music").hasClass("off")) {
+					
+					if(!$(".music").hasClass("off")) {
 						$("audio#" + gender)[0].play();
 					} else {
 						$("audio#" + gender)[0].pause();
@@ -675,9 +677,11 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
+							alert("23");
 							alert('分享朋友圈成功!');
 						},
 						cancel: function() {
+							alert("err1");
 							alert('分享朋友圈失败!');
 						}
 					});
@@ -688,9 +692,11 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
+							alert("33");
 							alert('分享给朋友成功!');
 						},
 						cancel: function() {
+							alert("err2");
 							alert('分享给朋友失败!');
 						}
 					});
@@ -700,9 +706,11 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
+							alert("22");
 							alert('分享微博成功!');
 						},
 						cancel: function() {
+							alert("err3");
 							alert('分享微博失败!');
 						}
 					});
@@ -713,9 +721,11 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
+							alert("suce1");
 							alert('分享腾讯QQ成功!');
 						},
 						cancel: function() {
+							alert("err4");
 							alert('分享腾讯QQ失败!');
 						}
 					});
@@ -726,9 +736,11 @@ define(function(require) {
 						link: url,
 						imgUrl: imgUrl,
 						success: function() {
+							alert("suce2");
 							alert('分享QQ空间成功!');
 						},
 						cancel: function() {
+							alert("err5");
 							alert('分享QQ空间失败!');
 						}
 					});
