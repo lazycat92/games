@@ -134,7 +134,7 @@ define(function(require) {
 			this.preloadFile();
 			this.changeStatus();
 			this.login();
-		 	this.autoPlayBgm();
+//		 	this.autoPlayBgm();
 		},
 		// 在微信中自动播放背景音乐
 		autoPlayBgm: function(e) {
