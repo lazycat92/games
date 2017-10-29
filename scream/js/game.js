@@ -135,7 +135,7 @@ define(function(require) {
 			this.changeStatus();
 			this.login();
 			this.autoPlayBgm();
-			// this.shareGame();
+			 this.shareGame();
 		},
 		// 在微信中自动播放背景音乐
 		autoPlayBgm: function(e) {
@@ -655,17 +655,16 @@ define(function(require) {
 					'sharedImageURL': 'https://img04.aomygod.com/fontend/20171027/imgs/status4/share.png',
 					'sharedTitle': "奥买家-尖叫值挑战赛",
 					'shareSummary': "奥买家 尖叫值挑战赛 全球约站 从不怠慢"
-				},
-				'publicHeaderOption': {
-					'sharedImageURL': '',
-					'sharedTitle': "",
-					'shareSummary': ""
 				}
 			};
 
+			initWxShare();
+
 			function initWxShare() {
 				var self = this;
+				alert("分享begin");
 				wx.ready(function() {
+					alert("分享11");
 					var title = options.initAppShareOption.sharedTitle;
 					var desc = options.initAppShareOption.shareSummary;
 					var url = options.initAppShareOption.sharedURL;
@@ -741,7 +740,7 @@ define(function(require) {
 //				initWxShare();
 //			}
 
-			initWxShare();
+			
 		}
 	}
 
