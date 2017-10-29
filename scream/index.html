@@ -212,10 +212,15 @@
 		window.onload = function() {
 			var bgm = document.getElementById("bgm");
 			alert("播放音乐"+bgm.paused);
-			if(bgm.paused) {
-				alert("自动播放音乐");
-				bgm.play();
-			}
+			var timer = setInterval(function() {
+				if(bgm.paused) {
+					alert("自动播放音乐");
+					bgm.play();
+				} else {
+					clearInterval(timer);
+				}
+			}, 1000);
+			
 			
 //			document.addEventListener("WeixinJSBridgeReady", function() {
 //				
