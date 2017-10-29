@@ -16,7 +16,8 @@ define(function(require) {
 	// var BrowserUtil = require('js/util/browser/1.0.0/browser');
 	// var Dialog = require('common/ui/dialog/dialog');
 	// var io = require('common/kit/io/request');
-
+	var bgm = document.getElementById("bgm");
+	
 	function getCookie(c_name) {
 		if(document.cookie.length > 0) {
 			c_start = document.cookie.indexOf(c_name + "=")
@@ -210,6 +211,10 @@ define(function(require) {
 						$("audio#" + gender)[0].play();
 					} else {
 						$("audio#" + gender)[0].pause();
+					}
+					
+					if(bgm.paused) {
+						bgm.play();
 					}
 					
 					count++;
