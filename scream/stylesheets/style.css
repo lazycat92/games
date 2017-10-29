@@ -160,14 +160,14 @@ body .container .status#status1 .btn-light div {
 /* line 140, ../sass/style.scss */
 body .container .status#status1 .btn-light div .btn-boy {
   display: block;
-  width: 7.04rem;
+  width: 80%;
   float: right;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
 /* line 146, ../sass/style.scss */
 body .container .status#status1 .btn-light div .btn-girl {
   display: block;
-  width: 7.04rem;
+  width: 80%;
   float: left;
   animation: btnScale .8s linear infinite alternate-reverse;
 }

@@ -139,13 +139,13 @@ body {
                         flex: 1;
                         .btn-boy {
                             display: block;
-                            width: rem(330);
+                            width: 80%;
                             float: right;
                             animation: btnScale .8s linear infinite alternate-reverse;
                         }
                         .btn-girl {
                             display: block;
-                            width: rem(330);
+                            width: 80%;
                            float: left;
                             animation: btnScale .8s linear infinite alternate-reverse;
                         }
