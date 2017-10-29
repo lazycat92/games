@@ -277,7 +277,7 @@ body .container .status#status1 p {
 /* line 258, ../sass/style.scss */
 body .container .status#status2 div {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: #eee;
 }
 /* line 263, ../sass/style.scss */
@@ -366,7 +366,7 @@ body .container .status#status3 {
 body .container .status#status3 .background img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 /* line 345, ../sass/style.scss */
 body .container .status#status3 .time-box {

@@ -139,16 +139,13 @@ define(function(require) {
 		},
 		// 在微信中自动播放背景音乐
 		autoPlayBgm: function(e) {
-			function loadSound() {
-			    var ev = document.createEvent('HTMLEvents');
-			    ev.initEvent('touchend', false, false);
-			    document.dispatchEvent(ev);
-			}
+			alert(1);
+			var bgm = document.getElementById("bgm");
 			document.addEventListener("WeixinJSBridgeReady", function() {
-			    loadSound()
+			    bgm.play();
 			}, false);
 			document.addEventListener('YixinJSBridgeReady', function() {
-			    loadSound()
+			   	bgm.play();
 			}, false);
 		},
 		// 定义页面宽高，屏幕适应计算
