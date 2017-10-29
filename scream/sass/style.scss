@@ -98,8 +98,9 @@ body {
                 .cartoon {
                     display: flex;
                     width: 100%;
-                    position: relative;
-                    top: rem(-36);
+                    position: absolute;
+                    bottom: 35%;
+                    left: 0;
                     z-index: 20;
                     .boy {
                         flex: 1 50%;
@@ -146,12 +147,14 @@ body {
                         width: 50%;
                         .btn-boy {
                             display: block;
+                            width: 90%;
                             height: 100%;
                             float: right;
                             animation: btnScale .8s linear infinite alternate-reverse;
                         }
                         .btn-girl {
                             display: block;
+                            width: 90%;
                             height: 100%;
                             float: left;
                             animation: btnScale .8s linear infinite alternate-reverse;
