@@ -60,7 +60,7 @@
 	<div class="container" style="display: none;">
 		<div class="voice">
 			<img src="" alt="" class="music">
-			<audio id="bgm" src="https://img04.aomygod.com/fontend/20171028/imgs/music/bgm.mp3" autoplay="autoplay" loop="loop"></audio>
+			<audio id="bgm" src="./bgm.mp3" autoplay="autoplay" loop="loop"></audio>
 		</div>
 		<div class="status" id="status1">
 			<i class="title"></i>
@@ -216,18 +216,14 @@
 		window.onload = function() {
 			var bgm = document.getElementById("bgm");
 			
-			alert('weixin' +WeixinJSBridge);
-			
-			if (typeof WeixinJSBridge == "undefined"){
-			    onBridgeReady();
-			}else{
-		        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-			}
-			
-			function onBridgeReady(){
-				alert("新的一轮播放" + bgm.paused);
-			 	bgm.play();
-			}
+			var bgm = document.getElementById("bgm");
+			alert("播放音乐" + bgm.paused);
+			document.addEventListener("WeixinJSBridgeReady", function() {
+				
+					alert("自动播放音乐");
+					bgm.play();
+					
+			}, false);
 		};
 	</script>
 </body>
