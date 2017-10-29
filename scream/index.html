@@ -62,7 +62,7 @@
             <img src="" alt="" class="music">
             <audio id="bgm" src="./bgm.mp3" autoplay="autoplay" loop="loop"></audio>
         </div>
-        <div class="status" id="status1" style="display: none;">
+        <div class="status" id="status1">
             <i class="title"></i>
             <i class="could"></i>
             <div class="cartoon">
@@ -140,7 +140,7 @@
                 </div>
             </div>
         </div>
-        <div class="status" id="status4">
+        <div class="status" id="status4" style="display:none">
             <!--<div class="background">
                 <img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/logo.png" alt="">
             </div>-->
@@ -217,7 +217,6 @@
 
         window.onload = function() {
             var bgm = document.getElementById("bgm");
-            alert(4);
             document.addEventListener("WeixinJSBridgeReady", function() {
                 bgm.play();
             }, false);
