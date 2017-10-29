@@ -134,17 +134,18 @@ define(function(require) {
 			this.preloadFile();
 			this.changeStatus();
 			this.login();
-		 	
+		 	this.autoPlayBgm();
 		},
 		// 在微信中自动播放背景音乐
 		autoPlayBgm: function(e) {
 			var bgm = document.getElementById("bgm");
+			alert("播放音乐", bgm.paused);
 			document.addEventListener("WeixinJSBridgeReady", function() {
-				alert(2);
-			    bgm.play();
-			}, false);
-			document.addEventListener('YixinJSBridgeReady', function() {
-			   	bgm.play();
+				
+				if(bgm.paused) {
+					alert("自动播放音乐");
+					bgm.play();
+				}
 			}, false);
 		},
 		// 定义页面宽高，屏幕适应计算
@@ -187,7 +188,6 @@ define(function(require) {
 				$(".voice").find("img").attr("src", urls.img + 'imgs/music-on.png');
 				$(".preload-tips").hide();
 				$(".container").show();
-				_this.autoPlayBgm();
 				_this.shareGame();
 			}
 
