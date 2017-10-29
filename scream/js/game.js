@@ -289,7 +289,7 @@ define(function(require) {
 		changeStatus: function(e) {
 			var _this = this;
 
-			$("#status1 .btn-light a").on('click', function(e) {
+			$("#status1 .btn-light img").on('click', function(e) {
 				e.stopPropagation();
 				$(this).parents("#status1").hide();
 				$("#status2").show();
