@@ -112,7 +112,7 @@ body .container .status#status1 .cartoon {
   position: absolute;
   bottom: 27%;
   left: 0;
-  z-index: 20;
+  z-index: 9;
 }
 /* line 105, ../sass/style.scss */
 body .container .status#status1 .cartoon .boy {
