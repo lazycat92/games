@@ -111,7 +111,7 @@ body .container .status#status1 .could {
 body .container .status#status1 .cartoon {
   display: flex;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 27%;
   left: 0;
   z-index: 9;
@@ -139,7 +139,7 @@ body .container .status#status1 .cartoon .girl {
 /* line 126, ../sass/style.scss */
 body .container .status#status1 .coupon {
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 12%;
   left: 0;
   z-index: 30;
@@ -155,7 +155,7 @@ body .container .status#status1 .coupon img {
 body .container .status#status1 .btn-light {
   display: flex;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: -1%;
   left: 0;
   z-index: 50;
@@ -185,7 +185,7 @@ body .container .status#status1 .btn-light div .btn-girl {
 body .container .status#status1 .arrow {
   display: block;
   width: 1.70667rem;
-  position: absolute;
+  position: fixed;
   bottom: -1%;
   animation: arrowTransform 2s ease infinite alternate-reverse;
 }
