@@ -141,9 +141,9 @@
             </div>
         </div>
         <div class="status" id="status4">
-            <div class="background">
+            <!--<div class="background">
                 <img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/logo.png" alt="">
-            </div>
+            </div>-->
             <div class="score">
                 <p>你已打败全国
                     <span></span>的人</p>
@@ -217,8 +217,8 @@
 
         window.onload = function() {
             var bgm = document.getElementById("bgm");
+            alert(2);
             document.addEventListener("WeixinJSBridgeReady", function() {
-            	alert(1);
                 bgm.play();
             }, false);
 
