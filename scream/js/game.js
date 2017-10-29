@@ -122,6 +122,8 @@ define(function(require) {
     // 阻止页面上下滑动
     $("body").on("touchmove", function(e) {
         e.preventDefault();
+    }).on('dblclick', function(e) {
+    	e.preventDefault();
     })
 
 
@@ -152,7 +154,7 @@ define(function(require) {
                 screenWidth = Math.floor(screenHeight * normalWidth / normalHeight);
             }
             //			container.find(".status").width(screenWidth);
-            //			container.find(".status").height(winHeight);
+              			container.find(".status").height(winHeight);
         },
         // 图片预加载
         preloadFile: function() {
