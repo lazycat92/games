@@ -2,8 +2,8 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="">
@@ -11,25 +11,25 @@
     <meta name="HandheldFriendly" content="true">
     <meta http-equiv="x-rim-auto-match" content="none">
     <meta name="format-detection" content="telephone=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="apple-touch-fullscreen"content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="format-detection" content="telephone=no,email=no,address=no" />
-	<meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
-	
-	<title>游戏</title>
-	
-	<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-	
-	<script>
-     wx.config({
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no,email=no,address=no" />
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
+
+    <title>游戏</title>
+
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+    <script>
+        wx.config({
             debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时会打印。
             appId: 'wxf182e91b5d8b8e6d', // 必填，公众号的唯一标识
             timestamp: '1509296628', // 必填，生成签名的时间戳
             nonceStr: 'KND0NMly5M372eAw', // 必填，生成签名的随机串
-            signature: '8e6420c6e75f6ac3a5cfc1d68176e902981b0658',// 必填，签名，见附录1
+            signature: '8e6420c6e75f6ac3a5cfc1d68176e902981b0658', // 必填，签名，见附录1
             jsApiList: [
                 'checkJsApi',
                 'onMenuShareTimeline',
@@ -43,186 +43,187 @@
                 'hideAllNonBaseMenuItem',
                 'showAllNonBaseMenuItem'
             ]
-      });
-	</script>
+        });
+    </script>
 </head>
 
 <body>
-	<!-- 图片预加载 -->
-	<div class="preload-tips">
-		<p>
-			<img src="https://img04.aomygod.com/fontend/20171027/imgs/logo.png" alt="logo"> loading
-			<span class="preload-progress">0</span>%
-		</p>
-	</div>
+    <!-- 图片预加载 -->
+    <div class="preload-tips">
+        <p>
+            <img src="https://img04.aomygod.com/fontend/20171027/imgs/logo.png" alt="logo"> loading
+            <span class="preload-progress">0</span>%
+        </p>
+    </div>
 
-	<!-- 内容区域 -->
-	<div class="container" style="display: none;">
-		<div class="voice">
-			<img src="" alt="" class="music">
-			<audio id="bgm" src="./bgm.mp3" autoplay="autoplay" loop="loop"></audio>
-		</div>
-		<div class="status" id="status1">
-			<i class="title"></i>
-			<i class="could"></i>
-			<div class="cartoon">
-				<p class="boy"></p>
-				<p class="girl"></p>
-			</div>
-			<div class="coupon">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status1/coupon.png"/>
-			</div>
-			<div class="btn-light">
-				<div id="">
-					<img src="https://img04.aomygod.com/fontend/20171027/imgs/status1/boy-light2.png" class="btn-boy"/>
-				</div>
-				<div>
-					<img src="https://img04.aomygod.com/fontend/20171027/imgs/status1/girl-light2.png" class="btn-girl"/>
-				</div>
-			</div>
-			<img src="https://img04.aomygod.com/fontend/20171027/imgs/status1/arrow.png" class="arrow"/>
-		</div>
-		<div class="status" id="status2" style="display: none;">
-			<div class="for-boy" style="display: none;">
-				<img src="" alt="" class="status2-head">
-				<img src="" alt="" class="status2-body">
-				<img src="" alt="" class="status2-foot">
-				<img src="" alt="" class="status2-ready">
-			</div>
-			<div class="for-girl">
-				<img src="" alt="" class="status2-head">
-				<img src="" alt="" class="status2-body">
-				<img src="" alt="" class="status2-foot">
-				<img src="" alt="" class="status2-ready">
-			</div>
-		</div>
-		<div class="status" id="status3" style="display: none;">
-			<div class="background">
-				<img src="" alt="">
-			</div>
-			<div class="time-box">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/time.png" class="time" />
-				<div class="time-count">
-					<p>
-						<img src="https://img04.aomygod.com/fontend/20171027/imgs/number/1.png" class="count1" />
-					</p>
-					<p>
-						<img src="https://img04.aomygod.com/fontend/20171027/imgs/number/0.png" class="count2" />
-					</p>
-				</div>
-			</div>
-			<div class="score">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/12.png">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/13.png">
-				<div class="score-num">
-					<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/33.png" alt="">
-				</div>
-			</div>
-			<div class="cloud">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/cloud.png" alt="">
-			</div>
-			<div class="person boy">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/0.png" alt="" name="person">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/5.png" alt="" class="mask">
-				<audio id="boy" src="https://img04.aomygod.com/fontend/20171028/imgs/music/boy.mp3"></audio>
-			</div>
-			<div class="person girl" style="display:none">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/girl/0.png" alt="" name="person">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/girl/3.png" alt="" name="shadow1">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/5.png" alt="" class="mask">
-				<audio id="girl" src="https://img04.aomygod.com/fontend/20171027/imgs/music/girl.mp3"></audio>	
-			</div>
-			<div class="btn-box">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/1.png" alt="" class="table">
-				<div class="btns">
-					<img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/begin.png" alt="" class="arrow-begin">
-					<a href="javascript:;" class="btn btn-begin"></a>
-				</div>
-			</div>
-		</div>
-		<div class="status" id="status4" style="display: none;">
-			<div class="background">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/logo.png" alt="">
-			</div>
-			<div class="score">
-				<p>你已打败全国
-					<span></span>的人</p>
-			</div>
-			<div class="word">
-			</div>
-			<div class="scream">
-				<p class="1st">
-					<img src="" alt="">
-				</p>
-				<p class="2nd">
-					<img src="" alt="">
-				</p>
-				<p class="3rd">
-					<img src="" alt="">
-				</p>
-				<p class="4th">
-					<img src="" alt="">
-				</p>
-				<p class="5th">
-					<img src="" alt="">
-				</p>
-			</div>
-			<div class="btns">
-				<img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/btn.png" alt="">
-				<a href="javascript:;" class="play-again"></a>
-				<a href="javascript:;" class="share"></a>
-			</div>
-			<div class="coupon">
-				<img src="" alt="" class="btn-coupon">
-			</div>
-		</div>
-		<div class="outside-mask">
-			<div class="login">
-				<div class="box">
-					<h3>验证手机号码</h3>
-					<p>
-						<input type="text" placeholder="请输入手机号码" name="phone">
-						<a href="javascript:;" class="get-code" data-send="1">获取验证码</a>
-					</p>
-					<p>
-						<input type="text" placeholder="请输入验证码" name="code">
-					</p>
-					<a href="javascript:;" class="get-coupon">立即领取</a>
-				</div>
-				<i class="close"></i>
-			</div>
-		</div>
-		<div class="share-mask">
-			<img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/share.png"/>
-		</div>
-	</div>
+    <!-- 内容区域 -->
+    <div class="container" style="display: none;">
+        <div class="voice">
+            <img src="" alt="" class="music">
+            <audio id="bgm" src="./bgm.mp3" autoplay="autoplay" loop="loop"></audio>
+        </div>
+        <div class="status" id="status1" style="display: none;">
+            <i class="title"></i>
+            <i class="could"></i>
+            <div class="cartoon">
+                <p class="boy"></p>
+                <p class="girl"></p>
+            </div>
+            <div class="coupon">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status1/coupon.png" />
+            </div>
+            <div class="btn-light">
+                <div id="">
+                    <img src="https://img04.aomygod.com/fontend/20171027/imgs/status1/boy-light2.png" class="btn-boy" />
+                </div>
+                <div>
+                    <img src="https://img04.aomygod.com/fontend/20171027/imgs/status1/girl-light2.png" class="btn-girl" />
+                </div>
+            </div>
+            <img src="https://img04.aomygod.com/fontend/20171027/imgs/status1/arrow.png" class="arrow" />
+        </div>
+        <div class="status" id="status2" style="display: none;">
+            <div class="for-boy" style="display: none;">
+                <img src="" alt="" class="status2-head">
+                <img src="" alt="" class="status2-body">
+                <img src="" alt="" class="status2-foot">
+                <img src="" alt="" class="status2-ready">
+            </div>
+            <div class="for-girl">
+                <img src="" alt="" class="status2-head">
+                <img src="" alt="" class="status2-body">
+                <img src="" alt="" class="status2-foot">
+                <img src="" alt="" class="status2-ready">
+            </div>
+        </div>
+        <div class="status" id="status3" style="display: none;">
+            <div class="background">
+                <img src="" alt="">
+            </div>
+            <div class="time-box">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/time.png" class="time" />
+                <div class="time-count">
+                    <p>
+                        <img src="https://img04.aomygod.com/fontend/20171027/imgs/number/1.png" class="count1" />
+                    </p>
+                    <p>
+                        <img src="https://img04.aomygod.com/fontend/20171027/imgs/number/0.png" class="count2" />
+                    </p>
+                </div>
+            </div>
+            <div class="score">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/12.png">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/13.png">
+                <div class="score-num">
+                    <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/33.png" alt="">
+                </div>
+            </div>
+            <div class="cloud">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/cloud.png" alt="">
+            </div>
+            <div class="person boy">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/0.png" alt="" name="person">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/5.png" alt="" class="mask">
+                <audio id="boy" src="https://img04.aomygod.com/fontend/20171028/imgs/music/boy.mp3"></audio>
+            </div>
+            <div class="person girl" style="display:none">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/girl/0.png" alt="" name="person">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/girl/3.png" alt="" name="shadow1">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/boy/5.png" alt="" class="mask">
+                <audio id="girl" src="https://img04.aomygod.com/fontend/20171027/imgs/music/girl.mp3"></audio>
+            </div>
+            <div class="btn-box">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/1.png" alt="" class="table">
+                <div class="btns">
+                    <img src="https://img04.aomygod.com/fontend/20171027/imgs/status3/begin.png" alt="" class="arrow-begin">
+                    <a href="javascript:;" class="btn btn-begin"></a>
+                </div>
+            </div>
+        </div>
+        <div class="status" id="status4">
+            <div class="background">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/logo.png" alt="">
+            </div>
+            <div class="score">
+                <p>你已打败全国
+                    <span></span>的人</p>
+            </div>
+            <div class="word">
+            </div>
+            <div class="scream">
+                <p class="1st">
+                    <img src="" alt="">
+                </p>
+                <p class="2nd">
+                    <img src="" alt="">
+                </p>
+                <p class="3rd">
+                    <img src="" alt="">
+                </p>
+                <p class="4th">
+                    <img src="" alt="">
+                </p>
+                <p class="5th">
+                    <img src="" alt="">
+                </p>
+            </div>
+            <div class="btns">
+                <img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/btn.png" alt="">
+                <a href="javascript:;" class="play-again"></a>
+                <a href="javascript:;" class="share"></a>
+            </div>
+            <div class="coupon">
+                <img src="" alt="" class="btn-coupon">
+            </div>
+        </div>
+        <div class="outside-mask">
+            <div class="login">
+                <div class="box">
+                    <h3>验证手机号码</h3>
+                    <p>
+                        <input type="text" placeholder="请输入手机号码" name="phone">
+                        <a href="javascript:;" class="get-code" data-send="1">获取验证码</a>
+                    </p>
+                    <p>
+                        <input type="text" placeholder="请输入验证码" name="code">
+                    </p>
+                    <a href="javascript:;" class="get-coupon">立即领取</a>
+                </div>
+                <i class="close"></i>
+            </div>
+        </div>
+        <div class="share-mask">
+            <img src="https://img04.aomygod.com/fontend/20171027/imgs/status4/share.png" />
+        </div>
+    </div>
 
-	<script src="js/require.js"></script>
-	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		var rate = {
-			"member_count": 0,
-			"coupons": [{
-				"coupon_id": 1421,
-				"coupon_desc": "5\u5143\u65e0\u95e8\u69db\u5238"
-			}, {
-				"coupon_id": 1422,
-				"coupon_desc": "10\u5143\u65e0\u95e8\u69db\u5238"
-			}, {
-				"coupon_id": 1423,
-				"coupon_desc": "\u6ee1198\u51cf100\u5238"
-			}]
-		};
-		require(['game']);
-		
-		window.onload = function() {
-			var bgm = document.getElementById("bgm");
-			document.addEventListener("WeixinJSBridgeReady", function () {
-				bgm.play();
-			},false);
-			
-		}
-	</script>
+    <script src="js/require.js"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var rate = {
+            "member_count": 0,
+            "coupons": [{
+                "coupon_id": 1421,
+                "coupon_desc": "5\u5143\u65e0\u95e8\u69db\u5238"
+            }, {
+                "coupon_id": 1422,
+                "coupon_desc": "10\u5143\u65e0\u95e8\u69db\u5238"
+            }, {
+                "coupon_id": 1423,
+                "coupon_desc": "\u6ee1198\u51cf100\u5238"
+            }]
+        };
+        require(['game']);
+
+        window.onload = function() {
+            var bgm = document.getElementById("bgm");
+            document.addEventListener("WeixinJSBridgeReady", function() {
+            	alert(1);
+                bgm.play();
+            }, false);
+
+        }
+    </script>
 </body>
 
 </html>
