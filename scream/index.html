@@ -211,22 +211,24 @@
 		
 		window.onload = function() {
 			var bgm = document.getElementById("bgm");
-			alert("播放音乐"+bgm.paused);
-			var timer = setInterval(function() {
-				if(bgm.paused) {
-					alert("自动播放音乐");
-					bgm.play();
-				} else {
-					clearInterval(timer);
-				}
-			}, 1000);
 			
+			alert(WeixinJSBridge);
 			
-//			document.addEventListener("WeixinJSBridgeReady", function() {
-//				
-//				
-//				
-//			}, true);
+			if (typeof WeixinJSBridge == "undefined"){
+			    if( document.addEventListener ){
+			        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+			    }else if (document.attachEvent){
+			        document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+			        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+			    }
+			}else{
+			    onBridgeReady();
+			}
+			
+			function onBridgeReady(){
+				alert("新的一轮播放" + bgm.paused);
+			 	bgm.play();
+			}
 		};
 	</script>
 </body>
