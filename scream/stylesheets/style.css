@@ -169,7 +169,7 @@ body .container .status#status1 .btn-light div {
 body .container .status#status1 .btn-light div .btn-boy {
   display: block;
   width: 100%;
-  height: 5.97333rem;
+  height: 5.54667rem;
   float: right;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
@@ -177,7 +177,7 @@ body .container .status#status1 .btn-light div .btn-boy {
 body .container .status#status1 .btn-light div .btn-girl {
   display: block;
   width: 100%;
-  height: 5.97333rem;
+  height: 5.54667rem;
   float: left;
   animation: btnScale .8s linear infinite alternate-reverse;
 }
