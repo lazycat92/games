@@ -489,7 +489,7 @@ define(function(require) {
 			var couponId;
 			alert("321");
 			
-			$("body").on('click', ".btn-coupon", function(e) {
+			$(".btn-coupon").on('click', function(e) {
 				alert("113");
 				e.stopPropagation();
 				var $this = this;
@@ -502,7 +502,10 @@ define(function(require) {
 					_this.getCoupon(couponId);
 				}
 
-			}).on('click', ".get-coupon", function(e) {
+			});
+			
+			
+			$("body").on('click', ".get-coupon", function(e) {
 				e.stopPropagation();
 				var phone = $("input[name=phone]").val();
 				var code = $("input[name=code]").val();
