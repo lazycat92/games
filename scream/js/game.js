@@ -666,13 +666,30 @@ define(function(require) {
 
 			function initWxShare() {
 				var self = this;
-				alert("分享begin");
 				wx.ready(function() {
-					alert("分享11");
+					
+					alert("微信ready");
+					
 					var title = options.initAppShareOption.sharedTitle;
 					var desc = options.initAppShareOption.shareSummary;
 					var url = options.initAppShareOption.sharedURL;
 					var imgUrl = options.initAppShareOption.sharedImageURL;
+					// 微信中自动播放音乐
+					var evalWXjsApi = function(jsApiFun) {
+					    if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+					        jsApiFun();
+					    } else {
+					        document.attachEvent && document.attachEvent("WeixinJSBridgeReady", jsApiFun);
+					        document.addEventListener && document.addEventListener("WeixinJSBridgeReady", jsApiFun);
+					    }
+					}
+					
+					var bgm = document.getElementById("bgm");
+					function jsApiFun() {
+						alert("自动播放音乐");
+						bgm.play();
+					}
+					
 					//朋友圈
 					wx.onMenuShareTimeline({
 						title: title,
