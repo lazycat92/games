@@ -25,7 +25,7 @@
 	
 	<script>
      wx.config({
-            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时会打印。
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时会打印。
             appId: 'wxf182e91b5d8b8e6d', // 必填，公众号的唯一标识
             timestamp: '1509296628', // 必填，生成签名的时间戳
             nonceStr: 'KND0NMly5M372eAw', // 必填，生成签名的随机串
@@ -216,10 +216,9 @@
 		require(['game']);
 		
 		window.onload = function() {
-			
+			alert("更新1");
 			var bgm = document.getElementById("bgm");
 			document.addEventListener("WeixinJSBridgeReady", function () {
-				alert("自动播放音乐");
 				bgm.play();
 			},false);
 			

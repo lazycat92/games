@@ -134,19 +134,6 @@ define(function(require) {
 			this.preloadFile();
 			this.changeStatus();
 			this.login();
-//		 	this.autoPlayBgm();
-		},
-		// 在微信中自动播放背景音乐
-		autoPlayBgm: function(e) {
-			var bgm = document.getElementById("bgm");
-			alert("播放音乐" + bgm.paused);
-			document.addEventListener("WeixinJSBridgeReady", function() {
-				
-				if(bgm.paused) {
-					alert("自动播放音乐");
-					bgm.play();
-				}
-			}, false);
 		},
 		// 定义页面宽高，屏幕适应计算
 		calcScreen: function() {
@@ -196,7 +183,6 @@ define(function(require) {
 			}
 
 			function handleFileError(event) {
-				alert(event);
 				$(".preload-tips").html("error" + JSON.stringify(event));
 			}
 			
