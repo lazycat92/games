@@ -212,17 +212,17 @@
 		window.onload = function() {
 			var bgm = document.getElementById("bgm");
 			
-			alert(WeixinJSBridge);
+			alert('weixin' +WeixinJSBridge);
 			
 			if (typeof WeixinJSBridge == "undefined"){
+			    onBridgeReady();
+			}else{
 			    if( document.addEventListener ){
 			        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
 			    }else if (document.attachEvent){
 			        document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
 			        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
 			    }
-			}else{
-			    onBridgeReady();
 			}
 			
 			function onBridgeReady(){
