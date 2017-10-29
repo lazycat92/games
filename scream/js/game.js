@@ -650,7 +650,7 @@ define(function(require) {
 		},
 		shareGame: function() {
 			var _this = this;
-
+			
 			var options = {
 				'initAppShareOption': {
 					'sharedURL': "https://m.aomygod.com/Activitycommon/scream",
@@ -664,12 +664,6 @@ define(function(require) {
 
 			function initWxShare() {
 				var self = this;
-				var bgm = document.getElementById("bgm");
-				// 微信中自动播放音乐
-				document.addEventListener("WeixinJSBridgeReady", function () {
-					alert("自动播放音乐");
-					bgm.play();
-				});
 				
 				wx.ready(function() {
 					

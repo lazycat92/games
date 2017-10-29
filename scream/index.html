@@ -215,6 +215,15 @@
 		};
 		require(['game']);
 		
+		window.onload = function() {
+			
+			var bgm = document.getElementById("bgm");
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				alert("自动播放音乐");
+				bgm.play();
+			},false);
+			
+		}
 	</script>
 </body>
 
