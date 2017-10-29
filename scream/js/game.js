@@ -480,8 +480,10 @@ define(function(require) {
 		login: function() {
 			var _this = this;
 			var couponId;
-
-			$("body").on('click', ".btn-coupon", function(e) {
+			alert("321");
+			
+			$(".btn-coupon").on('click', function(e) {
+				alert("113");
 				e.stopPropagation();
 				var $this = this;
 				couponId = $(this).data("index");
@@ -493,7 +495,10 @@ define(function(require) {
 					_this.getCoupon(couponId);
 				}
 
-			}).on('click', ".get-coupon", function(e) {
+			});
+			
+			
+			$("body").on('click', ".get-coupon", function(e) {
 				e.stopPropagation();
 				var phone = $("input[name=phone]").val();
 				var code = $("input[name=code]").val();
