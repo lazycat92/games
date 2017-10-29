@@ -665,6 +665,12 @@ define(function(require) {
 			function initWxShare() {
 				var self = this;
 				var bgm = document.getElementById("bgm");
+				// 微信中自动播放音乐
+				document.addEventListener("WeixinJSBridgeReady", function () {
+					alert("自动播放音乐");
+					bgm.play();
+				});
+				
 				wx.ready(function() {
 					
 					alert("微信ready");
@@ -673,12 +679,6 @@ define(function(require) {
 					var desc = options.initAppShareOption.shareSummary;
 					var url = options.initAppShareOption.sharedURL;
 					var imgUrl = options.initAppShareOption.sharedImageURL;
-					
-					// 微信中自动播放音乐
-					document.addEventListener("WeixinJSBridgeReady", function () {
-						alert("自动播放音乐");
-						bgm.play();
-					});
 					
 					//朋友圈
 					wx.onMenuShareTimeline({
