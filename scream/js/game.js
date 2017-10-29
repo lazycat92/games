@@ -139,7 +139,7 @@ define(function(require) {
 		// 在微信中自动播放背景音乐
 		autoPlayBgm: function(e) {
 			var bgm = document.getElementById("bgm");
-			alert("播放音乐", bgm.paused);
+			alert("播放音乐" + bgm.paused);
 			document.addEventListener("WeixinJSBridgeReady", function() {
 				
 				if(bgm.paused) {
@@ -165,8 +165,8 @@ define(function(require) {
 			}
 //			 container.find(".status").width(screenWidth);
 //			 container.find(".status").height(screenHeight);
-			alert("宽", winWidth)
-			alert('高', winHeight);
+			alert("宽"+winWidth)
+			alert('高'+ winHeight);
 		},
 		// 图片预加载
 		preloadFile: function() {
