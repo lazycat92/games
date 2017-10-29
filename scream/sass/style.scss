@@ -99,7 +99,7 @@ body {
                     display: flex;
                     width: 100%;
                     position: absolute;
-                    bottom: 35%;
+                    bottom: 27%;
                     left: 0;
                     z-index: 20;
                     .boy {
@@ -124,7 +124,7 @@ body {
                 .coupon {
                     width: 100%;
                     position: absolute;
-                    bottom: 10%;
+                    bottom: 12%;
                     left: 0;
                     z-index: 30;
                     animation: formTop 1s ease-in forwards;
@@ -137,9 +137,9 @@ body {
                 .btn-light {
                     display: flex;
                     width: 100%;
-                    height: 20vh;
+                    height: rem(250);
                     position: absolute;
-                    bottom: -2%;
+                    bottom: -1%;
                     left: 0;
                     z-index: 50;
                     div {
@@ -147,14 +147,14 @@ body {
                         width: 50%;
                         .btn-boy {
                             display: block;
-                            width: 90%;
+                            width: 100%;
                             height: 100%;
                             float: right;
                             animation: btnScale .8s linear infinite alternate-reverse;
                         }
                         .btn-girl {
                             display: block;
-                            width: 90%;
+                            width:  100%;
                             height: 100%;
                             float: left;
                             animation: btnScale .8s linear infinite alternate-reverse;
@@ -200,14 +200,14 @@ body {
                         opacity: 0;
                     }
                     50% {
-                        bottom: 10%;
+                        bottom: 12%;
                         opacity: 1;
                     }
                     75% {
                         bottom: 13%;
                     }
                     100% {
-                        bottom: 10%;
+                        bottom: 12%;
                         opacity: 1;
                     }
                 }
