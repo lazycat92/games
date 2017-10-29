@@ -578,7 +578,7 @@ body {
                     height: rem(284);
                     background: url('https://img04.aomygod.com/fontend/20171027/imgs/status4/2.png') no-repeat;
                     background-size: 100% 100%;
-                    padding: rem(25) rem(15) rem(20) rem(55);
+                    padding: rem(25) rem(10) rem(20) rem(40);
                     box-sizing: border-box;
                     color: #3d3d3d;
                     font: bold rem(30) "微软雅黑";
@@ -648,6 +648,24 @@ body {
                         left: rem(-10);
                    }
                 }
+            }
+        }
+        .share-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+            display: none;
+            img {
+                position: absolute;
+                top: rem(20);
+                right: rem(20);
+                width: rem(320);
+                height: rem(228);
+                display: block;
             }
         }
         .outside-mask {

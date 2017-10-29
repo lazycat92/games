@@ -193,13 +193,6 @@ define(function(require) {
 		gameBegin: function(gender) {
 			var _this = this;
 			var count = 0;
-//			var musics = [
-//				"https://img04.aomygod.com/fontend/20171028/imgs/music/boy.mp3",
-//				urls.img + 'imgs/music/girl.mp3'
-//			];
-//			var sound2 = new Howl({
-//				src: [gender == boy ? musics[0]: musics[1]]
-//			});
 			
 			// 初始化页面
 			$(".score-num img").css('bottom', '-8.74667rem');
@@ -536,6 +529,10 @@ define(function(require) {
 			}).on('click', ".close", function(e) {
 				e.stopPropagation();
 				$(".outside-mask").hide();
+			}).on('click', '.share', function(e) {
+				$(".share-mask").show();
+			}).on('click', '.share-mask', function(e) {
+				$(".share-mask").hide();
 			});
 			
 			$(".get-code").on('click', function (e) {
