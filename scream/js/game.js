@@ -134,7 +134,22 @@ define(function(require) {
 			this.preloadFile();
 			this.changeStatus();
 			this.login();
+			this.autoPlayBgm();
 			// this.shareGame();
+		},
+		// 在微信中自动播放背景音乐
+		autoPlayBgm: function(e) {
+			function loadSound() {
+			    var ev = document.createEvent('HTMLEvents');
+			    ev.initEvent('touchend', false, false);
+			    document.dispatchEvent(ev);
+			}
+			document.addEventListener("WeixinJSBridgeReady", function() {
+			    loadSound()
+			}, false);
+			document.addEventListener('YixinJSBridgeReady', function() {
+			    loadSound()
+			}, false);
 		},
 		// 定义页面宽高，屏幕适应计算
 		calcScreen: function() {
@@ -480,10 +495,8 @@ define(function(require) {
 		login: function() {
 			var _this = this;
 			var couponId;
-			alert("321");
 			
 			$(".btn-coupon").on('click', function(e) {
-				alert("113");
 				e.stopPropagation();
 				var $this = this;
 				couponId = $(this).data("index");
@@ -533,7 +546,9 @@ define(function(require) {
 				}
 			}).on('click', '.share', function(e) {
 				$(".share-mask").show();
-			}).on('click', '.share-mask', function(e) {
+			});
+			
+			$('.share-mask').on('click', function(e) {
 				$(".share-mask").hide();
 			});
 			
@@ -725,9 +740,11 @@ define(function(require) {
 
 			};
 
-			if(BrowserUtil.isWeixin()) {
-				initWxShare();
-			}
+//			if(BrowserUtil.isWeixin()) {
+//				initWxShare();
+//			}
+
+			initWxShare();
 		}
 	}
 
