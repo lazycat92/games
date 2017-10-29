@@ -163,8 +163,8 @@ define(function(require) {
 				screenHeight = winHeight;
 				screenWidth = Math.floor(screenHeight * normalWidth / normalHeight);
 			}
-//			 container.find(".status").width(screenWidth);
-//			 container.find(".status").height(screenHeight);
+//			container.find(".status").width(screenWidth);
+			container.find(".status").height(winHeight);
 			alert("宽"+winWidth)
 			alert('高'+ winHeight);
 		},

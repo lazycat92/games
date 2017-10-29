@@ -148,8 +148,8 @@ body .container .status#status1 .coupon {
 body .container .status#status1 .btn-light {
   display: flex;
   width: 100%;
-  position: relative;
-  top: -6.4rem;
+  position: absolute;
+  bottom: 0.21333rem;
   z-index: 50;
 }
 /* line 137, ../sass/style.scss */
