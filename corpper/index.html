@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>h5图片相关操作</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+	</head>
+	<body>
+		<section class="container">
+			
+			<canvas id="myCanvas" width="" height=""></canvas>
+			
+			<div class="operations">
+				<a href="javascrip:;" class="upload">上传图片</a>
+				<a href="javascrip:;" class="rotate">旋转</a>
+				<a href="javascrip:;" class="cropper">裁剪</a>
+			</div>
+		</section>
+		
+		<script src="js/require.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			require(['jquery', 'cropper'], function($, Cropper){
+				
+			});
+		</script>
+	</body>
+</html>

@@ -53,6 +53,7 @@
                 
                 $("#canvas").hammer({
                     gestureCb: function(o) {
+                    	console.log(o);
                         //每次缩放拖拽的回调
                         $.extend(previewStyle, o);
                         console.log("用户修改图片", previewStyle)
