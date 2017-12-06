@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+    <title>手机图片缩放demo</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+
+    <section id="upload" style="display:block;">
+        <div class="upload-body">
+        
+            <img class="mask" src="images/t.png" width="100%">
+            
+            <span class="img_content">
+                <img src="images/t_01_bg.png" width="100%">
+            </span>
+
+            <!--裁剪图片框。宽高为定义裁剪出的图片大小-->
+            <canvas id="canvas" width="300" height="300"></canvas>
+        </div>
+
+    </section>
+
+
+    <!-- 无非微信分享项目通用代码 -->
+    <script src="./assets/js/require.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+
+			//hammer 依赖 jquery
+			//canvas 控制 img
+
+            require(["jquery", 'hammer', 'tomPlugin', "tomLib", 'hammer.fake', 'hammer.showtouch'], function($, hammer, plugin, T) {
+                
+
+                var previewStyle = {
+                    x: 0,
+                    y: 0,
+                    scale: 1,
+                    rotate: 0,
+                    ratio: 1
+                },
+                transform = T.prefixStyle("transform");
+
+                
+                $("#canvas").hammer({
+                    gestureCb: function(o) {
+                        //每次缩放拖拽的回调
+                        $.extend(previewStyle, o);
+                        console.log("用户修改图片", previewStyle)
+                        $(".img_content img").css(transform, "translate3d(" + previewStyle.x + 'px,' + previewStyle.y + "px,0) rotate(" + previewStyle.rotate + "deg) scale(" + (previewStyle.scale / previewStyle.ratio) + ")")
+                    }
+                });
+				
+				
+				document.addEventListener("touchmove", function(e) {
+                        e.preventDefault();
+                });
+
+            });
+
+
+    </script>
+
+</body>
+</html>
