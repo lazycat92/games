@@ -158,9 +158,8 @@ body .container #status {
   font-weight: bold;
   margin: 0;
   padding: 0;
-  margin-bottom: 0.42667rem;
 }
-/* line 95, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 body .container .btn-begin {
   position: absolute;
   bottom: 2rem;
