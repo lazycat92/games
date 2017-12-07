@@ -24,7 +24,7 @@
 				var feedback = document.getElementById("status");
 				var countTime = document.querySelector(".countTime");
 				var count = 10;	// 定义倒计时器
-				var threshold = 2000;	// 设置一个摇动的阈值
+				var threshold = 500;	// 设置一个摇动的阈值
 				var x, y, z, lastx, lasty, lastz = 0;	//本次摇晃和上一次摇晃时设备的x,y,z轴上的
 				var lastTime, curTime;	// 本次摇晃和上一次摇晃对应的时间
 				var timer;
@@ -54,7 +54,7 @@
 					if((curTime - lastTime) > 100) {
 						// 当前时间距上一次时间相差100毫秒时
 						// 将各轴的加速度值变化量除以时间值，并乘以10000，以得到一个相对的速度值
-						var speed = Math.abs(x+y+z-lastx-lasty-lastz) / (curTime - lastTime) * 10000;
+						var speed = Math.abs(x+y+z-lastx-lasty-lastz) / (curTime - lastTime) * 10000 || 0;
 						lastTime = curTime;
 						lastx = x;
 						lasty = y;
