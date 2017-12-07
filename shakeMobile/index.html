@@ -23,7 +23,7 @@
 				var content = document.getElementsByClassName("content")[0];
 				var feedback = document.getElementById("status");
 				var countTime = document.querySelector(".countTime");
-				var timer, count = 10;	// 定义倒计时器
+				var count = 10;	// 定义倒计时器
 				var threshold = 5000;	// 设置一个摇动的阈值
 				var x, y, z, lastx, lasty, lastz = 0;	//本次摇晃和上一次摇晃时设备的x,y,z轴上的
 				var lastTime, curTime;	// 本次摇晃和上一次摇晃对应的时间
@@ -42,15 +42,15 @@
 				});
 				
 				function deviceMotionHandler(e) {
-//					window.addEventListener("devicemotion", deviceMotionHandler);
-//					timer = setInterval(function() {
-//						countTime.innerHTML = count + "s";
-//						count --;
-//						if(count < 0) {
-//							clearInterval(timer);
-//						}
-//					}, 1000);
-					feedback.innerHTML = JSON.stringify(e.accelerationIncludingGravity);
+					window.addEventListener("devicemotion", deviceMotionHandler);
+					var timer = setInterval(function() {
+						countTime.innerHTML = count + "s";
+						count --;
+						if(count < 0) {
+							clearInterval(timer);
+						}
+					}, 1000);
+
 //					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
 //					x = acceleraton.x;
 //					y = acceleraton.y;
