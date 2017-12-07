@@ -50,27 +50,27 @@
 //							clearInterval(timer);
 //						}
 //					}, 1000);
-					
-					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
-					x = acceleraton.x;
-					y = acceleraton.y;
-					z = acceleraton.z;
-					curTime = new Date().getTime();
-					if((curTime - lastTime) > 100) {
-						// 当前时间距上一次时间相差100毫秒时
-						// 将各轴的加速度值变化量除以时间值，并乘以10000，以得到一个相对的速度值
-						var speed = Math.abs(x+y+z-lastx-lasty-lastz) / (curTime - lastTime) * 10000;
-						feedback.innerHTML = "您的摇一摇速度达到了" + speed ; 	// 在页面中显示当前速度
-						lastTime = curTime;
-						lastx = x;
-						lasty = y;
-						lastz = z;
-					}
-					if(speed > threshold) {
-						// 当速度大于所设阈值时
-						window.removeEventListener('devicemotion', deviceMotionHandler);  // 移除事件
-						feedback.innerHTML = "game over";
-					}
+					feedback.innerHTML = e.accelerationIncludingGravity;
+//					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
+//					x = acceleraton.x;
+//					y = acceleraton.y;
+//					z = acceleraton.z;
+//					curTime = new Date().getTime();
+//					if((curTime - lastTime) > 100) {
+//						// 当前时间距上一次时间相差100毫秒时
+//						// 将各轴的加速度值变化量除以时间值，并乘以10000，以得到一个相对的速度值
+//						var speed = Math.abs(x+y+z-lastx-lasty-lastz) / (curTime - lastTime) * 10000;
+//						feedback.innerHTML = "您的摇一摇速度达到了" + speed ; 	// 在页面中显示当前速度
+//						lastTime = curTime;
+//						lastx = x;
+//						lasty = y;
+//						lastz = z;
+//					}
+//					if(speed > threshold) {
+//						// 当速度大于所设阈值时
+//						window.removeEventListener('devicemotion', deviceMotionHandler);  // 移除事件
+//						feedback.innerHTML = "game over";
+//					}
 				}
 				
 				document.body.addEventListener("mousemove", function(e) {
