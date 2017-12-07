@@ -1,0 +1,102 @@
+@import "compass/reset";
+
+$fontSize: 46.875;
+
+@function rem($n) {
+  @return ($n / $fontSize) * 1rem;
+}
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #F0AD4E;
+        img {
+            width: 60%;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            &.active {
+                animation: shakeImg 1s linear 0s infinite alternate;
+            }
+            @keyframes shakeImg {
+                0% {
+                    transform: translateX(-50%) translateY(-50%) rotateZ(-10deg);
+                }
+                15% {
+                    transform: translateX(-50%) translateY(-50%) rotateZ(10deg);
+                }
+                30% {
+                    transform: translateX(-50%) translateY(-50%) rotateZ(-10deg);
+                }
+                45% {
+                    transform: translateX(-50%) translateY(-50%) rotateZ(10deg);
+                }
+                60%{
+                    transform: translateX(-50%) translateY(-50%) rotateZ(-10deg);
+                }
+                70%, 100% {
+                    transform: translateX(-50%) translateY(-50%) rotateZ(0);
+                }
+            }
+        }
+        h1 {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: rem(60);
+            font-weight: bold;
+            &.countTime {
+                top: 8%;
+                z-index: 100;
+            }
+            &.active {
+                animation: shakeWord 1s linear 0s infinite alternate;
+            }
+            @keyframes shakeWord {
+                0% {
+                    transform: rotateZ(-10deg);
+                }
+                15% {
+                    transform: rotateZ(10deg);
+                }
+                30% {
+                    transform: rotateZ(-10deg);
+                }
+                45% {
+                    transform: rotateZ(10deg);
+                }
+                60%{
+                    transform: rotateZ(-10deg);
+                }
+                70%, 100% {
+                    transform: rotateZ(0);
+                }
+            }
+        }
+        .btn-begin {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            display: block;
+            background: #007AFF;
+            color: #fff;
+            width: 40%;
+            height: rem(100);
+            line-height: rem(100);
+            text-decoration: none;
+            font-size: rem(36);
+        }
+    }
+    
+}
