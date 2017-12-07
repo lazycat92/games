@@ -30,7 +30,9 @@
 //				lastTime = new Date().getTime();	// 获取当前的时间
 				
 				
-				beginBtn.addEventListener("click", function(e) {
+				beginBtn.addEventListener("click", gameStartHandler);
+				
+				function gameStartHandler(e) {
 					content.children[0].className = "active";
 					content.children[1].className = "active";
 					lastTime = new Date().getTime();
@@ -39,18 +41,20 @@
 					} else {
 						feedback.innerHTML = "本设备不支持摇一摇";
 					}
-				});
+				}
 				
 				function deviceMotionHandler(e) {
 					window.removeEventListener("devicemotion", deviceMotionHandler);
+					beginBtn.removeEventListener("click", gameStartHandler);
 					var timer = setInterval(function() {
 						countTime.innerHTML = count + "s";
 						count --;
 						if(count < 0) {
 							clearInterval(timer);
+							beginBtn.addEventListener("click", gameStartHandler);
 						}
 					}, 1000);
-					feedback.innerHTML = JSON.stringify(e);
+					feedback.innerHTML = JSON.stringify(e.accelerationIncludingGravity);
 //					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
 //					x = acceleraton.x;
 //					y = acceleraton.y;
