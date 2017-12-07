@@ -42,7 +42,7 @@
 				});
 				
 				function deviceMotionHandler(e) {
-					window.addEventListener("devicemotion", deviceMotionHandler);
+					window.removeEventListener("devicemotion", deviceMotionHandler);
 					var timer = setInterval(function() {
 						countTime.innerHTML = count + "s";
 						count --;
@@ -50,7 +50,7 @@
 							clearInterval(timer);
 						}
 					}, 1000);
-
+					feedback.innerHTML = JSON.stringify(e);
 //					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
 //					x = acceleraton.x;
 //					y = acceleraton.y;
