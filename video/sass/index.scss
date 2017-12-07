@@ -5,3 +5,7 @@ $fontSize: 46.875;
 @function rem($n) {
   @return ($n / $fontSize) * 1rem;
 }
+body {
+    padding: 0;
+    margin: ;
+}
