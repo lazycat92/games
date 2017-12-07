@@ -82,6 +82,14 @@ body {
                 }
             }
         }
+        #status {
+            text-align: center;
+            line-height: rem(100);
+            font-size: rem(40);
+            color: blue;
+            font-weight: bold;  
+            margin-bottom: rem(20);  
+        }
         .btn-begin {
             position: absolute;
             bottom: 2rem;

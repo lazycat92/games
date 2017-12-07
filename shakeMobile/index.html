@@ -46,15 +46,17 @@
 				function deviceMotionHandler(e) {
 					window.removeEventListener("devicemotion", deviceMotionHandler);
 					beginBtn.removeEventListener("click", gameStartHandler);
+					feedback.innerHTML = "加油，使劲摇！";
 					var timer = setInterval(function() {
 						countTime.innerHTML = count + "s";
 						count --;
 						if(count < 0) {
 							clearInterval(timer);
+							countTime.innerHTML = "10s";
 							beginBtn.addEventListener("click", gameStartHandler);
+							feedback.innerHTML = "game over";
 						}
 					}, 1000);
-					feedback.innerHTML = JSON.stringify(e.accelerationIncludingGravity);
 //					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
 //					x = acceleraton.x;
 //					y = acceleraton.y;

@@ -150,6 +150,15 @@ body .container h1.active {
   }
 }
 /* line 85, ../sass/style.scss */
+body .container #status {
+  text-align: center;
+  line-height: 2.13333rem;
+  font-size: 0.85333rem;
+  color: blue;
+  font-weight: bold;
+  margin-bottom: 0.42667rem;
+}
+/* line 93, ../sass/style.scss */
 body .container .btn-begin {
   position: absolute;
   bottom: 2rem;
