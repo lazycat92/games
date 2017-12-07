@@ -46,41 +46,60 @@
 				
 				function deviceMotionHandler(e) {
 					beginBtn.removeEventListener("click", gameStartHandler);	// 禁止倒计时结束内重复点击
-					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
-					x = acceleraton.x;
-					y = acceleraton.y;
-					z = acceleraton.z;
-					curTime = new Date().getTime();
-					if((curTime - lastTime) > 100) {
-						// 当前时间距上一次时间相差100毫秒时
-						// 将各轴的加速度值变化量除以时间值，并乘以10000，以得到一个相对的速度值
-						var speed = Math.abs(x+y+z-lastx-lasty-lastz) / (curTime - lastTime) * 10000 || 0;
-						lastTime = curTime;
-						lastx = x;
-						lasty = y;
-						lastz = z;
-					}
-					if(speed > threshold) {
-						// 当速度大于所设阈值时，有所偏移的时候开始倒计时
-						window.removeEventListener('devicemotion', deviceMotionHandler);  // 移除事件
-						feedback.innerHTML = "奖品距离你只有1%的路程！speed:" + speed;
-						timer = setInterval(function() {
-							count --;
-							countTime.innerHTML = count + "s";
-							if(count < 0) {
-								clearInterval(timer);
-								countTime.innerHTML = "10s";
-								count = 10;
-								beginBtn.addEventListener("click", gameStartHandler);
-								feedback.innerHTML = "game over";
-								content.children[0].className = "";
-								content.children[1].className = "";
-							}
-						}, 1000);
-					} else {
-						feedback.innerHTML = "加油，使劲摇！你的速度太慢了！"; 	// 在页面中显示当前速度
-						return ;
-					}
+					
+					// 没有阈值的情况
+					window.removeEventListener('devicemotion', deviceMotionHandler);  // 移除事件
+					feedback.innerHTML = "hurry up";
+					timer = setInterval(function() {
+						count --;
+						countTime.innerHTML = count + "s";
+						if(count < 0) {
+							clearInterval(timer);
+							countTime.innerHTML = "10s";
+							count = 10;
+							beginBtn.addEventListener("click", gameStartHandler);
+							feedback.innerHTML = "game over";
+							content.children[0].className = "";
+							content.children[1].className = "";
+						}
+					}, 1000);
+					
+//					有阈值的情况
+//					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
+//					x = acceleraton.x;
+//					y = acceleraton.y;
+//					z = acceleraton.z;
+//					curTime = new Date().getTime();
+//					if((curTime - lastTime) > 100) {
+//						// 当前时间距上一次时间相差100毫秒时
+//						// 将各轴的加速度值变化量除以时间值，并乘以10000，以得到一个相对的速度值
+//						var speed = Math.abs(x+y+z-lastx-lasty-lastz) / (curTime - lastTime) * 10000 || 0;
+//						lastTime = curTime;
+//						lastx = x;
+//						lasty = y;
+//						lastz = z;
+//					}
+//					if(speed > threshold) {
+//						// 当速度大于所设阈值时，有所偏移的时候开始倒计时
+//						window.removeEventListener('devicemotion', deviceMotionHandler);  // 移除事件
+//						feedback.innerHTML = "奖品距离你只有1%的路程！speed:" + speed;
+//						timer = setInterval(function() {
+//							count --;
+//							countTime.innerHTML = count + "s";
+//							if(count < 0) {
+//								clearInterval(timer);
+//								countTime.innerHTML = "10s";
+//								count = 10;
+//								beginBtn.addEventListener("click", gameStartHandler);
+//								feedback.innerHTML = "game over";
+//								content.children[0].className = "";
+//								content.children[1].className = "";
+//							}
+//						}, 1000);
+//					} else {
+//						feedback.innerHTML = "加油，使劲摇！你的速度太慢了！"; 	// 在页面中显示当前速度
+//						return ;
+//					}
 				}
 				
 				document.addEventListener("touchmove", function(e) {
