@@ -24,11 +24,10 @@
 				var feedback = document.getElementById("status");
 				var countTime = document.querySelector(".countTime");
 				var count = 10;	// 定义倒计时器
-				var threshold = 100;	// 设置一个摇动的阈值
+				var threshold = 100;	// 设置一个摇动的阈值，手机晃动最小力度
 				var x, y, z, lastx, lasty, lastz = 0;	//本次摇晃和上一次摇晃时设备的x,y,z轴上的
 				var lastTime, curTime;	// 本次摇晃和上一次摇晃对应的时间
 				var timer;
-//				lastTime = new Date().getTime();	// 获取当前的时间
 				
 				
 				beginBtn.addEventListener("click", gameStartHandler);
@@ -47,7 +46,7 @@
 				function deviceMotionHandler(e) {
 					beginBtn.removeEventListener("click", gameStartHandler);	// 禁止倒计时结束内重复点击
 					
-					// 没有阈值的情况
+					// 没有阈值的情况，直接通过点击按钮触发倒计时
 					window.removeEventListener('devicemotion', deviceMotionHandler);  // 移除事件
 					feedback.innerHTML = "Hurry up!奖品要飞了！";
 					timer = setInterval(function() {
@@ -64,15 +63,15 @@
 						}
 					}, 1000);
 					
-//					有阈值的情况
+//					有阈值的情况，通过摇晃力度来触发倒计时
 //					var acceleraton = e.accelerationIncludingGravity;	// 获取含重力在内的加速度值
 //					x = acceleraton.x;
 //					y = acceleraton.y;
 //					z = acceleraton.z;
 //					curTime = new Date().getTime();
 //					if((curTime - lastTime) > 100) {
-//						// 当前时间距上一次时间相差100毫秒时
-//						// 将各轴的加速度值变化量除以时间值，并乘以10000，以得到一个相对的速度值
+//						// 两次摇晃至少相差100毫秒
+//						// 将各轴的加速度值变化量除以时间值，并乘以10000（可以设任意值，与阈值有关联），以得到一个相对的速度值
 //						var speed = Math.abs(x+y+z-lastx-lasty-lastz) / (curTime - lastTime) * 10000 || 0;
 //						lastTime = curTime;
 //						lastx = x;
@@ -81,7 +80,7 @@
 //					}
 //					if(speed > threshold) {
 //						// 当速度大于所设阈值时，有所偏移的时候开始倒计时
-//						window.removeEventListener('devicemotion', deviceMotionHandler);  // 移除事件
+//						window.removeEventListener('devicemotion', deviceMotionHandler);  // 速度达到阈值后，移除重力感应事件，倒计时开始
 //						feedback.innerHTML = "奖品距离你只有1%的路程！speed:" + speed;
 //						timer = setInterval(function() {
 //							count --;
@@ -97,7 +96,7 @@
 //							}
 //						}, 1000);
 //					} else {
-//						feedback.innerHTML = "加油，使劲摇！你的速度太慢了！"; 	// 在页面中显示当前速度
+//						feedback.innerHTML = "加油，使劲摇！你的速度太慢了！"; 	
 //						return ;
 //					}
 				}
