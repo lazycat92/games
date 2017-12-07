@@ -156,9 +156,11 @@ body .container #status {
   font-size: 0.85333rem;
   color: blue;
   font-weight: bold;
+  margin: 0;
+  padding: 0;
   margin-bottom: 0.42667rem;
 }
-/* line 93, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 body .container .btn-begin {
   position: absolute;
   bottom: 2rem;
